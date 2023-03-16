@@ -1,0 +1,305 @@
+@charset "utf-8";
+/*
+theme Name: WordPress Sample-site by Kazuma
+Author: Kazuma
+Description: Sample original theme
+version： 2.0.0
+*/
+
+
+/*ハンバーガーメニュー*/
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:0;
+    right:-120%;
+	width:300px;
+    height: 100vh;/*ナビの高さ*/
+	background:#999;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    right: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list,.sp-menu{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 300px;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    max-width: 800px;
+    top:35%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+    text-align: left;
+    border-bottom: 1px dashed #dfdfdf;
+    width: 100%;
+}
+
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #666;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+
+
+/*====================================================================
+.s_07 .accordion_one
+====================================================================*/
+.s_07{
+	max-width: 1024px;
+	margin: 0 auto;
+	position: relative;
+	top:150px;
+}
+
+.s_07 .accordion_one .accordion_header {
+	background-color: #999;
+	border-bottom: 1px dashed #dfdfdf;;
+	color: #fff;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 20px 11%;
+	text-align: center;
+	position: relative;
+	z-index: +1;
+	cursor: pointer;
+	transition-duration: 0.2s;
+}
+
+.s_07 .accordion_one:nth-of-type(1) .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one:nth-of-type(1) .accordion_inner .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one:nth-of-type(2) .accordion_header {
+	background-color: #999;
+}
+
+.s_07 .accordion_one:nth-of-type(2) .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one:nth-of-type(2) .accordion_inner .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one:nth-of-type(3) .accordion_header {
+	background-color: #999;
+}
+
+.s_07 .accordion_one:nth-of-type(3) .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one:nth-of-type(3) .accordion_inner .accordion_inner .accordion_header {
+	background-color: #666;
+}
+
+.s_07 .accordion_one .accordion_header:hover {
+	opacity: .8;
+}
+
+.s_07 .accordion_one .accordion_header .i_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	right: 5%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	box-sizing: border-box;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transform-origin: center center;
+	transition-duration: 0.2s;
+}
+
+.s_07 .accordion_one .accordion_header .i_box .one_i {
+	display: block;
+	width: 18px;
+	height: 18px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transform-origin: center center;
+	transition-duration: 0.2s;
+	position: relative;
+}
+
+.s_07 .accordion_one .accordion_header.open .i_box {
+	-webkit-transform: rotate(-360deg);
+	transform: rotate(-360deg);
+}
+
+.s_07 .accordion_one .accordion_header .i_box .one_i:before,
+.s_07 .accordion_one .accordion_header .i_box .one_i:after {
+	display: flex;
+	content: '';
+	background-color: #fff;
+	border-radius: 10px;
+	width: 14px;
+	height: 2px;
+	position: absolute;
+	top: 6px;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	transform-origin: center center;
+}
+
+.s_07 .accordion_one .accordion_header .i_box .one_i:before {
+	width: 2px;
+	height: 14px;
+	top: 0;
+	left: 6px;
+}
+
+.s_07 .accordion_one .accordion_header.open .i_box .one_i:before {
+	content: none;
+}
+
+.s_07 .accordion_one .accordion_header.open .i_box .one_i:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.s_07 .accordion_one .accordion_inner {
+	display: none;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.s_07 .accordion_one .accordion_inner .box_one {
+	height: 300px;
+}
+
+.s_07 .accordion_one .accordion_inner p.txt_a_ac {
+	margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.s_07 .accordion_one .accordion_header {
+		font-size: 18px;
+	}
+
+	.s_07 .accordion_one .accordion_header .i_box {
+		width: 30px;
+		height: 30px;
+		margin-top: -15px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.s_07 .accordion_one .accordion_header {
+		font-size: 12px;
+		text-align: left;
+		padding: 15px;
+	}
+}
+
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+    .openbtn{
+        position:fixed;
+        z-index: 9999;/*ボタンを最前面に*/
+        top:10px;
+        right: 10px;
+        cursor: pointer;
+        width: 50px;
+        height:50px;
+    }
+    /*PCのみカテゴリー*/
+    .site-branding{
+        display: flex;
+        gap:20px;
+    }
+    }
