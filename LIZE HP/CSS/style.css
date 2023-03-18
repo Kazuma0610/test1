@@ -1,0 +1,1614 @@
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background:#fff;
+	text-align:center;
+	color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo img {
+	width:260px;
+}
+
+/* fadeUpをするアイコンの動き */
+
+.fadeUp{
+animation-name: fadeUpAnime;
+animation-duration:0.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleY(0);
+    background-color: #85a7cc;/*伸びる背景色の設定*/
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:bottom;
+		transform:scaleY(0);
+	}
+	50% {
+		transform-origin:bottom;
+		transform:scaleY(1);
+	}
+	50.001% {
+		transform-origin:top;
+	}
+	100% {
+		transform-origin:top;
+		transform:scaleY(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+#header{
+	opacity: 0;/*はじめは透過0に*/
+}
+#top-main{
+	opacity: 0;/*はじめは透過0に*/
+}
+#footer{
+    opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+body.appear #header{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+body.appear #top-main{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+body.appear #footer{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+/*========= PC-only,SP-onlyためのCSS ===============*/
+/*　SP用のスタイル*/
+.sp-only{
+    display: block;
+    position: relative;
+    top: 10%;
+}
+.pc-only{
+    display: none;
+}
+/*　PC用のスタイル */
+@media screen and (min-width:1030px) {
+    .sp-only{
+        display: none;
+    }
+
+    .pc-only{
+        display: block;
+    }
+}
+
+/*========= 下線が伸びて背景に変わるのためのCSS ==================*/
+/*== ボタン共通設定 */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+	overflow: hidden;
+    /*ボタンの形状*/
+	text-decoration: none;
+	display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+	color:#333;
+}
+
+.btn:hover span{
+	color:#fff;
+}
+
+/*== 背景が流れる（斜め） */
+.bgskew::before {
+	content: '';
+    /*絶対配置で位置を指定*/
+	position: absolute;
+	top: 0;
+	left: -130%;
+    /*色や形状*/
+	background:#333;
+	width:120%;
+	height: 100%;
+	transform: skewX(-25deg);
+}
+
+/*hoverした時のアニメーション*/
+.bgskew:hover::before {
+	animation: skewanime .8s forwards;/*アニメーションの名前と速度を定義*/
+}
+
+@keyframes skewanime {
+	100% {
+		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+	}
+}
+
+/*========= HeaderのためのCSS ==================*/
+#header{
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+}
+.logo-area img{
+    width: 100px;
+}
+.company-text{
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+.pc-navi{
+    width: 80%;
+}
+.pc-navi ul{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 5%;
+}
+.pc-navi li a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 0 15px;
+}
+@media screen and (max-width:1030px) {
+    #header{
+        position: fixed;
+        top: 0px;
+        height: 80px;
+    }
+    .pc-navi{
+        display:none;
+    }
+    .header-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 20%;
+        left: 0%;
+    }
+    .logo-area img{
+        width: 70px;
+    }
+    .company-text{
+        font-size: 15px;
+        letter-spacing: 10px;
+    }
+}
+@media screen and (max-width:370px) {
+    .company-text{
+        font-size: 13px;
+        letter-spacing: 5px;
+    }
+}
+
+/*========= GnaviのためのCSS ===============*/
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:-120%;
+    left:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#999;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+    position: relative;
+	color: #333;
+	text-decoration: none;
+	padding:20px;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+#g-nav li a::after{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scale(0,1);
+    transform-origin: right top;
+    transition: transform .3s;
+}
+
+#g-nav li a:hover::after{
+    transform-origin: left top;
+    transform: scale(1,1);
+}
+@media screen and (orientation: landscape) and (max-width: 850px){
+    #g-nav ul {
+        display: flex;
+        justify-content: center;
+        /*ナビゲーション天地中央揃え*/
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+}
+@media screen and (max-width:820px) {
+    #g-nav{
+        height: calc(var(--vh, 1vh) * 100);/*ナビの高さ*/
+    }
+    #g-nav ul {
+        /*ナビゲーション天地中央揃え*/
+        top:50%;
+        left:50%;
+    }
+}
+@media screen and (max-width:370px) {
+    #g-nav li a{
+        font-size: 1rem;
+    }
+}
+
+/*========= GnaviボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:20px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+    border-left: 1px solid #333;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #666;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+@media screen and (max-width:1030px) {
+    .openbtn{
+        top:10px;
+        right: 10px;
+    }
+}
+/*========= スクロールするとエリアの高さに合わせて線が伸びるのためのCSS ===============*/
+.scrollgress{
+	z-index: 3;/*他のposition指定しているエリアより前に出すためz-indexの数字を大きく*/
+	top:80px!important;/* fixedで設置しているheaderの高さよりも下にバーを出す*/
+}
+
+/*========= main-areaレイアウトのためのCSS ===============*/
+#main-area{
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+#container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/*========= TOP画像のためのCSS ================= */
+#top-main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#top-main::before{
+    content: '';
+    position: fixed;
+    top: 0vh;
+    left: 0%;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/lize_mv_new.svg) no-repeat center;
+    background-size: cover;
+}
+
+/*========= 背景色が伸びて出現のためのCSS ===============*/
+.top-lead{
+    position: fixed;
+    bottom: 45%;
+    left: 5%;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 1.5rem;
+    color: #fff;
+}
+@media screen and (max-width:1030px) {
+    #top-main{
+        height: 100vh;
+    }
+    #top-main::before{
+        content: '';
+        position: absolute;
+        top: 0vh;
+        left: 0%;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        background: url(../images/lize_mv_new_ipad.svg) no-repeat center;
+        background-size: cover;
+    }
+    .top-lead{
+        position: absolute;
+        bottom: 45%;
+        left: 10%;
+        font-size: 2rem;
+        line-height: 1.5;
+        letter-spacing: 1rem;
+        color: #fff;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:760px) {
+    #top-main{
+        height: 100vh;
+    }
+    #top-main::before{
+        content: '';
+        position: absolute;
+        top: 0vh;
+        left: 0%;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        background: url(../images/lize_mv_new_sp.svg) no-repeat center;
+        background-size: cover;
+    }
+    .top-lead{
+        position: absolute;
+        bottom: 55%;
+        left: 10%;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        letter-spacing: .5rem;
+        padding: 5px;
+    }
+}
+@media screen and (orientation: landscape) and (max-width: 900px){
+    .top-lead{
+        position: absolute;
+        bottom: 45%;
+        left: 10%;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        letter-spacing: .5rem;
+        padding: 5px;
+    }
+}
+@media screen and (max-width:370px) {
+    .top-lead{
+        font-size: 1rem;
+        letter-spacing: .5rem;
+    }
+}
+
+
+/*========= TOPICSのためのCSS ===============*/
+#topics{
+    border-left: 3px solid #000;
+    padding: 0 0 0 20px;
+}
+#topics h2{
+    width: 80%;
+    text-align: left;
+    position: absolute;
+    margin-bottom: 0;
+    top: 40px;
+    z-index: 999;
+    background-color: #fff;
+}
+.box-wrapper{
+    width: 100%;
+    
+}
+
+/*==================================================
+ニュースティッカーのためのcss*/
+
+/*ニュース1行の周りの余白*/
+.slider a{
+    display: block;
+    background:#fff;
+    padding: 15px 0;
+}
+
+/*日付*/
+.slider span {
+    display:inline-block;
+    font-size:0.8rem;
+    margin-right:10px;
+    color:#777;
+}
+
+.slider li{
+    width: 100%;
+}
+
+.bx-wrapper{
+    box-shadow: none;
+    border: none;
+}
+
+/*==================================================
+ふわっとした効果を出すCSS
+===================================*/
+
+/* fadeUp (Spanやaはtransformは効かない）(スクロールしたら）*/
+
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeUpAnime{
+      from {
+        opacity: 0;
+      transform: translateY(200px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateY(0);
+      }
+    }
+    
+    
+    /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+    .fadeUpTrigger{
+        opacity: 0;
+    }
+
+
+/* 左から右へアニメーション（画面が読み込まれたらたらすぐに起動）*/
+.fadeLeft{
+    animation-name:fadeLeftAnime;
+    animation-duration:8s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeLeftAnime{
+      from {
+        opacity: 0;
+      transform: translateX(-300px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateX(0);
+      }
+    }
+
+    .fadeLeftTrigger{
+    opacity: 0;
+}
+
+/* 左上へ flipLeftTopTrigger*/
+.flipLeftTop{
+    animation-name:flipLeftTopAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes flipLeftTopAnime{
+      from {
+       transform: translate(-20px,80px) rotate(-15deg);
+      opacity: 0;
+      }
+    
+      to {
+       transform: translate(0,0) rotate(0deg);
+      opacity: 1;
+      }
+    }
+.flipLeftTopTrigger{
+    opacity: 0;
+}
+
+/* X 軸（縦へ）(スクロールしたら）rotateXTrigger */
+.rotateX{
+    animation-name:rotateXAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes rotateXAnime{
+    from{
+      transform: rotateX(0);
+      opacity: 0;
+      }
+    to{
+      transform: rotateX(-360deg);
+      opacity: 1;
+      }
+  }
+.rotateXTrigger{
+    opacity: 0;
+}
+
+/*========= VISIONのためのCSS ===============*/
+#vision{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px 0 100px 0;
+}
+
+.vision-img{
+    width: 30%;
+    min-height: 600px;
+    background: url(../images/lize-image-sora.png) no-repeat center;
+    background-size: cover;
+}
+
+.vision-text h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #0A11b2;
+    margin: 0 0 30px 0;
+    text-align: right;
+}
+
+.vision-text h2 span{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.vision-lead{
+    position: relative;
+    color: #0A11b2;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0 90px 0;
+    text-align: right;
+    letter-spacing: 10px;
+}
+
+.vision-lead::after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 0px;
+    background: #0A11b2;
+    width: 12em;
+    height: 3px;
+}
+
+.vision-text p{
+    line-height: 2;
+    margin: 0 0 50px 0;
+    text-align: right;
+    letter-spacing: 5px;
+}
+
+@media screen and (max-width:1000px) {
+    #vision{
+        display: block;
+        margin: 0px 0 100px 0;
+    }
+    .vision-img{
+        width: 100%;
+        min-height: 590px;
+    }
+    .vision-text h2{
+        font-size: 2rem;
+        margin: 50px 0 30px 0;
+        text-align: left;
+    }
+    .vision-text h2 span{
+        justify-content: left;
+    }
+    .vision-lead{
+        font-size: 1rem;
+        margin: 50px 0 90px 0!important;
+        text-align: left!important;
+        letter-spacing: 10px!important;
+    }
+    .vision-text p{
+        font-size: 1rem;
+        line-height: 2;
+        margin: 0 0 50px 0;
+        text-align: left;
+        letter-spacing: 5px;
+    }
+
+}
+@media screen and (max-width:370px) {
+    .vision-text h2{
+        font-size: 1.5rem;
+        margin: 50px 0 30px 0;
+        text-align: left;
+    }
+    .vision-lead{
+        font-size: 1rem;
+        margin: 50px 0 90px 0!important;
+        text-align: left!important;
+        letter-spacing: 5px!important;
+    }
+    .vision-text p{
+        font-size: 1rem;
+        line-height: 2;
+        margin: 0 0 50px 0;
+        text-align: left;
+        letter-spacing: 5px;
+    }
+}
+
+/*========= 背景がシュッと出るのためのCSS ===============*/
+/*背景色が伸びて出現（共通）*/
+.bgextend{
+    animation-name:bgextendAnimeBase;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    position: relative;
+    overflow: hidden;/*　はみ出た色要素を隠す　*/
+    opacity:0;
+  }
+  
+  @keyframes bgextendAnimeBase{
+    from {
+      opacity:0;
+    }
+  
+    to {
+      opacity:1;  
+  }
+  }
+  
+  /*中の要素*/
+  .bgappear{
+    animation-name:bgextendAnimeSecond;
+    animation-duration:1s;
+    animation-delay: 0.6s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+  
+  @keyframes bgextendAnimeSecond{
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+  }
+  }
+  
+  /*左から*/
+  .bgLRextend::before{
+    animation-name:bgLRextendAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+      content: "";
+      position: absolute;
+      width: 30%;
+      height: 100%;
+      background-color: #666;/*伸びる背景色の設定*/
+  }
+  @keyframes bgLRextendAnime{
+    0% {
+      transform-origin:left;
+      transform:scaleX(0);
+    }
+    50% {
+      transform-origin:left;
+      transform:scaleX(1);
+    }
+    50.001% {
+      transform-origin:right;
+    }
+    100% {
+      transform-origin:right;
+      transform:scaleX(0);
+    }
+  }
+
+  .bgappearTrigger{
+    opacity: 0;
+  }
+
+@media screen and (max-width:1030px) {
+  .bgLRextend::before{
+     width: 70%;
+      }
+    
+
+}
+
+/*========= パタっと出るのためのCSS ===============*/
+/* 左上へ */
+.flipLeftTop{
+    animation-name:flipLeftTopAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes flipLeftTopAnime{
+      from {
+       transform: translate(-20px,80px) rotate(-10deg);
+      opacity: 0;
+      }
+    
+      to {
+       transform: translate(0,0) rotate(0deg);
+      opacity: 1;
+      }
+    }
+.flipLeftTopTrigger{
+    opacity: 0;
+}
+
+/* 右上へ */
+.flipRightTop{
+    animation-name:flipRightTopAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes flipRightTopAnime{
+      from {
+       transform: translate(-20px,80px) rotate(10deg);
+       opacity: 0;
+      }
+    
+      to {
+       transform: translate(0,1) rotate(0deg);
+      opacity: 1;
+      }
+    }
+.flipRightTopTrigger{
+    opacity: 0;
+}
+
+/*========= SERVICEのためのCSS ===============*/
+#service h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 100px 0;
+}
+
+.service-subtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #000;
+}
+
+#service .service-area{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin: 0 0 400px 0;
+    padding: 20px;
+}
+
+.service-area-noreverse{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 400px 0;
+}
+
+#service .service-area .img{
+    width: 45%;
+    margin: 0;
+}
+
+.service-area-noreverse .img{
+    width: 45%;
+    margin: 0;
+}
+
+.content{
+    width: 40%;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 150px;
+}
+
+.content-area{
+    padding: 40px;
+}
+
+.content-area h3{
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+
+.content-area p{
+    font-size: 1rem;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+}
+
+.reculte{
+    font-size: 1.5rem;
+    color: #0A11b2;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.service-area::after{
+    content: '';
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    width: 70%;
+    height: 32em;
+    background: #f3f3f3;
+    z-index: -1;
+}
+
+.service-area-noreverse::after{
+    content: '';
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    width: 70%;
+    height: 35em;
+    background: #f3f3f3;
+    z-index: -1;
+}
+
+.btn-content{
+    text-align: right;
+}
+
+/*ボタンの為の装飾（線が伸びて背景に変わる）*/
+.btnlinestretches3{
+    /*線の基点とするためrelativeを指定*/
+	position:relative;
+    /*ボタンの形状*/  
+	color:#333;
+    padding: 10px 30px;
+	display:inline-block;
+    text-decoration: none;
+    outline: none;
+}
+
+/*テキストの設定*/
+.btnlinestretches3 span{
+    /*テキストを前面に出すためz-indexの値を高く設定*/
+	position:relative;
+	z-index: 2;
+}
+
+.btnlinestretches3:hover span{
+	color: #fff;
+}
+
+/*線の設定*/
+.btnlinestretches3::after {
+	content:'';
+    /*絶対配置で線の位置を決める*/
+	position:absolute;
+	z-index:1;
+	bottom:0;
+	left:0;
+    /*線の形状*/
+	background:#333;
+	width:100%;
+	height:3px;
+    /*アニメーションの指定*/
+	transition:all 0.3s ease-in-out;
+}
+
+/*線が伸びて背景に*/
+.btnlinestretches3:hover::after {
+	height:100%;
+}
+
+
+@media screen and (max-width:1030px) {
+    #service h2{
+        font-size: 2rem;
+        margin: 0 0 50px 0;
+    }
+    #service .service-area{
+        margin: 0 0 100px 0;
+        padding: 0px;
+    }
+    .service-area-noreverse{
+        margin: 0 0 100px 0;
+    }
+    #service .service-area .img{
+        width: 100%;
+        margin: 0;
+    }
+    .service-area-noreverse .img{
+        width: 100%;
+        margin: 0;
+    }
+    .content{
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 0 20px #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: -10px;
+    }
+    .content-area h3{
+        font-size: 1rem;
+        letter-spacing: 5px;
+    }
+    .forsp-text{
+        text-align: center;
+    }
+    .content-area p{
+        display: inline-block;
+        font-size: .8rem;
+        text-align: left;
+    }
+    .reculte{
+        font-size: 1rem;
+        color: #0A11b2;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+    .btn-content{
+        text-align: center;
+    }
+    .service-area::after{
+        height: 1em;
+    }
+    .service-area-noreverse::after{
+        height: 1em;
+    }
+
+}
+@media screen and (max-width:370px) {
+    .content-area{
+        padding: 20px;
+    }
+    .btnlinestretches3{
+        padding: 10px 10px;
+    }
+    .reculte{
+        font-size: .8rem;
+    }
+}
+
+/*========= SERVICEのためのCSS ===============*/
+#about{
+    position: relative;
+}
+#about .about-list{
+    width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+#about h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #0A11b2;
+    margin: 0 0 100px 0;
+}
+.about-list li{
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 15px 0;
+    padding: 0 0 5px 0;
+}
+.about-list dl{
+    display: flex;
+    justify-content: space-between;
+}
+.about-list dt{
+    width: 40%;
+    padding: 0 0 0 40px;
+}
+.about-list dd{
+    width: 60%;
+}
+.image-about img{
+    position: absolute;
+    top:-300px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.04;
+}
+@media screen and (max-width:1030px) {
+    .image-about img{
+        top: -180px;
+    }
+}
+@media screen and (max-width:820px) {
+    .image-about img{
+        top: -100px;
+    }
+}
+@media screen and (max-width:600px) {
+    .image-about img{
+        top: 0px;
+    }
+}
+
+@media screen and (max-width:1030px) {
+    #about h2{
+        font-size: 2rem;
+        margin: 0 0 50px 0;
+    }
+    #about .about-list{
+        margin-bottom: 100px;
+    }
+    .about-list dl{
+        font-size: .8rem;
+    }
+
+}
+@media screen and (max-width:370px) {
+    .about-list dt{
+        padding: 0 0 0 20px;
+    }
+    .about-list dd{
+        width: 70%;
+    }
+}
+
+/*========= faq-bgのためのCSS ===============*/
+.faq-bg{
+    position: relative;
+    height: 55vh;
+    background: url(/images/lize-car-two.jpeg) no-repeat center;
+    background-size: cover;
+    margin: 0 0 250px 25%;
+}
+.faq-bg::after{
+    content: "";
+    position: absolute;
+    top:20%;
+    left:-32%;
+    width: 100%;
+    height: 55vh;
+    background: #f3f3f3;
+    z-index: -1;
+}
+
+@media screen and (max-width:1030px) {
+    .faq-bg{
+        height: 20vh;
+        margin: 0 0 100px 25%;
+    }
+    .faq-bg::after{
+        height: 20vh;
+    }
+
+}
+
+/*========= faqのためのCSS ===============*/
+#faq{
+    margin-bottom: 200px;
+}
+#faq h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 100px 0;
+}
+/*アコーディオン全体の装飾*/
+.accordion-area{
+    width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.accordion-area li{
+    margin: 10px 0;
+}
+.accordion-area section{
+    border: 1px solid #ccc;
+}
+/*アコーディオンタイトル*/
+.title{
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 3% 3% 3% 50px;
+    transition: all .5s ease;
+    margin: 0;
+}
+/*アイコンの＋と×*/
+.title::before,.title::after{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+}
+.title::before{
+    top:48%;
+    left:15px;
+    transform: rotate(0deg);
+}
+.title::after{
+    top:48%;
+    left:15px;
+    transform: rotate(90deg);
+}
+/* closeというクラスがついたら形状変化*/
+.title.close::before{
+    transform: rotate(45deg);
+}
+.title.close::after{
+    transform: rotate(-45deg);
+}
+/*アコーディオンで現れるエリア*/
+.box{
+    display: none;
+    background: #f3f3f3;
+    margin: 0 3% 3% 3%;
+    padding: 3%;
+}
+
+@media screen and (max-width:1030px) {
+    .accordion-area li{
+        margin: 30px 0;
+    }
+    #faq{
+        margin-bottom: 100px;
+    }
+    #faq h2{
+        font-size: 2rem;
+        margin: 0 0 50px 0;
+    }
+    .title{
+        font-size: .8rem;
+    }
+    .box p{
+        font-size: .8rem;
+    }
+
+}
+
+/*========= contactのためのCSS ===============*/
+#contact{
+    margin-bottom: 200px;
+}
+
+#contact h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #0A11b2;
+    margin: 0 0 100px 0;
+}
+
+.contact-area{
+    width: 96%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:1030px) {  
+    #contact{
+        margin-bottom: 100px;
+    }
+
+    .contact-area{
+        width: 80%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    #contact h2{
+        font-size: 2rem;
+        margin: 0 0 50px 0;
+    }
+}
+/*Reload btnの位置*/
+.reload-btn{
+    text-align: center;
+    margin-top: 50px;
+}
+/* ボタン共通設定 */
+.btn04 {
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	display:inline-block;
+    padding: 10px 30px;
+	color:#333;
+	border:1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    /*はみ出す背景色を隠す*/
+ 	overflow: hidden;
+}
+
+/*hoverした際のボタンの形状*/
+.btn04:hover {
+	color:#ccc;
+	border-color: transparent;
+    /*色の変化を遅らせる*/
+	transition-delay: .6s;
+}
+
+/*線の設定*/
+.btn04 span{
+    display: block;
+    z-index: 2;
+}
+
+/*== 線から塗りに変化（左から右） */
+
+/*線の設定*/
+.borderleft span::before,
+.borderleft span::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    width:0;
+    height:1px;
+    /*線の形状*/
+    background: #333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+
+/*左上線*/
+.borderleft span::before {
+    left:0;
+    top:0;
+}
+
+/*左下線*/
+.borderleft span::after {
+    left:0;
+    bottom:0;
+}
+
+/*hoverをすると線が伸びる*/
+.borderleft:hover span::before,
+.borderleft:hover span::after {
+    width: 100%;
+}
+
+/*背景の設定*/
+.borderleft::before{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+	position: absolute;
+	left: 0;
+    bottom:0;
+	z-index: -1;
+    /*背景の形状*/
+	height: 100%;
+	width: 0;
+	background:#333;
+    /*アニメーションの設定*/
+	transition: all .3s;
+}
+
+/*hoverをすると背景が伸びる*/
+.borderleft:hover::before{
+	width: 100%;
+    /*0.4秒遅れてアニメーション*/
+	transition-delay: .4s;
+}
+
+/*========= footerのためのCSS ===============*/
+#footer{
+    padding: 70px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+    background: #11227b;
+    position: relative;
+    text-transform: uppercase;
+}
+#footer h3{
+    margin: -20px 0 30px 0;
+    font-size: 1.5rem;
+    color: #fff;
+
+}
+.wrapper-ft{
+    text-align: center;
+}
+.wrapper-ft ul{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.wrapper-ft li{
+    color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: #fff 1px solid;
+}
+.wrapper-ft li a{
+    color: #fff;
+}
+.wrapper-ft small{
+    color: #fff;
+}
+
+@media screen and (max-width:1030px) {  
+    .wrapper-ft ul{
+        display: block;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .wrapper-ft li{
+        color: #fff;
+        padding: 20px 0 0 0;
+    }
+}
+
+/*========= pagetopのためのCSS ===============*/
+#page-top a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    width: 60px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.6rem;
+    transition: all 0.3s;
+    letter-spacing: 5px;
+}
+#page-top a:hover{
+    background: #fff;
+    color: #000;
+    border: 1px solid;
+}
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 0px;
+	bottom:-30px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateX(100px);
+}
+
+/*　左の動き　*/
+
+#page-top.LeftMove{
+	animation: LeftAnime 0.5s forwards;
+}
+
+@keyframes LeftAnime{
+  from {
+    opacity: 0;
+	transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateX(0);
+  }
+}
+
+/*　右の動き　*/
+
+#page-top.RightMove{
+	animation: RightAnime 0.5s forwards;
+}
+@keyframes RightAnime{
+  from {
+  	opacity: 1;
+	transform: translateX(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateX(100px);
+  }
+}
