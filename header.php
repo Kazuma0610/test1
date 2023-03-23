@@ -48,7 +48,7 @@
                             </div><!--accordion_header-->
                                 <div class="accordion_inner">
                                     <div class="accordion_one">
-                                          <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
+                                          <div class="accordion_header">Aあ<div class="i_box"><i class="one_i"></i></div>
                                           </div><!--accordion_header-->
                                               <div class="accordion_inner">
                                                   <div class="accordion_one">
