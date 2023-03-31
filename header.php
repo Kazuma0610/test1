@@ -71,23 +71,41 @@
                       </div><!--accordion_one-->
                 </div><!--section s_07-->
                 <div class="header-bg-wrap pc-only">
-                    <?php wp_nav_menu( array(
-                     
-                         'theme_location' => 'pc-menu',
-                         'container' => 'nav',
-                         'container_class' => 'pc-menu',
-                         'container_id' => 'pc-menu',
-                         'fallback_cb' => ''
-
-                    ) ); ?>
-                </div>
+                  <div class="section s_07 pc-only">
+                      <div class="accordion_one">
+                            <div class="accordion_header">TOP</div><!--accordion_header-->
+                            <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
+                            </div><!--accordion_header-->
+                                <div class="accordion_inner">
+                                    <div class="accordion_one">
+                                          <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
+                                          </div><!--accordion_header-->
+                                              <div class="accordion_inner">
+                                                  <div class="accordion_one">
+                                                    <div class="accordion_header">A_a</div>
+                                                    <div class="accordion_header">A_b</div>
+                                                  </div><!--accordion_one-->
+                                              </div><!--accordion_inner-->
+                                    </div><!--accordion_one-->
+                                    <div class="accordion_one">
+                                          <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
+                                          </div><!--accordion_header3-->
+                                              <div class="accordion_inner">
+                                                  <div class="accordion_one">
+                                                    <div class="accordion_header">B_a</div>
+                                                    <div class="accordion_header">B_b</div>
+                                                  </div><!--accordion_one-->
+                                              </div><!--accordion_inner--> 
+                                    </div><!--accordion_one-->
+                                </div><!--accordion_inner-->
+                      </div><!--accordion_one-->
+                  </div><!--section s_07-->
+                </div><!--header-bg-wrap pc-only-->
                </div><!--g-nav-list-->
             </nav><!--g-nav-->
 
           </div><!--site-branding-->
  
        </div><!--end header-inner-->
-       <p>ああ</P>
-       <p>いい</p>
        
     </header>

@@ -352,6 +352,7 @@ cite {
 	font-style: normal;
 }
 
+
 /*========= PC-only,SP-onlyためのCSS ===============*/
 /*　SP用のスタイル*/
 .sp-only{
@@ -373,20 +374,8 @@ cite {
     }
 }
 
-/* -- Footer Fixed -- */
-/*body,
-#site {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-body.admin-bar,
-.admin-bar #site {
-	min-height: calc(100vh - 46px);
-}*/
 
-
-/*確認用に一時記述----------*/
+/*レイアウト確認用に一時記述----------*/
 .contents, #sidebar {height: 5800px; }
  
 .site-header{background-color: #888;}
@@ -404,6 +393,8 @@ body.admin-bar,
 .footer-inner{background-color: #ddd; height: 250px; }
 /*------------------------*/
 
+
+/*------------------------*/
 /*スマホサイズ*/
 /*基本設定*/
 html {
@@ -417,6 +408,10 @@ html {
 .contents {
     margin-bottom: 1rem;
   }
+/*------------------------*/
+
+
+/*------------------------*/
 /*コンテンツのサイズ指定*/
 .header-inner,.footer-inner,.container{
     box-sizing: border-box;
@@ -437,6 +432,10 @@ html {
 .contents{
     margin-bottom: 1.5rem;
 }
+/*------------------------*/
+
+
+/*------------------------*/
 /*ヘッダーの基本設定*/
 .site-header{
 	position: fixed;
@@ -448,55 +447,10 @@ html {
     justify-content: center;
     align-items: center;
 }
-/*ヘッダーのスクロール途中から固定*/
-/*fixedでブロックがなくなるのではじめの要素のトップに余白を持たせる*/
-section#area-1 {
-	padding-top: 100px;
+/*PCオンリー・プルダウンメニュー時の基本設定*/
+#mega-menu-wrap-main-menu{
+	margin-left: 100px;
 }
-
-/*==ふわっと出現させるためのCSS*/
-
-/*　上に上がる動き　*/
-
-#header.UpMove {
-	position: fixed;
-	width: 100%;
-	animation: UpAnime 0.5s forwards;
-}
-
-@keyframes UpAnime {
-	from {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	to {
-		opacity: 0;
-		transform: translateY(-100px);
-	}
-}
-
-/*　下に下がる動き　*/
-
-#header.DownMove {
-	position: fixed;
-	width: 100%;
-	animation: DownAnime 0.5s forwards;
-}
-
-@keyframes DownAnime {
-	from {
-		opacity: 0;
-		transform: translateY(-100px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-
 /*** 16.3 Tablet Large 880px */
  @media screen and (min-width: 55em) {
 /*コンテンツのサイズ指定*/
@@ -508,6 +462,10 @@ section#area-1 {
     margin-left: auto;
     padding: 1.25rem;
 }
+/*------------------------*/
+
+
+/*------------------------*/
 /*コンテンツ・サイドバー並び*/
 .container{
     padding: 2rem 1.25rem;
@@ -528,3 +486,4 @@ section#area-1 {
     width: 27%;
 }
 }
+/*------------------------*/
