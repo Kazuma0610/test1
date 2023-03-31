@@ -9,3 +9,15 @@
     <figure class="post-thumbnail">
         <?php the_post_thumbnail(); ?>
     </figure><!-- .post-thumbnail-->
+
+    <div class="entry-content">
+        <?php the_excerpt(); ?>
+    </div><!--.entry-content-->
+
+    <footer class="entry-footer">
+        <span class="cat-links">カテゴリー： <?php the_category(','); ?></span>
+        <?php the_tags( '<span class="tags-links">タグ:',',','</span>' ); ?>
+    </footer><!--.entry-footer-->
+</article><!--#post-<?php the_ID(); ?> -->
+
+    
