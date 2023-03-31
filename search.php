@@ -10,7 +10,7 @@
                 <?php 
                 while ( have_posts() ) :
                     the_post();
-                    get_template_part('excerpt');
+                    get_template_part('template-parts/excerpt');
                 endwhile;
                 the_posts_pegination( [
                     'prev_text' => '&larr;',
