@@ -203,13 +203,13 @@ input[type='url'] {
 }
 
 /* -- input: button, submit, reset -- */
-input[type="button"],
+/*input[type="button"],
 input[type="submit"],
 input[type="reset"] {
 	background: #eee;
 	border: none;
 	outline: none;
-}
+}*/
 
 /* -- select -- */
 select {
@@ -462,6 +462,7 @@ html {
     margin-left: auto;
     padding: 1.25rem;
 }
+}
 /*------------------------*/
 
 
@@ -475,6 +476,7 @@ html {
 	font-size: 14px;
 	width: 95% !important;
 	margin-left: 8px;
+	margin-bottom: 30px;
 	padding: 10px;
 	background-color: #efefef;
   }
@@ -503,7 +505,10 @@ html {
 .container{
     padding: 2rem 1.25rem;
 }
-/*float時のcss！必ずclearfixを*/
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+	/*コンテンツのサイズ指定*/
+	/*float時のcss！必ずclearfixを*/
 .container:after{
     display: block;
     clear: both;
@@ -518,5 +523,6 @@ html {
     float: left;
     width: 27%;
 }
-}
+	}
+	/*------------------------*/
 /*------------------------*/

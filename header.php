@@ -44,6 +44,7 @@
                <div id="g-nav-list">
                 <div class="section s_07 sp-only">
                       <div class="accordion_one">
+                            <?php get_search_form(); ?>
                             <div class="accordion_header">TOP</div><!--accordion_header-->
                             <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
                             </div><!--accordion_header-->
