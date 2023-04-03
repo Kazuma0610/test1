@@ -4,6 +4,7 @@
 <meta charset="<?php bloginfo('charset'); ?>"/><!--エンコードがUTF-8であることを指定-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0 "><!--viewportの設定-->
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!--fontawesomeの呼び出しCDNコード-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
 <script src="js/5-1-11.js"></script><!--for--nav-js-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
@@ -73,6 +74,7 @@
                 <div class="header-bg-wrap pc-only">
                   <div class="section s_07 pc-only">
                       <div class="accordion_one">
+                            <?php get_search_form(); ?>
                             <div class="accordion_header">TOP</div><!--accordion_header-->
                             <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
                             </div><!--accordion_header-->

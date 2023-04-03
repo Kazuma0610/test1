@@ -466,6 +466,39 @@ html {
 
 
 /*------------------------*/
+/*検索窓の基本設定*/
+.searchform {
+	position: relative;
+  }
+   
+.searchfield {
+	font-size: 14px;
+	width: 95% !important;
+	margin-left: 8px;
+	padding: 10px;
+	background-color: #efefef;
+  }
+   
+.searchsubmit {
+	font-family: FontAwesome;
+	font-size: 1.8em;
+	position: absolute;
+	top: 0;
+	right: 8%;
+	margin-top: 10px;
+	padding: 0;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+  }
+   
+.searchsubmit:hover {
+	opacity: .6;
+  }
+/*------------------------*/
+
+
+/*------------------------*/
 /*コンテンツ・サイドバー並び*/
 .container{
     padding: 2rem 1.25rem;
