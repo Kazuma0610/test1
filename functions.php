@@ -49,6 +49,18 @@ add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 
 //ウイジェットの設定//
+if (function_exists('register_sidebar')) {
+  register_sidebar(array(
+    'name' => 'サイドバー',
+    'id' => 'sidebar',
+    'description' => 'サイドバーウィジェット',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="side-title">',
+    'after_title' => '</h3>'
+ ));
+}
+
 register_sidebar(array(
   'id' => 'search',
   'name' => '検索表示エリア',
