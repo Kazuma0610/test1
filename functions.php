@@ -46,3 +46,15 @@ function my_scripts_method() {
 	);
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
+
+
+//ウイジェットの設定//
+register_sidebar(array(
+  'id' => 'search',
+  'name' => '検索表示エリア',
+  'description' => '検索表示エリアです',
+  'before_widget' => '<div class="widget-search">',
+  'after_widget' => '</div>',
+  'before_title' => '<h4>',
+  'after_title' => '</h4>',
+));

@@ -2,34 +2,46 @@
 
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
+        
 
-            <header class="page-header">
-                <h1 class="page-title">「<?php the_search_query(); ?>」で検索した結果</h1>
-            </header><!--peage-header-->
-            <?php if ( have_post() ) : ?>
-                <?php 
-                while ( have_posts() ) :
-                    the_post();
-                    get_template_part('template-parts/excerpt');
-                endwhile;
-                the_posts_pegination( [
+
+            <?php if (have_posts()): ?>
+                <?php
+                     if (isset($_GET['s']) && empty($_GET['s'])) {
+                     echo '検索キーワード未入力'; // 検索キーワードが未入力の場合のテキストを指定
+                     } else {
+                    echo '“'.$_GET['s'] .'”の検索結果：'.$wp_query->found_posts .'件'; // 検索キーワードと該当件数を表示
+                }
+                ?>
+                <ul>
+                    <?php while(have_posts()): the_post(); ?>
+                    <li>
+                        <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+                    </li>
+                    <?php endwhile; ?>
+                </ul>
+                <?php the_posts_pagination([
                     'prev_text' => '&larr;',
                     'next_text' => '&rarr;',
-
-                ] );
-            else :?>
-                <section class="no-results not-found">
-                    <div class="page-content">
-                        <P>お探しの記事やタグは見つかりませんでした。</p>
-                        <?php
+                ]); ?>
+                <?php else: ?>
+                    <P>検索されたキーワードにマッチする記事はありませんでした</P>
+                <div class="page-content">
+                    <p>見つからなかった場合は再度検索</p>
+                    <?php
                         get_search_form();
-                        if ( is_active_sidebar( 'serch_notfound' ) ) {
-                            dynamic_sidebar( 'search_notfound' );
-                        } ?>
-                    </div>
-                </section>
-            <?php endif; ?>
+                        if ( is_active_sidebar('search')){
+                            dynamic_sidebar('search');
+                        } 
+                    ?>
+                </div><!--page-content-->
+                <?php endif; ?>
+                
+                
+
+
         </main><!--#main-->
+        <?php get_sidebar(); ?>
     </section><!--#primary-->
 
-<?php get_footer();
+<?php get_footer(); 

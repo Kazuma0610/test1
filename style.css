@@ -376,13 +376,13 @@ cite {
 
 
 /*レイアウト確認用に一時記述----------*/
-.contents, #sidebar {height: 5800px; }
+.contents, #sidebar,#primary,.content-area {height: 4800px; }
  
 .site-header{background-color: #888;}
  
 .header-inner{ background-color: #ccc; height: 80px;}
  
-.container {background-color: #9db2ea; }
+.container,.content-area {background-color: #9db2ea; }
  
 .contents {background-color: #a5e2ff; }
  
@@ -413,14 +413,14 @@ html {
 
 /*------------------------*/
 /*コンテンツのサイズ指定*/
-.header-inner,.footer-inner,.container{
+.header-inner,.footer-inner,.container,.content-area{
     box-sizing: border-box;
     max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
     padding: 2rem;
 }
-.container{
+.container,.content-area{
 	margin-top: 80px;
     padding: 2rem 1.25rem;
 }
@@ -456,7 +456,6 @@ html {
 /*コンテンツのサイズ指定*/
 .header-inner,.footer-inner{
     box-sizing: border-box;
-	max-width: unset;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -473,7 +472,7 @@ html {
   }
    
 .searchfield {
-	font-size: 14px;
+	font-size: 16px;
 	width: 95% !important;
 	margin-left: 8px;
 	margin-bottom: 30px;
@@ -501,6 +500,93 @@ html {
 
 
 /*------------------------*/
+/*検索表示の設定*/
+/*検索表示で見つからなかった場合*/
+.content-area{
+	padding: 2rem 1.25rem;
+}
+.site-main p{
+	font-size: 1em;
+	font-weight: bold;
+}
+.page-content p{
+	font-size: 1em !important;
+}
+.page-content{
+	margin-top: 50px;
+}
+.page-content input[type='text']{
+	width: 100%;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+.page-content input[type="submit"]{
+	margin-top: 20px;
+}
+/*** 16.1 Mobile Large 620px*/
+@media screen and (min-width: 38.75em) {
+	.content-area::after{
+		display: block;
+        clear: both;
+        content: '';
+	}
+	.site-main{
+		float: left;
+        width: 70%;
+        margin-right: 3%;
+	}
+	.site-main p{
+		font-size: 1.5em;
+	}
+	.page-content p{
+		font-size: 1.5em !important;
+	}
+	.page-content input[type='text']{
+		width: 50% !important;
+		margin-top: 10px;
+		margin-left: 0px;
+	}
+	.page-content input[type="submit"]{
+		margin-top: 20px;
+		right: 52%;
+	}
+}
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+	.site-main p{
+		font-size: 2em;
+	}
+}
+/*------------------------*/
+
+
+/*------------------------*/
+/*ウィジェットの設定*/
+/*searchエリアの場合*/
+.widget-search h4{
+	font-size: 1em;
+	position: relative;
+    padding: 0.5rem;
+	margin-bottom: 20px;
+    text-align: left;
+}
+.widget-search h4:before{
+	position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: #000;
+}
+.wp-block-latest-posts__featured-image{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+/*------------------------*/
 /*コンテンツ・サイドバー並び*/
 .container{
     padding: 2rem 1.25rem;
@@ -524,5 +610,8 @@ html {
     width: 27%;
 }
 	}
-	/*------------------------*/
 /*------------------------*/
+
+
+
+
