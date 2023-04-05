@@ -376,7 +376,9 @@ cite {
 
 
 /*レイアウト確認用に一時記述----------*/
-.contents, #sidebar,#primary,.content-area {height: 4800px; }
+.contents,#primary,.content-area {height: 4800px; }
+
+#sidebar{height: 80%}
  
 .site-header{background-color: #888;}
  
@@ -561,16 +563,15 @@ html {
 
 
 /*------------------------*/
-/*ウィジェットの設定*/
-/*searchエリアの場合*/
-.widget-search h4{
+/*サイドバーウィジェットの設定*/
+.sidebar h3{
 	font-size: 1em;
 	position: relative;
     padding: 0.5rem;
 	margin-bottom: 20px;
     text-align: left;
 }
-.widget-search h4:before{
+.sidebar h3:before{
 	position: absolute;
     bottom: 0px;
     width: 60px;
@@ -579,11 +580,19 @@ html {
     border-radius: 3px;
     background: #000;
 }
-.wp-block-latest-posts__featured-image{
+.wp-block-latest-posts__featured-image img{
 	margin-top: 10px;
 	margin-bottom: 10px;
+	margin-left: 10px;
 }
-
+.wp-block-latest-posts__post-title{
+	position: relative;
+	top:10px;
+}
+.wp-block-latest-posts__post-date{
+	padding-top: 10px;
+}
+/*------------------------*/
 
 
 /*------------------------*/

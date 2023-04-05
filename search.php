@@ -30,9 +30,6 @@
                     <p>見つからなかった場合は再度検索</p>
                     <?php
                         get_search_form();
-                        if ( is_active_sidebar('search')){
-                            dynamic_sidebar('search');
-                        } 
                     ?>
                 </div><!--page-content-->
                 <?php endif; ?>
