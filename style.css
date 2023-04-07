@@ -503,6 +503,28 @@ html {
 
 /*------------------------*/
 /*検索表示の設定*/
+/*検索表示で見つかった場合*/
+.search_result{
+	font-size: 1rem;
+    margin: 0px 0px 50px 20px;
+}
+.site-main ul{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 20px 0px 20px 0px;
+}
+.site-main li{
+	width: calc(50% - 40px / 2);
+	margin: 0px 10px 20px 10px;
+}
+/*** 16.1 Tablet Large 600px */
+@media screen and (min-width: 38.25em) {
+	.site-main li{
+		width: calc(20% - 40px / 4);
+		margin: 0px 20px 0px 20px;
+	}
+}
 /*検索表示で見つからなかった場合*/
 .content-area{
 	padding: 2rem 1.25rem;
@@ -525,8 +547,8 @@ html {
 .page-content input[type="submit"]{
 	margin-top: 20px;
 }
-/*** 16.1 Mobile Large 620px*/
-@media screen and (min-width: 38.75em) {
+/*** 16.3 Mobile Large 880px*/
+@media screen and (min-width: 55em) {
 	.content-area::after{
 		display: block;
         clear: both;
@@ -567,7 +589,8 @@ html {
 .sidebar h3{
 	font-size: 1em;
 	position: relative;
-    padding: 0.5rem;
+    padding: 1rem;
+	padding-top: 20px;
 	margin-bottom: 20px;
     text-align: left;
 }

@@ -163,7 +163,7 @@ version： 2.0.0
 	font-size: 1em;
 	font-weight: bold;
 	padding: 20px 11%;
-	text-align: center;
+	text-align: left;
 	position: relative;
 	z-index: +1;
 	cursor: pointer;
