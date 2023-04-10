@@ -415,7 +415,14 @@ html {
 
 /*------------------------*/
 /*コンテンツのサイズ指定*/
-.header-inner,.footer-inner,.container,.content-area{
+.header-inner{
+    box-sizing: border-box;
+    max-width: 2400px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2rem;
+}
+.container,.content-area,.footer-inner{
     box-sizing: border-box;
     max-width: 1400px;
     margin-right: auto;
