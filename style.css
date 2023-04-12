@@ -478,15 +478,19 @@ html {
 /*検索窓の基本設定*/
 .searchform {
 	position: relative;
+	max-width: 720px !important;
+	width: 100%;
+	margin-right: 24px;
+	top:15px;
   }
    
 .searchfield {
 	font-size: 16px;
-	width: 95% !important;
 	margin-left: 8px;
 	margin-bottom: 30px;
 	padding: 10px;
 	background-color: #efefef;
+	transition: box-shadow .3s;
   }
    
 .searchsubmit {

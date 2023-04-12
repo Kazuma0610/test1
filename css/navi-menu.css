@@ -76,11 +76,11 @@ version： 2.0.0
 /*========= ボタンのためのCSS ===============*/
 .openbtn{
 	position:fixed;
-    z-index: 9999;/*ボタンを最前面に*/
+    z-index: 2000;/*ボタンを最前面に*/
 	top:10px;
 	right: 10px;
 	cursor: pointer;
-    width: 50px;
+    width: 40px;
     height:50px;
 }
 /*×に変化*/	
@@ -91,7 +91,7 @@ version： 2.0.0
     left: 14px;
     height: 3px;
     border-radius: 2px;
-	background-color: #666;
+	background-color: #000;
   	width: 45%;
   }
 
@@ -129,7 +129,7 @@ version： 2.0.0
 @media screen and (min-width: 55em) {
     .openbtn{
         position:fixed;
-        z-index: 9999;/*ボタンを最前面に*/
+        z-index: 2000;/*ボタンを最前面に*/
         top:10px;
         right: 10px;
         cursor: pointer;
@@ -143,7 +143,6 @@ version： 2.0.0
 		align-items: center;
     }
     }
-
 
 
 /*====================================================================
@@ -307,3 +306,159 @@ version： 2.0.0
 		text-align: left;
 	}
     }
+
+
+/*====================================================================
+検索フォーム用
+====================================================================*/
+
+/*検索ボタン用*/
+.searchbtn{
+	position: fixed;
+	top:25px;
+	right: 90%;
+}
+.searchbtn img{
+	width: 21px;
+	height: 21px;
+}
+/*サーチモーダル内*/
+#search-modal.panelactive #search-modal__container{
+	/*ナビの数が増えた場合縦スクロール*/
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.search-modal__inner{
+	height: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow-y: scroll;
+    padding: 8px 16px 16px;
+    scrollbar-width: none;
+    width: 100%;
+}
+/*左から右に出現*/
+#search-modal{
+	position: fixed;
+	z-index: 3000;
+	/*ナビのスタート位置と形状*/
+	top:0;
+	left:-120%;
+	width: 100%;
+	height: 100vh;
+	background: #999;
+	/*動き*/
+	transition: all 0.6s;
+}
+/*activeが付いたら位置を0に*/
+#search-modal.panelactive{
+	left: 0;
+}
+/*modal__headerのCSS*/
+.search-modal__header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 32px;
+}
+/*閉じるボタン*/
+.search-model__close-btn{
+	align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: unset;
+    flex-wrap: nowrap;
+    height: 24px;
+    justify-content: center;
+    padding: 4px;
+    position: relative;
+    transition: all .2s;
+    width: 24px;
+}
+.search-model__close-btn::before{
+	background: #3b3b3b;
+    border-radius: 2px;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+	transform: rotate(45deg);
+}
+.search-model__close-btn::after{
+	background: #3b3b3b;
+    border-radius: 2px;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+	transform: rotate(-45deg);
+}
+
+/*** 16.1 Tablet Large 600px */
+@media screen and (min-width: 38.25em) {
+	.searchbtn{
+		position: fixed;
+		top:25px;
+		right: 95%;
+	}
+}
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+    .searchbtn{
+		position: fixed;
+		top:23px;
+		right: 90px;
+	}
+	#search-modal__container{
+		background: #999;
+        box-shadow: 0 0 8px #5a534c;
+        height: 50% !important;
+        position: absolute !important;
+        transition: all .4s;
+        width: 100%;
+        z-index: 4000 !important;
+	}
+	/*サーチモーダル内*/
+	.search-modal__inner{
+		height: 100%;
+		margin: 0 auto;
+		max-width: 1200px;
+		overflow-y: unset;
+		padding: 8px 16px 16px;
+		scrollbar-width: none;
+		width: 100%;
+	}
+	/*上から下に出現*/
+    #search-modal{
+	    position: fixed;
+	    z-index: 3000;
+	    /*ナビのスタート位置と形状*/
+	    top:-120%;
+	    left:0;
+	    width: 100%;
+	    height: 100vh;
+	    background: #999;
+	    /*動き*/
+	    transition: all 0.6s;
+		background: rgba(59,59,59,.8);
+		/*opacity: 0 ;
+		transform: scale(0) ;
+        transition: opacity .3s,transform 0s .3s ;*/
+    }
+    /*activeが付いたら位置を0に*/
+    #search-modal.panelactive{
+	    top: 0;
+		/*opacity: 1;
+        transform: scale(1);
+        transition: opacity .3s;*/
+    }
+}

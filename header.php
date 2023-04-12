@@ -18,94 +18,105 @@
     <header id="header" class="site-header"> 
        <div class="header-inner">
           <div class="site-branding">
-            <?php if (has_custom_logo()) : ?>
-                <div class="site-logo"><?php the_custom_logo(); ?></div>
-            <?php endif; ?>
-            <?php if (is_front_page() && is_home()) :?>
-                <h1 class="site-title"><?php bloginfo('name'); ?></h1>
-            <?php else : ?>
-                <p class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-            <?php endif; ?>
-            <p class="site-description"><?php bloginfo('description'); ?></p>
-            <!--ヘッダーメニュー-->
-            <div id="header-nav-wrap" class="header-nav-wrap pc-only">
-                <?php wp_nav_menu( array(
+                <?php if (has_custom_logo()) : ?>
+                    <div class="site-logo"><?php the_custom_logo(); ?></div>
+                <?php endif; ?>
+                <?php if (is_front_page() && is_home()) :?>
+                    <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+                <?php else : ?>
+                    <p class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+                <?php endif; ?>
+                <p class="site-description"><?php bloginfo('description'); ?></p>
+                <!--ヘッダーメニュー-->
+                <div id="header-nav-wrap" class="header-nav-wrap pc-only">
+                    <?php wp_nav_menu( array(
                      
-                     'theme_location' => 'main-menu',
-                     'container' => 'nav',
-                     'container_class' => 'main-menu',
-                     'container_id' => 'main-menu',
-                     'fallback_cb' => ''
+                         'theme_location' => 'main-menu',
+                         'container' => 'nav',
+                         'container_class' => 'main-menu',
+                         'container_id' => 'main-menu',
+                         'fallback_cb' => ''
 
-                ) ); ?>
-            </div>
-            <div class="openbtn"><span></span><span></span><span></span></div><!--ハンバーガーボタン-->
-            <nav id="g-nav">
-               <div id="g-nav-list">
-                <div class="section s_07 sp-only">
-                      <div class="accordion_one">
-                            <?php get_search_form(); ?>
-                            <div class="accordion_header">TOP</div><!--accordion_header-->
-                            <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
-                            </div><!--accordion_header-->
-                                <div class="accordion_inner">
-                                    <div class="accordion_one">
-                                          <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
-                                          </div><!--accordion_header-->
-                                              <div class="accordion_inner">
-                                                  <div class="accordion_one">
-                                                    <div class="accordion_header">A_a</div>
-                                                    <div class="accordion_header">A_b</div>
-                                                  </div><!--accordion_one-->
-                                              </div><!--accordion_inner-->
-                                    </div><!--accordion_one-->
-                                    <div class="accordion_one">
-                                          <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
-                                          </div><!--accordion_header3-->
-                                              <div class="accordion_inner">
-                                                  <div class="accordion_one">
-                                                    <div class="accordion_header">B_a</div>
-                                                    <div class="accordion_header">B_b</div>
-                                                  </div><!--accordion_one-->
-                                              </div><!--accordion_inner--> 
-                                    </div><!--accordion_one-->
-                                </div><!--accordion_inner-->
-                      </div><!--accordion_one-->
-                </div><!--section s_07-->
-                <div class="header-bg-wrap pc-only">
-                  <div class="section s_07 pc-only">
-                      <div class="accordion_one">
-                            <?php get_search_form(); ?>
-                            <div class="accordion_header">TOP</div><!--accordion_header-->
-                            <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
-                            </div><!--accordion_header-->
-                                <div class="accordion_inner">
-                                    <div class="accordion_one">
-                                          <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
-                                          </div><!--accordion_header-->
-                                              <div class="accordion_inner">
-                                                  <div class="accordion_one">
-                                                    <div class="accordion_header">A_a</div>
-                                                    <div class="accordion_header">A_b</div>
-                                                  </div><!--accordion_one-->
-                                              </div><!--accordion_inner-->
-                                    </div><!--accordion_one-->
-                                    <div class="accordion_one">
-                                          <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
-                                          </div><!--accordion_header3-->
-                                              <div class="accordion_inner">
-                                                  <div class="accordion_one">
-                                                    <div class="accordion_header">B_a</div>
-                                                    <div class="accordion_header">B_b</div>
-                                                  </div><!--accordion_one-->
-                                              </div><!--accordion_inner--> 
-                                    </div><!--accordion_one-->
-                                </div><!--accordion_inner-->
-                      </div><!--accordion_one-->
-                  </div><!--section s_07-->
-                </div><!--header-bg-wrap pc-only-->
-               </div><!--g-nav-list-->
-            </nav><!--g-nav-->
+                    ) ); ?>
+                </div>
+                <div class="searchbtn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/search.png" alt="画像"/></div>
+                <nav id="search-modal">
+                    <div id="search-modal__container">
+                        <div class="search-modal__inner">
+                            <div class="search-modal__content">
+                                <div class="search-modal__header">
+                                    <?php get_search_form(); ?>
+                                    <button type="button" class="search-model__close-btn" aria-controls="searchmodal"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="openbtn"><span></span><span></span><span></span></div><!--ハンバーガーボタン-->
+                <nav id="g-nav">
+                   <div id="g-nav-list">
+                    <div class="section s_07 sp-only">
+                          <div class="accordion_one">
+                                <div class="accordion_header">TOP</div><!--accordion_header-->
+                                <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
+                                </div><!--accordion_header-->
+                                    <div class="accordion_inner">
+                                        <div class="accordion_one">
+                                              <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
+                                              </div><!--accordion_header-->
+                                                  <div class="accordion_inner">
+                                                      <div class="accordion_one">
+                                                        <div class="accordion_header">A_a</div>
+                                                        <div class="accordion_header">A_b</div>
+                                                      </div><!--accordion_one-->
+                                                  </div><!--accordion_inner-->
+                                        </div><!--accordion_one-->
+                                        <div class="accordion_one">
+                                              <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
+                                              </div><!--accordion_header3-->
+                                                  <div class="accordion_inner">
+                                                      <div class="accordion_one">
+                                                        <div class="accordion_header">B_a</div>
+                                                        <div class="accordion_header">B_b</div>
+                                                      </div><!--accordion_one-->
+                                                  </div><!--accordion_inner--> 
+                                        </div><!--accordion_one-->
+                                    </div><!--accordion_inner-->
+                          </div><!--accordion_one-->
+                    </div><!--section s_07-->
+                    <div class="header-bg-wrap pc-only">
+                      <div class="section s_07 pc-only">
+                          <div class="accordion_one">
+                                <div class="accordion_header">TOP</div><!--accordion_header-->
+                                <div class="accordion_header">カテゴリー<div class="i_box"><i class="one_i"></i></div>
+                                </div><!--accordion_header-->
+                                    <div class="accordion_inner">
+                                        <div class="accordion_one">
+                                              <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
+                                              </div><!--accordion_header-->
+                                                  <div class="accordion_inner">
+                                                      <div class="accordion_one">
+                                                        <div class="accordion_header">A_a</div>
+                                                        <div class="accordion_header">A_b</div>
+                                                      </div><!--accordion_one-->
+                                                  </div><!--accordion_inner-->
+                                        </div><!--accordion_one-->
+                                        <div class="accordion_one">
+                                              <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
+                                              </div><!--accordion_header3-->
+                                                  <div class="accordion_inner">
+                                                      <div class="accordion_one">
+                                                        <div class="accordion_header">B_a</div>
+                                                        <div class="accordion_header">B_b</div>
+                                                      </div><!--accordion_one-->
+                                                  </div><!--accordion_inner--> 
+                                        </div><!--accordion_one-->
+                                    </div><!--accordion_inner-->
+                          </div><!--accordion_one-->
+                      </div><!--section s_07-->
+                    </div><!--header-bg-wrap pc-only-->
+                   </div><!--g-nav-list-->
+                </nav><!--g-nav-->
 
           </div><!--site-branding-->
  

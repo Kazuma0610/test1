@@ -13,6 +13,21 @@ jQuery(function ($) {
   });
 });
 
+/*検索メニューのJS*/
+jQuery(function ($) {
+  $(".searchbtn").click(function () {
+    //ボタンがクリックされたら
+    $(this).toggleClass("active"); //ボタン自身に activeクラスを付与し
+    $("#search-modal").toggleClass("panelactive"); //ナビゲーションにpanelactiveクラスを付与
+  });
+
+  $(".search-model__close-btn").click(function () {
+    //ナビゲーションのリンクがクリックされたら
+    $(".searchbtn").removeClass("active"); //ボタンの activeクラスを除去し
+    $("#search-modal").removeClass("panelactive"); //ナビゲーションのpanelactiveクラスも除去
+  });
+});
+
 // .s_07 .accordion_one
 jQuery(function ($) {
   //.accordion_oneの中の.accordion_headerがクリックされたら
