@@ -28,12 +28,20 @@ jQuery(function ($) {
   });
 });
 
-// .s_07 .accordion_one
+// .s_07 .accordion_one(グローバルメニューのアコーディオン)
 jQuery(function ($) {
   //.accordion_oneの中の.accordion_headerがクリックされたら
   $(".s_07 .accordion_one .accordion_header").click(function () {
     //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
     $(this).next(".accordion_inner").slideToggle();
     $(this).toggleClass("open");
+  });
+});
+
+//検索コンテンツ内のアコーディオン
+jQuery(function ($) {
+  $(".js-accordion-title").on("click", function() {
+    $(this).next().slideToggle(200);
+    $(this).toggleClass("open",200);
   });
 });

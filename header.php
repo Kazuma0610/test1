@@ -48,6 +48,48 @@
                                     <?php get_search_form(); ?>
                                     <button type="button" class="search-model__close-btn" aria-controls="searchmodal"></button>
                                 </div>
+                                <div class="search-modal__main">
+                                    <div class="search-content">
+                                        <div id="search-menu" class="search-content__menu">
+                                            <div class="speech-bubbles">
+                                                <div class="speech-bubbles__inner">
+                                                    探す
+                                                </div>
+                                            </div>
+                                            <div class="search-content__dropdown">
+                                            <div class="accordion-container">
+                                                <dl class="accordion-list">
+                                                    <dt class="accordion-title js-accordion-title">カテゴリーから探す</dt><!-- /.accordion-title -->
+                                                    <dd class="accordion-text">
+                                                        <div class="accordion-list-flex">
+                                                            <div class="nav-menu__list-item"><a class="nav-menu__link" href="#">ああああ</a></div>
+                                                            <div class="nav-menu__list-item"><a class="nav-menu__link" href="#">いいいい</a></div>
+                                                            <div class="nav-menu__list-item"><a class="nav-menu__link" href="#">うううう</a></div>
+                                                            <div class="nav-menu__list-item"><a class="nav-menu__link" href="#">ええええ</a></div>
+                                                        </div>
+                                                    </dd><!-- /.accordion-text -->
+                                                </dl><!-- /.accordion-list -->
+                                                <dl class="accordion-list">
+                                                    <dt class="accordion-title js-accordion-title">タイトル2タイトル2</dt><!-- /.accordion-title -->
+                                                    <dd class="accordion-text"><p>テキスト2テキスト2テキスト2テキスト2</p></dd><!-- /.accordion-text -->
+                                                </dl><!-- /.accordion-list -->
+                                                <dl class="accordion-list">
+                                                    <dt class="accordion-title js-accordion-title">タイトル3タイトル3</dt><!-- /.accordion-title -->
+                                                    <dd class="accordion-text"><p>テキスト3テキスト3テキスト3テキスト3</p></dd><!-- /.accordion-text -->
+                                                </dl><!-- /.accordion-list -->
+                                            </div><!-- /.accordion-container -->  
+                                            </div><!--search-content__dropdown-->
+                                        </div><!--search-content__menu-->
+                                        <div id="hot-word" class="search-content__hot-word">
+                                            <div class="speech-bubbles">
+                                                <div class="speech-bubbles__inner">
+                                                    ホットワードで探す
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div><!--search-content-->
+                                </div><!--search-modal__main-->
                             </div>
                         </div>
                     </div>
