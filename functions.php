@@ -70,3 +70,46 @@ register_sidebar(array(
   'before_title' => '<h4>',
   'after_title' => '</h4>',
 ));
+
+
+//-----------------------------------------------------
+// 検索対象にカテゴリやタグを含める
+//-----------------------------------------------------
+function custom_search($search, $wp_query) {
+  global $wpdb;
+
+  //検索ページ以外
+  if (!$wp_query->is_search)
+  return $search;
+
+  if (!isset($wp_query->query_vars))
+  return $search;
+
+  $search_words = explode(' ', isset($wp_query->query_vars['s']) ? $wp_query->query_vars['s'] : '');
+  if ( count($search_words) > 0 ) {
+      $search = '';
+      foreach ( $search_words as $word ) {
+          if ( !empty($word) ) {
+              $search_word = $wpdb-> _escape("%{$word}%");
+              $search .= " AND (
+                      {$wpdb->posts}.post_title LIKE '{$search_word}'
+                      OR {$wpdb->posts}.post_content LIKE '{$search_word}'
+          /*タグ名・カテゴリ名を検索対象に含める記述 start*/
+                      OR {$wpdb->posts}.ID IN (
+                          SELECT distinct r.object_id
+                          FROM {$wpdb->term_relationships} AS r
+                          INNER JOIN {$wpdb->term_taxonomy} AS tt ON r.term_taxonomy_id = tt.term_taxonomy_id
+                          INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
+                          WHERE t.name LIKE '{$search_word}'
+                      OR t.slug LIKE '{$search_word}'
+                      OR tt.description LIKE '{$search_word}'
+                      )
+        /*タグ名・カテゴリ名を検索対象に含める記述 end*/
+              ) ";
+          }
+      }
+  }
+
+  return $search;
+}
+add_filter('posts_search','custom_search', 10, 2);

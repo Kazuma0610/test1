@@ -85,8 +85,10 @@
                                                 <div class="speech-bubbles__inner">
                                                     ホットワードで探す
                                                 </div>
+                                                <div class="hotword_list">
+                                                    
+                                                </div>
                                             </div>
-
                                         </div>
                                     </div><!--search-content-->
                                 </div><!--search-modal__main-->
