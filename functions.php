@@ -36,6 +36,12 @@ add_action('wp_enqueue_scripts', 'add_styles');
         '1.0'
       );
 
+      wp_enqueue_style(
+        'singular_style',
+        get_template_directory_uri() . '/css/singular.css',
+        array('main_style'), // main_styleが読み込まれた後にsingular_styleを読み込む 
+        '1.0'
+      );
   }
 
 //JSの読み込み//

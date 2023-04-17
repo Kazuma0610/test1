@@ -1,0 +1,73 @@
+@charset "utf-8";
+/*
+theme Name: WordPress Sample-site by Kazuma
+Author: Kazuma
+Description: Sample original theme
+version： 2.0.0
+*/
+
+
+/*個別投稿のCSS*/
+
+/*投稿下部ページネーション*/
+.post__pagination{
+    margin-top: 50px;
+    margin-bottom:50px;
+    overflow:hidden;
+}
+.post__pagination__left,
+.post__pagination__right{
+    width:230px;
+}
+.post__pagination__left{
+    float:left;
+}
+.post__pagination__right{
+    float:right;
+}
+.post__pagination__left > a,
+.post__pagination__right > a{
+    display:block;
+    position:relative;
+    margin-bottom: 50px;
+}
+.post__pagination__left__img,
+.post__pagination__right__img{
+    display:block;
+    background:#000;
+}
+.post__pagination__left__img > img,
+.post__pagination__right__img > img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    opacity:0.3;
+}
+.post__pagination__left__img > img:hover{
+    opacity: 0.6;
+}
+.post__pagination__right__img > img:hover{
+    opacity: 0.6;
+}
+.post__pagination__left__text,
+.post__pagination__right__text{
+    position: absolute;
+    top: 40px;
+    z-index: 999;
+    color: #fff;
+    font-size:14px;
+}
+.post__pagination__left__text{
+    left:50px;
+}
+.post__pagination__right__text{
+    right: 50px;
+}
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+	.post__pagination__left,
+.post__pagination__right{
+    width:280px;
+}
+}
+/*-----------------------------*/
