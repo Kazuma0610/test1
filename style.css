@@ -657,5 +657,37 @@ html {
 /*------------------------*/
 
 
-
+/*------------------------*/
+/*アーカイブページのページネーション設定*/
+.pagination{
+	margin:40px 0 0;
+ }
+ .nav-links{
+	display:flex;
+ }
+ .pagination .page-numbers{
+	display:inline-block;
+	margin-right:10px;
+	padding:10px 15px;
+	color:#333;
+	border-radius:3px;
+	box-shadow:0 3px 3px #999;
+	background:#fff;
+ }
+ .pagination .current{
+	padding:10px 15px;
+	background:#69a4db;
+	color:#fff;
+ }
+ .pagination .prev,
+ .pagination .next{
+	background:transparent;
+	box-shadow:none;
+	color:#000;
+ }
+ .pagination .dots{
+	background:transparent;
+	box-shadow:none;
+ }
+/*------------------------*/
 

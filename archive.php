@@ -14,15 +14,21 @@
                     get_template_part( 'template-parts/excerpt' );
 
                 endwhile;
-
-                the_posts_pegination( [
-                    'prev_text' => '&larr;',
-                    'next_text' => '&rarr;',
-                ] );
+                
             else :
                 echo '記事はありません。';
             endif;
             ?>
+                <?php
+                    $args = array(
+                    'mid_size' => 1,
+                    'prev_text' => '&lt;&lt;前へ',
+                    'next_text' => '次へ&gt;&gt;',
+                    'screen_reader_text' => ' ',
+                    );
+                    the_posts_pagination($args);
+                ?>
         </main><!--#main-->
+        <?php get_sidebar(); ?>
         </section><!--#primary-->
 <?php get_footer();
