@@ -24,6 +24,7 @@
                         <a href="<?php echo get_permalink($nextpost->ID); ?>">
                             <span class="post__pagination__left__img"><?php echo get_the_post_thumbnail($nextpost->ID); ?></span>
                             <span class="post__pagination__left__text"><?php echo esc_attr($nextpost->post_title); ?></span>
+                            <span class="prev">前の記事</span>
                         </a>
                     </div>
                     <?php endif; ?>
@@ -32,6 +33,7 @@
                         <a href="<?php echo get_permalink($prevpost->ID); ?>">
                             <span class="post__pagination__right__img"><?php echo get_the_post_thumbnail($prevpost->ID); ?></span>
                             <span class="post__pagination__right__text"><?php echo esc_attr($prevpost->post_title); ?></span>
+                            <span class="next">次の記事</span>
                         </a>
                     </div>
                     <?php endif; ?>

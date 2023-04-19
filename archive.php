@@ -2,23 +2,24 @@
 
     <section id="primary" class="content-area">
         <main id="main" class="site-main">
-            <?php if ( have_posts() ) : ?>
+                <?php if ( have_posts() ) : ?>
 
-                <header class="page-header">
-                    <?php the_archive_title('<h1 class="page-title">' , '</h1>'); ?>
-                </header><!-- .page-header -->
-                
-                <?php
-                while ( have_posts() ) :
-                    the_post();
-                    get_template_part( 'template-parts/excerpt' );
+                    <header class="page-header">
+                        <?php the_archive_title('<h1 class="page-title">', '</h1>'); ?>
+                    </header><!-- .page-header -->
+                    <div class="archive-flex">
+                        <?php
+                        while ( have_posts() ) :
+                            the_post();
+                            get_template_part( 'template-parts/excerpt' );
 
-                endwhile;
+                        endwhile;
                 
-            else :
-                echo '記事はありません。';
-            endif;
-            ?>
+                        else :
+                            echo '記事はありません。';
+                        endif;
+                        ?>
+                    </div>
                 <?php
                     $args = array(
                     'mid_size' => 1,

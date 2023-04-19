@@ -20,10 +20,15 @@
                     </li>
                     <?php endwhile; ?>
                 </ul>
-                <?php the_posts_pagination([
-                    'prev_text' => '&larr;',
-                    'next_text' => '&rarr;',
-                ]); ?>
+                <?php
+                    $args = array(
+                    'mid_size' => 1,
+                    'prev_text' => '&lt;&lt;前へ',
+                    'next_text' => '次へ&gt;&gt;',
+                    'screen_reader_text' => ' ',
+                    );
+                    the_posts_pagination($args);
+                ?>
                 <?php else: ?>
                     <P>検索されたキーワードにマッチする記事はありませんでした</P>
                 <div class="page-content">

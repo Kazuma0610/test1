@@ -10,6 +10,8 @@
         <?php the_post_thumbnail(); ?>
     </figure><!--.post-thumbnail-->
 
+    <?php the_tags( '<span class="tags-links">', ', ', '</span>' ); ?>
+
     <div class="entry-content">
         <?php
         the_content();//本文表示
@@ -23,7 +25,6 @@
         <?php if (is_singular('post')) { ?>
             <footer class="entry-footer">
                 <span class="cat-links">カテゴリー: <?php the_category(','); ?></span>
-                <?php the_tags( '<span class="tags-links">タグ: ', ', ', '</span>' ); ?>
             </footer><!--.entry-footer -->
         <?php } // is_singlar('post') ?>
 
