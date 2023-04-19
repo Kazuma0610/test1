@@ -140,10 +140,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     color: #000;
   }
-h1{
-	font-size: 2rem;
-	padding-bottom: 20px;
-}
 
 /* -- a -- */
 a {
@@ -693,12 +689,12 @@ html {
     /*アーカイブページのレイアウト設定*/
     .archive-flex{
 	    display: flex;
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
     }
     /*個別の要素設定*/
     .archive-flex article{
-	    width: calc(25% - 100px / 4);
-	    margin: 0 50px 50px 0;
+	    width: calc(50% - 50px / 2);
+	    margin: 0 25px 25px 0;
     }
     /*画像の設定*/
     .post-thumbnail-excerpt{

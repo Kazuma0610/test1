@@ -11,6 +11,10 @@
 
     </header><!--/entry-header-->
 
+    <time class="card__time" datetime="<?php the_time('Y.m.d'); ?>">
+        <?php the_time('Y.m.d'); ?>
+    </time>
+
     <footer class="entry-footer">
         <span class="cat-links">カテゴリー： <?php the_category(','); ?></span>
     </footer><!--.entry-footer-->
