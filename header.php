@@ -85,9 +85,19 @@
                                                 <div class="speech-bubbles__inner">
                                                     ホットワードで探す
                                                 </div>
-                                                <div class="hotword_list">
-                                                    
-                                                </div>
+                                            </div>
+                                            <div class="hotword_list">
+                                            <?php
+                                                $args = array(
+                                                    'smallest'=> '1',
+                                                    'largest' => '1',
+                                                    'unit'    => 'em',
+                                                    'orderby' => 'count',  //記事件数で並び替える
+                                                    'order'   => 'DESC',   //大きい順
+                                                    'number'  => 10,
+                                                );
+                                                wp_tag_cloud($args); 
+                                            ?>
                                             </div>
                                         </div>
                                     </div><!--search-content-->
@@ -106,24 +116,17 @@
                                 </div><!--accordion_header-->
                                     <div class="accordion_inner">
                                         <div class="accordion_one">
-                                              <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div>
+                                              <div class="accordion_header">美容<div class="i_box"><i class="one_i"></i></div>
                                               </div><!--accordion_header-->
                                                   <div class="accordion_inner">
                                                       <div class="accordion_one">
-                                                        <div class="accordion_header">A_a</div>
+                                                        <div class="accordion_header"><a href="http://sample-site-test.local/category/sample-one/">サンプル1</a></div>
                                                         <div class="accordion_header">A_b</div>
                                                       </div><!--accordion_one-->
                                                   </div><!--accordion_inner-->
                                         </div><!--accordion_one-->
                                         <div class="accordion_one">
-                                              <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div>
-                                              </div><!--accordion_header3-->
-                                                  <div class="accordion_inner">
-                                                      <div class="accordion_one">
-                                                        <div class="accordion_header">B_a</div>
-                                                        <div class="accordion_header">B_b</div>
-                                                      </div><!--accordion_one-->
-                                                  </div><!--accordion_inner--> 
+                                              <div class="accordion_header">B</div><!--accordion_header3-->
                                         </div><!--accordion_one-->
                                     </div><!--accordion_inner-->
                           </div><!--accordion_one-->

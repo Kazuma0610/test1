@@ -627,6 +627,92 @@ html {
 .wp-block-latest-posts__post-date{
 	padding-top: 10px;
 }
+.wp-block-latest-posts__list.has-dates.wp-block-latest-posts{
+	height: 830px;
+	margin-bottom: 30px;
+}
+.wp-widget-group__inner-blocks{
+	margin-bottom: 30px;
+}
+.wp-block-categories-list.wp-block-categories{
+	margin-left: 10px;
+}
+.cat-item{
+	margin-bottom: 5px;
+}
+.wp-block-tag-cloud{
+	padding-left: 10px;
+}
+
+/*人気記事一覧*/
+.popular-posts h2{
+	font-size: 1em;
+	position: relative;
+    padding: 1rem;
+	padding-top: 20px;
+	margin-bottom: 20px;
+    text-align: left;
+}
+.popular-posts h2:before{
+	position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 5px;
+    content: '';
+    border-radius: 3px;
+    background: #000;
+}
+.wpp-no-data{
+	margin-left: 10px;
+}
+/*ランキング順位表示*/
+ul.wpp-list li {
+    border-bottom: 1px dashed #77776E;
+    position: relative;
+    list-style: none;
+}
+/*記事タイトル*/
+ul.wpp-list li a.wpp-post-title {
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    color: #333;
+    margin: 10px 10px 10px 0px;
+}
+ul.wpp-list li a.wpp-post-title:hover {
+    color: #3fa3ff;
+}
+/*アイキャッチ*/
+ul.wpp-list li img {
+    margin: 10px;
+}
+/*ランキングカウンター*/
+ul.wpp-list li:before {
+    content: counter(wpp-count);
+    display: block;
+    position: absolute;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    padding: 3px 10px;
+    border-radius:50%;
+    z-index: 1;
+}
+/*カウント数*/
+ul.wpp-list li {
+    counter-increment: wpp-count;
+}
+/*ランキング1〜3の色変更*/
+ul.wpp-list li:nth-child(1):before{
+    background-color: #EFAF00;
+}
+ul.wpp-list li:nth-child(2):before{
+    background-color: #9EACB4;
+}
+ul.wpp-list li:nth-child(3):before{
+    background-color: #BA6E40;
+}
 /*------------------------*/
 
 
@@ -661,11 +747,18 @@ html {
 .archive-flex{
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+/*h1の設定*/
+.page-title-archive{
+	font-size: 1.5rem;
+	padding-left: 10px;
+	padding-bottom: 10px;
 }
 /*個別の要素設定*/
 .archive-flex article{
-	width: calc(50% - 0px / 2);
-	margin: 0 auto;
+	width: calc(50% - 30px / 2);
+	margin: 0 5px 0 5px;
 }
 /*画像の設定*/
 .post-thumbnail-excerpt{
@@ -690,7 +783,13 @@ html {
     .archive-flex{
 	    display: flex;
 		flex-wrap: wrap;
+		margin-bottom: 0px;
     }
+	/*h1の設定*/
+	.page-title-archive{
+		font-size: 2rem;
+		padding-bottom: 10px;
+	}
     /*個別の要素設定*/
     .archive-flex article{
 	    width: calc(50% - 50px / 2);
@@ -700,7 +799,7 @@ html {
     .post-thumbnail-excerpt{
 	    position: relative;
 	    overflow: hidden;
-	    padding-top: 100%;
+	    padding-top: 80%;
 	    margin: 10px 5px;
 	    margin-bottom: 5px;
     }
