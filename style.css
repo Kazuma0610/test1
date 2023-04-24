@@ -665,6 +665,9 @@ html {
 .wpp-no-data{
 	margin-left: 10px;
 }
+.wpp-list{
+	margin: 10px;
+}
 /*ランキング順位表示*/
 ul.wpp-list li {
     border-bottom: 1px dashed #77776E;
@@ -712,6 +715,10 @@ ul.wpp-list li:nth-child(2):before{
 }
 ul.wpp-list li:nth-child(3):before{
     background-color: #BA6E40;
+}
+ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child(8)
+,ul.wpp-list li:nth-child(9),ul.wpp-list li:nth-child(10){
+	display: none;
 }
 /*------------------------*/
 
