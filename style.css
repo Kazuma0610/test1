@@ -430,8 +430,11 @@ html {
     padding: 2rem;
 }
 .container,.content-area{
-	margin-top: 80px;
+	margin-top: 0px;
     padding: 2rem 1.25rem;
+}
+.container{
+	margin-top: 80px;
 }
 .contents,.sidebar{
     float: none;
@@ -473,6 +476,12 @@ html {
 }
 /*------------------------*/
 
+/*------------------------*/
+/*パンクズの設定*/
+.breadcrumb{
+	margin-top: 90px;
+	padding-left: 10px;
+}
 
 /*------------------------*/
 /*検索窓の基本設定*/
@@ -539,7 +548,7 @@ html {
 }
 /*検索表示で見つからなかった場合*/
 .content-area{
-	padding: 2rem 1.25rem;
+	padding: 0rem 1.25rem;
 }
 .site-main p{
 	font-size: 1em;

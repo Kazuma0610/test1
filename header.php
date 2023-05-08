@@ -170,3 +170,16 @@
        </div><!--end header-inner-->
        
     </header>
+
+    <!--パンクズ＊ヘッダー枠外に設置-->
+    <?php if(!is_front_page()): ?>
+
+        <div class="breadcrumb">
+            <?php
+                if(function_exists( 'yoast_breadcrumb' )){
+                yoast_breadcrumb( '<p id="breadcrumbs">', '</p>');
+                }
+            ?>
+        </div>
+
+    <?php endif; ?>
