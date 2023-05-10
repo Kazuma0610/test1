@@ -10,7 +10,7 @@
         <?php the_post_thumbnail(); ?>
     </figure><!--.post-thumbnail-->
 
-    <?php the_tags( '<span class="tags-links">', ', ', '</span>' ); ?>
+    <?php the_tags( '<span class="tags-links">', '', '</span>' ); ?>
 
     <div class="entry-content">
         <?php

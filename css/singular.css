@@ -159,3 +159,97 @@ version： 2.0.0
 }
 }
 /*-----------------------------*/
+
+
+/*関連記事*/
+.related_post{
+    width: auto;
+    margin-bottom: 40px;
+}
+.related_post h3{
+    font-size: 15px;
+    font-weight: 600;
+    border-left: 9px solid #000;
+    text-align: justify;
+    margin-bottom: 40px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.related_post_container{
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.related_post_container li{
+    width: calc(50% - 20px / 2);
+    margin: 0 20px 20px 0;
+}
+.related_post_container li:nth-child(2){
+    margin-right: 0;
+}
+.related_post_container li:nth-child(4){
+    margin-right: 0;
+}
+.related_post_container li:nth-child(8){
+    margin-right: 0;
+}
+.related_post_container li:nth-child(n+1):nth-child(-n+4){
+    margin-bottom: 10px;
+}
+.related_post_container a{
+    display: flex;
+    flex-direction: column;
+    color: #1f1411;
+}
+.related_thumb{
+    width: 100%;
+}
+.related_title{
+    font-size: 12px;
+    font-weight: 700;
+}
+/*** 16.1 Tablet Large 600px */
+@media screen and (min-width: 38.25em) {
+    .related_post h3{
+        font-size: 20px;
+    }
+	.related_post_container{
+        width: auto;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .related_post_container li{
+        width: calc(22% - 20px / 4);
+        margin: 0 20px 20px 0;
+    }
+    .related_post_container li:nth-child(2){
+        margin-right: 20px;
+    }
+    .related_post_container li:nth-child(4){
+        margin-right: 0;
+    }
+    .related_post_container li:nth-child(8){
+        margin-right: 0;
+    }
+    .related_post_container li:nth-child(n+1):nth-child(-n+4){
+        margin-bottom: 10px;
+    }
+    .related_post_container a{
+        display: flex;
+        flex-direction: column;
+        color: #1f1411;
+    }
+    .related_thumb{
+        width: 100%;
+    }
+    .related_title{
+        font-size: 1em!important;
+        font-weight: 700;
+    }
+}
+/*-----------------------------*/
+

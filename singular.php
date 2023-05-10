@@ -39,6 +39,39 @@
                     </div>
                     <?php endif; ?>
                 </div>
+                <!--関連記事-->
+                <?php if(has_category() ) {
+                    $catlist =get_the_category();
+                    $category = array();
+                    foreach($catlist as $cat){
+                        $category[] = $cat->term_id;
+                    }}
+                ?>
+                <?php $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => '4', //表示させたい記事数
+                    'post__not_in' =>array( $post->ID ), //現在の記事は含めない
+                    'category__in' => $category, //先ほど取得したカテゴリー内の記事
+                    'orderby' => 'rand' //ランダムで取得
+                );
+                $related_query = new WP_Query( $args );?>
+                <aside class="related_post">
+                    <h3>関連記事</h3>
+                        <ul class="related_post_container">
+                        <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
+                            <li>
+                                <a href="<?php the_permalink(); ?>">
+                                    <!-- アイキャッチ表示 -->
+                                    <div class="related_thumb"><?php the_post_thumbnail('medium'); ?></div>
+                                    <!-- タイトル表示 -->
+                                    <p class="related_title"><?php the_title(); ?></p>
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); //最後に記事のリセット?>
+                        </ul>
+                </aside>
+
         </main><!--#main-->
         <?php get_sidebar(); ?>
     </section><!-- #primary-->                   
