@@ -62,6 +62,46 @@ version： 2.0.0
 }
 .search-box{
     width: 90%;
+    margin-bottom: 30px;
+}
+.error-cat{
+    border: 1px solid #666666;
+}
+.error-cat p{
+    text-align: left;
+    font-size: .8em;
+    font-weight: normal;
+    padding: 15px;
+    padding-bottom: 0px;
+}
+.cat-box ul{
+    display: block!important;
+}
+.cat-box li{
+    padding: 5px 0 0 20px;
+}
+.cat-box li:first-child{
+    padding-top: 0px!important;
+}
+.cat-box li:last-child{
+    padding-bottom: 30px!important;
+}
+.error-report{
+    border: 1px solid #666666;
+}
+.error-report p{
+    text-align: left;
+    font-size: .8em;
+    font-weight: normal;
+    padding: 15px;
+    padding-bottom: 0px;
+}
+.report-box{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0 50px 0px;
+    font-size: 1em;
+    font-weight: bold;
 }
 /*** 16.3 Tablet Large 880px */
 @media screen and (min-width: 55em) {
@@ -70,6 +110,7 @@ version： 2.0.0
     }
 	.error-tl p{
         font-size: 1.5em;
+        padding-bottom: 50px;
     }
     .error-h2{
         font-size: 2em;
@@ -79,11 +120,44 @@ version： 2.0.0
         font-size: 1.5em;
         font-weight: normal;
         padding: 15px;
+        padding-top: 50px;
     }
     .search-box{
         width: 80%;
-        margin: 0 auto;
         margin-bottom: 30px;
+    }
+    .error-cat p{
+        text-align: left;
+        font-size: 1.5em;
+        font-weight: normal;
+        padding: 15px;
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+    .cat-box ul{
+        display: block!important;
+    }
+    .cat-box li{
+        padding: 20px 0 0 20px;
+        font-size: 1.5em;
+    }
+    .cat-box li:first-child{
+        padding-top: 0px!important;
+    }
+    .error-report p{
+        text-align: left;
+        font-size: 1.5em;
+        font-weight: normal;
+        padding: 15px;
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+    .report-box{
+        width: 100%;
+        text-align: center;
+        padding: 50px 0 50px 0px;
+        font-size: 1.5em;
+        font-weight: bold;
     }
 }
 /*-----------------------------*/
