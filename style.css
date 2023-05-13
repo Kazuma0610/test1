@@ -376,7 +376,7 @@ cite {
 
 
 /*レイアウト確認用に一時記述----------*/
-.contents,#primary,.content-area {height: 4800px; }
+.contents-main,.contents,#primary,.content-area {height: 4800px; }
 
 #sidebar{height: 3000px}
  
@@ -386,7 +386,7 @@ cite {
  
 .container,.content-area {background-color: #9db2ea; }
  
-.contents {background-color: #a5e2ff; }
+.contents,.contents-main {background-color: #a5e2ff; }
  
 #sidebar{background-color: #aefffc; }
  
@@ -407,7 +407,7 @@ html {
 .footer-inner {
     padding: .8rem;
   }
-.contents {
+.contents,.contents-main {
     margin-bottom: 1rem;
   }
 /*------------------------*/
@@ -436,12 +436,12 @@ html {
 .container{
 	margin-top: 80px;
 }
-.contents,.sidebar{
+.contents,.contents-main,.sidebar{
     float: none;
     width: 100%;
     margin-right: 0;
 }
-.contents{
+.contents,.contents-main {
     margin-bottom: 1.5rem;
 }
 /*------------------------*/

@@ -49,6 +49,13 @@ add_action('wp_enqueue_scripts', 'add_styles');
         array('main_style'), // main_styleが読み込まれた後にerror_page_styleを読み込む 
         '1.0'
       );
+
+      wp_enqueue_style(
+        'post_style',
+        get_template_directory_uri() . '/css/post.css',
+        array('main_style'), // main_styleが読み込まれた後にpost_styleを読み込む 
+        '1.0'
+      );
   }
 
 //JSの読み込み//
