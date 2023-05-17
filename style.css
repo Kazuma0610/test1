@@ -422,12 +422,15 @@ html {
     margin-left: auto;
     padding: 2rem;
 }
-.container,.content-area,.footer-inner{
+.content-area,.footer-inner{
     box-sizing: border-box;
     max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
     padding: 2rem;
+}
+.container{
+	width: 100%;
 }
 .container,.content-area{
 	margin-top: 0px;
@@ -475,6 +478,23 @@ html {
 }
 }
 /*------------------------*/
+
+/*MVのswiper設定*/
+.mv-contents{
+	width: 100%;
+}
+.swiper {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	color: #FFF;
+	font-weight: bold;
+  }
+  @media screen and (max-width:480px) {
+  .swiper {
+	width: 100%;
+  }
+  }
 
 /*------------------------*/
 /*パンクズの設定*/
