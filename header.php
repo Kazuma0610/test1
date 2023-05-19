@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0 "><!--viewportの設定-->
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!--fontawesomeの呼び出しCDNコード-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"><!--fontawesomeの呼び出しCDNコード-->
 <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
@@ -122,7 +123,7 @@
                                               </div><!--accordion_header-->
                                                   <div class="accordion_inner">
                                                       <div class="accordion_one">
-                                                        <div class="accordion_header"><a href="http://sample-site-test.local/category/sample-one/">サンプル1</a></div>
+                                                        <div class="accordion_header"><a href="http://sample-site-test.local/category/sample-one/">sample1</a></div>
                                                         <div class="accordion_header">A_b</div>
                                                       </div><!--accordion_one-->
                                                   </div><!--accordion_inner-->
@@ -131,6 +132,7 @@
                                               <div class="accordion_header">B</div><!--accordion_header3-->
                                         </div><!--accordion_one-->
                                     </div><!--accordion_inner-->
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                           </div><!--accordion_one-->
                     </div><!--section s_07-->
                     <div class="header-bg-wrap pc-only">
@@ -145,7 +147,7 @@
                                               </div><!--accordion_header-->
                                                   <div class="accordion_inner">
                                                       <div class="accordion_one">
-                                                        <div class="accordion_header"><a href="http://sample-site-test.local/category/sample-one/">サンプル1</a></div>
+                                                        <div class="accordion_header"><a href="http://sample-site-test.local/category/sample-one/">sample1</a></div>
                                                         <div class="accordion_header">A_b</div>
                                                       </div><!--accordion_one-->
                                                   </div><!--accordion_inner-->
@@ -154,6 +156,8 @@
                                               <div class="accordion_header">B</div><!--accordion_header3-->
                                         </div><!--accordion_one-->
                                     </div><!--accordion_inner-->
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                </div><!--accordion_header-->
                           </div><!--accordion_one-->
                       </div><!--section s_07-->
                     </div><!--header-bg-wrap pc-only-->
@@ -163,6 +167,20 @@
           </div><!--site-branding-->
  
        </div><!--end header-inner-->
+
+       <div class="foot-inner">
+            <div class="sp-tel">
+                <a href="tel:000-000-0000">
+                <div class="sp-tel-text">お電話はこちらから</div>
+                <div class="sp-number">000-000-0000</div>
+                </a>
+            </div>
+            <div class="sp-contact">
+                <a href="#" target="_blank" rel="noopner">ご予約はこちら</a>
+            </div>
+        </div>
+
+       
        
     </header>
 

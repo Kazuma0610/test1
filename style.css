@@ -403,13 +403,15 @@ html {
     font-size: 15px;
   }
 .header-inner,
-.container,
 .footer-inner {
     padding: .8rem;
   }
 .contents,.contents-main {
     margin-bottom: 1rem;
   }
+.container{
+	padding: 0 .8rem 0 .8rem;
+}
 /*------------------------*/
 
 
@@ -422,30 +424,36 @@ html {
     margin-left: auto;
     padding: 2rem;
 }
-.content-area,.footer-inner{
+.contents-main,.content-area,.footer-inner{
     box-sizing: border-box;
     max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
     padding: 2rem;
 }
+.footer-inner{
+	margin-bottom: 70px;
+}
 .container{
 	width: 100%;
 }
 .container,.content-area{
 	margin-top: 0px;
-    padding: 2rem 1.25rem;
+    padding-bottom: 2rem;/*以前はpadding 2rem 1.25rem*/
 }
 .container{
 	margin-top: 80px;
 }
-.contents,.contents-main,.sidebar{
+.contents,.sidebar{
     float: none;
     width: 100%;
     margin-right: 0;
 }
 .contents,.contents-main {
     margin-bottom: 1.5rem;
+}
+.contents-main{
+	margin-top: 50px;
 }
 /*------------------------*/
 
@@ -461,8 +469,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+	transition: .5s;
 }
-/*PCオンリー・プルダウンメニュー時の基本設定*/
+.site-title a{
+	font-weight: bold;
+}
+/*PCオンリー・プルダウンメニュー（メガメニュー）時の基本設定*/
 #mega-menu-wrap-main-menu{
 	margin-left: 100px;
 }
@@ -479,22 +491,96 @@ html {
 }
 /*------------------------*/
 
+
+/*------------------------*/
+/*ヘッダーの隠し設定*/
+.site-header.hide{
+    top: -80px;
+	transition: .5s;
+}
+/*------------------------*/
+
+
+/*------------------------*/
 /*MVのswiper設定*/
 .mv-contents{
 	width: 100%;
 }
+/*swiperslider*/
+.swiperCont {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+  }
 .swiper {
 	width: 100%;
-	height: auto;
-	margin: 0 auto;
-	color: #FFF;
-	font-weight: bold;
   }
-  @media screen and (max-width:480px) {
-  .swiper {
-	width: 100%;
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+	right: -10px;
   }
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+	left: -10px;
   }
+.swiper-button-next:focus,
+.swiper-rtl .swiper-button-prev:focus,
+.swiper-button-prev:focus,
+.swiper-rtl .swiper-button-next:focus {
+	outline: none;
+  }
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+	color: #000;
+	font-size: 10px;
+  }
+.swiper-pagination-bullet-active {
+	opacity: var(--swiper-pagination-bullet-opacity, 1);
+	background: #444;
+  }
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	bottom: -30px;
+  }
+.swiper-backface-hidden .swiper-slide {
+	transition: .3s;
+  }
+.swiper-backface-hidden .swiper-slide.swiper-slide-prev,
+.swiper-backface-hidden .swiper-slide.swiper-slide-next {
+	opacity: .3;
+	transform: scale(.8);
+  }
+@media screen and (min-width: 38.25em) {
+	.swiper-button-next,
+.swiper-rtl .swiper-button-prev,
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+	background-color: #ccc;
+	border-radius: 50%;
+	padding: 25px;
+  }
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+	right: 0px;
+  }
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+	left: 0px;
+  }
+  .swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+	color: #fff;
+	font-size: 18px;
+  }
+}
+/*------------------------*/
+
 
 /*------------------------*/
 /*パンクズの設定*/
@@ -502,6 +588,46 @@ html {
 	margin-top: 90px;
 	padding-left: 10px;
 }
+/*------------------------*/
+
+
+/*------------------------*/
+/*ページトップの設定*/
+#page_top{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 10px;
+	bottom: 100px;
+	background: #888;
+	opacity: 0.6;
+	border-radius: 50%;
+  }
+  #page_top a{
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-decoration: none;
+  }
+  #page_top a::before{
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: '\f106';
+	font-size: 25px;
+	color: #fff;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: -20px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	text-align: center;
+  }
+/*------------------------*/
+
 
 /*------------------------*/
 /*検索窓の基本設定*/
@@ -755,7 +881,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 /*------------------------*/
 /*コンテンツ・サイドバー並び*/
 .container{
-    padding: 2rem 1.25rem;
+    padding-bottom: 2rem;/*以前はpadding 2rem 1.25rem*/
 }
 /*** 16.3 Tablet Large 880px */
 @media screen and (min-width: 55em) {
@@ -851,6 +977,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 }
 /*------------------------*/
 
+
 /*------------------------*/
 /*アーカイブページのページネーション設定*/
 .pagination{
@@ -898,3 +1025,93 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 }
 /*------------------------*/
 
+
+/*------------------------*/
+/*下部にコンテンツ設置*/
+/*メニューをページ下部に固定*/
+/*スマホ用の固定の電話、お問い合わせ*/
+.sp-tel {
+	display: block;
+	position: fixed;
+	top: auto;
+	bottom: 10px;
+	z-index: 1000;
+	width: calc(50% - 30px);
+	right: 20px;
+}
+.sp-tel a{ 
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 48px;
+	color: #333;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	border-radius: 5px;
+	background: #eff0f5;
+	box-shadow: 0 3px #809BB0; 
+}
+.sp-tel-text {
+	font-size: 0.5rem;
+}
+.sp-tel .sp-number {
+	padding-left: 15px;
+	font-size: 1rem;
+	background-size: 10px auto;
+	color: #333;
+	font-family: "Crimson Text";
+	font-weight: normal;
+	letter-spacing: 0.02rem;
+	line-height: 18px;
+	text-align: left;
+	background-image: url(images/tel.png);
+	background-repeat: no-repeat;
+	background-position: left 4px;
+	background-size: 9px auto;
+}
+.sp-contact {
+	display: block;
+	position: fixed;
+	top: auto;
+	bottom: 10px;
+	z-index: 1000;
+	width: calc(50% - 30px);
+	left: 20px;
+}
+.sp-contact a {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 48px;
+	color: #333;
+	letter-spacing: 0.05rem;
+	text-align: center;
+	border-radius: 5px;
+	background: #eff0f5;
+	box-shadow: 0 3px #809BB0;
+	font-size: 0.7rem;
+	padding-top: 23px;
+	padding-bottom: 8px;
+	background-image: url(images/mail-free.png);
+	background-repeat: no-repeat;
+	background-position: center 8px;
+	background-size: 12px auto;
+}
+.foot-inner:after {
+	content: "";
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 999;
+	display: block;
+	width: 100%;
+	height: 70px;
+	background: #95AEC1;
+	box-sizing: border-box;
+}

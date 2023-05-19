@@ -45,3 +45,85 @@ jQuery(function ($) {
     $(this).toggleClass("open",200);
   });
 });
+
+//スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
+jQuery(function ScrollAnime ($) {
+  var _window = $(window),
+        _header = $('.site-header'),
+           heroBottom,
+           startPos,
+           winScrollTop;
+
+           _window.on('scroll',function(){
+           winScrollTop = $(this).scrollTop();
+ heroBottom = $('.mv-contents').height();
+           if (winScrollTop >= startPos) {
+           if(winScrollTop >= heroBottom){
+           _header.addClass('hide');
+       }
+       } else {
+           _header.removeClass('hide');
+       }
+           startPos = winScrollTop;
+       });
+
+           _window.trigger('scroll');
+     
+});
+
+//スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
+jQuery(function ScrollAnime ($) {
+  var _window = $(window),
+        _header = $('.site-header'),
+           heroBottom,
+           startPos,
+           winScrollTop;
+
+           _window.on('scroll',function(){
+           winScrollTop = $(this).scrollTop();
+ heroBottom = $('.breadcrumb').height();
+           if (winScrollTop >= startPos) {
+           if(winScrollTop >= heroBottom){
+           _header.addClass('hide');
+       }
+       } else {
+           _header.removeClass('hide');
+       }
+           startPos = winScrollTop;
+       });
+
+           _window.trigger('scroll');
+     
+});
+
+//TOPをクリックしたらページトップに戻る。また500pxスクロールしたら出現
+jQuery(function() {
+    var pagetop = $('#page_top');
+  pagetop.hide();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 500) {
+      pagetop.fadeIn();
+    } else {
+      pagetop.fadeOut();
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({
+        scrollTop: 0
+    }, 500);
+    return false;
+  });
+});
+
+//500pxスクロールしたらfoot-innerが出現
+jQuery(function() {
+  var pagetop = $('.foot-inner');
+pagetop.hide();
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    pagetop.fadeIn();
+  } else {
+    pagetop.fadeOut();
+  }
+});
+});

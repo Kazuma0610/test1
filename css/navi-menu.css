@@ -75,7 +75,7 @@ version： 2.0.0
 
 /*========= ボタンのためのCSS ===============*/
 .openbtn{
-	position:fixed;
+	position:absolute;
     z-index: 2000;/*ボタンを最前面に*/
 	top:10px;
 	right: 10px;
@@ -128,7 +128,7 @@ version： 2.0.0
 /*** 16.3 Tablet Large 880px */
 @media screen and (min-width: 55em) {
     .openbtn{
-        position:fixed;
+        position:absolute;
         z-index: 2000;/*ボタンを最前面に*/
         top:10px;
         right: 10px;
@@ -167,6 +167,10 @@ version： 2.0.0
 	z-index: +1;
 	cursor: pointer;
 	transition-duration: 0.2s;
+}
+
+.accordion_header a{
+	color: #fff;
 }
 
 .s_07 .accordion_one:nth-of-type(1) .accordion_inner .accordion_header {
@@ -320,7 +324,7 @@ version： 2.0.0
 
 /*検索ボタン用*/
 .searchbtn{
-	position: fixed;
+	position: absolute;
 	top:25px;
 	right: 90%;
 }
@@ -556,7 +560,7 @@ version： 2.0.0
 /*** 16.1 Tablet Large 600px */
 @media screen and (min-width: 38.25em) {
 	.searchbtn{
-		position: fixed;
+		position: absolute;
 		top:25px;
 		right: 95%;
 	}
@@ -570,7 +574,7 @@ version： 2.0.0
 		justify-content: flex-start;
 	}
     .searchbtn{
-		position: fixed;
+		position: absolute;
 		top:23px;
 		right: 90px;
 	}
