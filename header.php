@@ -12,10 +12,19 @@
 <script src="js/5-1-11.js"></script><!--for--nav-js-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
 <script src="js/5-1-6.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
+<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script><!--progressbar-->
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div id="splash">
+		<div id="splash_logo">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hadatoiro.png" alt="画像" class="fadeUp"/>
+        </div>
+</div>
+<div class="splashbg"></div><!---画面遷移用-->
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
     <header id="header" class="site-header"> 
@@ -168,7 +177,7 @@
  
        </div><!--end header-inner-->
 
-       <div class="foot-inner">
+        <div class="foot-inner">
             <div class="sp-tel">
                 <a href="tel:000-000-0000">
                 <div class="sp-tel-text">お電話はこちらから</div>

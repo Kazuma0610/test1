@@ -56,16 +56,21 @@ add_action('wp_enqueue_scripts', 'add_styles');
         array('main_style'), // main_styleが読み込まれた後にpost_styleを読み込む 
         '1.0'
       );
+
+      wp_enqueue_style(
+        'move_style',
+        get_template_directory_uri() . '/css/move.css',
+        array('main_style'), // main_styleが読み込まれた後にmove_styleを読み込む 
+        '1.0'
+      );
   }
 
 //JSの読み込み//
-function my_scripts_method() {
-	wp_enqueue_script(
-		'custom_script',
-		get_template_directory_uri() . '/js/main.js',
-	);
-}
-add_action('wp_enqueue_scripts', 'my_scripts_method');
+function my_scripts() {
+    wp_enqueue_script( 'script-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'script-move', get_template_directory_uri() . '/js/move.js', array( 'jquery' ), '1.0.0', true );
+  }
+add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
 
 //ウイジェットの設定//

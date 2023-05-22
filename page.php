@@ -1,6 +1,8 @@
 <?php get_header(); ?>
     <section id="primary" class="content-area">
         <main id="main" class="site-main-post">
+
+        <div class="splashbg2"></div><!---画面遷移用-->
             
             <?php
             while ( have_posts() ) :
