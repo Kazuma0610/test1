@@ -22,8 +22,24 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div><!--swipercont-->
-        </div><!--mv-contents pc-only-->
+        </div><!--mv-contents-->
         <div class="contents-main">
+
+        
+        <div class="wrapper">
+	      <ul class="tab">
+		    <li><a href="#shop">SHOP</a></li>
+		    <li><a href="#media">MEDIA</a></li>
+	      </ul>
+
+		  <div id="shop" class="area">
+			<h2>当店について</h2>
+		  </div><!--shop/area-contents-->
+		
+          <div id="media" class="area">
+			<h2>MEDIA</h2>
+	      </div><!--media/area-contents-->
+        </div><!--wrapper-->
             
  
         </div><!--end contents-main-->

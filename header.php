@@ -39,9 +39,120 @@
                     <p class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                 <?php endif; ?>
                 <p class="site-description"><?php bloginfo('description'); ?></p>
+                <!--▼ メガグローバルナビゲーション -->
+                <nav class="global-nav pc-only">
+                  <ul class="nav-list">
+                    <li class="nav-item">
+                      <a href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#">カテゴリー</a>
+                        <div class="nav-item_sub">
+                          <div class="inner">
+                            <div class=mega-in-title>カテゴリー別記事一覧</div>
+                            <div class=mega-in-contents>
+                              <div class="mega-content-wrap">
+                                <ul class="mega-flex-wrap">
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s1.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>美容記事一覧</p>
+                                    </div>
+                                  </a></li>
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s2.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>コスメ事一覧</p>
+                                    </div>
+                                  </a></li>
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s3.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>ダイエット記事一覧</p>
+                                    </div>
+                                  </a></li>
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s4.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>マッサージ記事一覧</p>
+                                    </div>
+                                  </a></li>
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s5.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>オススメ記事一覧</p>
+                                    </div>
+                                  </a></li>
+                                  <li><a href="#">
+                                    <div class="mega-content-img">
+                                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/s6.png" alt="美容画像"/>
+                                    </div>
+                                    <div class="mega-content-text">
+                                        <p>リラックス記事一覧</p>
+                                    </div>
+                                  </a></li>
+                                </ul>
+                              </div> 
+                              <div class="mega-content-sub-wrap">
+                                <ul>
+                                    <li class="sub-list"><a href="#">当店の店舗一覧</a>
+                                    </li>
+                                    <li class="sub-list"><a href="#">当店の価格一覧</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                  <li class="sub-list"><a href="#">当店のインスタグラムはコチラから</a>
+                                  </li>
+                                  <li class="sub-list"><a href="#">当店のTwitterはコチラから</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div><!--inner-->
+                        </div><!--nav-item_sub-->
+                    </li><!--nav-item-->
+                    <li class="nav-item">
+                      <a href="#">システム</a>
+                        <div class="nav-item_sub">
+                          <div class="inner">
+                            <ul>
+                              <h3>施術価格</h3>
+                              <li><a href="">sample1</a></li>
+                              <li><a href="">sample2</a></li>
+                              <li><a href="">sample3</a></li>
+                              <li><a href="">sample4</a></li>
+                              <li><a href="">sample5</a></li>
+                            </ul>
+                            <ul>
+                              <h3>オプション</h3>
+                              <li><a href="">sample1-a</a></li>
+                              <li><a href="">sample2-a</a></li>
+                              <li><a href="">sample3-a</a></li>
+                              <li><a href="">sample4-a</a></li>
+                              <li><a href="">sample5-a</a></li>
+                            </ul>
+                          </div><!--inner-->
+                        </div><!--nav-item_sub-->
+                    </li><!--nav-item-->
+                    <li class="nav-item"><a href="#">ページ C</a></li>
+                    <li class="nav-item"><a href="#">ページ D</a></li>
+                    <li class="nav-item"><a href="#">ページ E</a></li>
+                  </ul>
+                </nav>
+                <!--▲ メガグローバルナビゲーション -->
                 <!--ヘッダーメニュー-->
-                <div id="header-nav-wrap" class="header-nav-wrap pc-only">
-                    <?php wp_nav_menu( array(
+                <!--<div id="header-nav-wrap" class="header-nav-wrap pc-only">
+                    <?php /*wp_nav_menu( array(
                      
                          'theme_location' => 'main-menu',
                          'container' => 'nav',
@@ -49,8 +160,8 @@
                          'container_id' => 'main-menu',
                          'fallback_cb' => ''
 
-                    ) ); ?>
-                </div>
+                    ) ); */?>
+                </div>-->
                 <div class="searchbtn"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/search.png" alt="画像"/></div>
                 <nav id="search-modal">
                     <div id="search-modal__container">

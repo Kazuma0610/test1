@@ -319,6 +319,150 @@ version： 2.0.0
 
 
 /*====================================================================
+メガメニュー用
+====================================================================*/
+/* グローバルメニュー */
+.global-nav
+ {
+    margin: 0;
+	position: relative;
+}  
+.global-nav .nav-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding-left: 50px;
+} 
+.global-nav .nav-list .nav-item {
+	flex: 1;
+}  
+.global-nav .nav-list .nav-item {
+	color: #333;
+	width: 100px;
+	display: block;
+	padding: 0.6em 0.4em;
+	text-align: center;
+	text-decoration: none;
+}  
+.global-nav .nav-list .nav-item:last-child a {
+	border-right: none;
+}
+/* サブナビゲーション */
+.nav-list {
+	  position: relative;
+}  
+.nav-item_sub {
+	  background: #ccc;
+	  left: 0px;
+	  margin: 0 -20%;
+	  opacity: 0;
+	  position: absolute;
+	  top: 40px;
+	  transition: all 0.2s ease;
+	  visibility: hidden;
+	  width: 100vw;
+	  height: 500px;
+}  
+.nav-item_sub .inner {
+	  display: block;
+	  margin: 0 auto;
+	  max-width: 1200px;
+} 
+.nav-item_sub .inner ul {
+	margin: 20px 20px 20px;
+}
+.global-nav .nav-list .nav-item_sub a {
+	text-align: left;
+}
+.nav-item:hover .nav-item_sub {
+	opacity: 1;
+	visibility: visible;
+}
+/* メガメニュー内コンテンツ */
+.mega-in-title{
+	text-align: left;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+.mega-in-contents{
+	display: flex;
+	justify-content: flex-start;
+}
+.mega-flex-wrap{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 800px;
+}
+.mega-flex-wrap li{
+	width: calc(30%);
+	margin-bottom: 20px;
+}
+.mega-flex-wrap li a{
+	width: 190px;
+}
+.mega-content-img{
+	width: 190px;
+	height: auto;
+}
+.mega-content-text{
+	width: 190px;
+	padding: 10px 0 0px 0;
+}
+.mega-content-sub-wrap{
+	margin-left: -50px;
+}
+.sub-list{
+	padding: 10px;
+	border:1px solid #e4e5ec;
+	margin-bottom: 20px;
+	background-color: #fff;
+    color: #222;
+    font-size: .933em;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    font-weight: normal;
+}
+/*リスト内ホバー時の線のアニメーション形状*/
+.nav-item a{
+	position: relative;
+}
+.nav-item a:hover{
+	color:#0481A2
+}
+.nav-item a::after{
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 0%;
+	/*線の形状*/
+	width: 100%;
+	height: 2px;
+	background: #0481A2;
+	/*アニメーションの指定*/
+	transition: all .3s;
+	transform: scale(0,1);
+	transform-origin: left top;
+}
+.nav-item a:hover::after{
+	transform: scale(1,1);
+}
+.mega-flex-wrap li a::after{
+	display: none;
+}
+.mega-content-sub-wrap li a::after{
+	display: none;
+}
+/*-------*/
+
+
+
+/*====================================================================
 検索フォーム用
 ====================================================================*/
 

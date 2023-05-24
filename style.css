@@ -429,7 +429,7 @@ html {
     max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
-    padding: 2rem;
+    padding-top: 0.5rem;/*2rem*/
 }
 .footer-inner{
 	margin-bottom: 70px;
