@@ -72,12 +72,8 @@ add_action('wp_enqueue_scripts', 'add_styles');
       );
   }
 
-//JSの読み込み//
-function my_scripts() {
-    wp_enqueue_script( 'script-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
-    wp_enqueue_script( 'script-move', get_template_directory_uri() . '/js/move.js', array( 'jquery' ), '1.0.0', true );
-  }
-add_action( 'wp_enqueue_scripts', 'my_scripts' );
+
+  
 
 
 //ウイジェットの設定//

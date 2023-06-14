@@ -22,7 +22,7 @@ Tabのレイアウト
     justify-content: center;
 }
 .tab li{
-    width: calc(50% - 30%/2);
+    width: calc(50% - 10%/2);
     
 }
 .tab li a{
@@ -32,6 +32,10 @@ Tabのレイアウト
 	padding:10px 20px;
     color: darkgray;
     text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	border: darkgray 1px solid;
+	border-bottom: 2px solid #000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -80,6 +84,7 @@ Tabのレイアウト
     color: darkgray;
     text-align: center;
     font-size: 1.5em;
+	border-bottom: 0px solid #000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

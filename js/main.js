@@ -46,6 +46,26 @@ jQuery(function ($) {
   });
 });
 
+//メガメニュー内のフェードインアニメーション
+const id1 = document.getElementById('id1');
+ 
+id1.addEventListener('mouseover', function() {
+    $('.inner').addClass("is-active-move");
+    });
+id1.addEventListener('mouseleave', function() {
+    $('.inner').removeClass("is-active-move");
+    });
+
+const id2 = document.getElementById('id2');
+ 
+id2.addEventListener('mouseover', function() {
+        $('.inner').addClass("is-active-move");
+        });
+id2.addEventListener('mouseleave', function() {
+        $('.inner').removeClass("is-active-move");
+        });
+
+
 //スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
 jQuery(function ScrollAnime ($) {
   var _window = $(window),

@@ -380,6 +380,20 @@ version： 2.0.0
 	visibility: visible;
 }
 /* メガメニュー内コンテンツ */
+.inner.is-active-move{
+	display: block;
+	animation-name: moveAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes moveAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 .mega-in-title{
 	text-align: left;
 	font-size: 1.5em;
@@ -455,11 +469,40 @@ version： 2.0.0
 .mega-flex-wrap li a::after{
 	display: none;
 }
+.mega-flex-wrap li a::before{
+	display: none;
+}
 .mega-content-sub-wrap li a::after{
 	display: none;
 }
-/*-------*/
-
+.mega-content-sub-wrap li  a::before{
+	display: none;
+}
+/*メガ用三角、*/
+#id1 a,#id2 a{
+	position: relative;
+}
+#id1 a::before,#id2 a::before{
+	content: "";
+	position: absolute;
+    top: 50%;
+    right: -15px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: -5px 0 0 0;
+    border-top: 2px solid #222;
+    border-right: 2px solid #222;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+#id1 li a::before,#id2 li a::before{
+	display: none;
+}
+/*---------------------------------*/
 
 
 /*====================================================================

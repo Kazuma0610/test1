@@ -22,7 +22,7 @@
 <div id="splash">
 		<div id="splash_logo">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hadatoiro.png" alt="画像" class="fadeUp"/>
-        </div>
+    </div>
 </div>
 <div class="splashbg"></div><!---画面遷移用-->
 <div id="page" class="site">
@@ -45,7 +45,7 @@
                     <li class="nav-item">
                       <a href="#">ホーム</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="id1" class="nav-item">
                       <a href="#">カテゴリー</a>
                         <div class="nav-item_sub">
                           <div class="inner">
@@ -121,8 +121,8 @@
                           </div><!--inner-->
                         </div><!--nav-item_sub-->
                     </li><!--nav-item-->
-                    <li class="nav-item">
-                      <a href="#">システム</a>
+                    <li id="id2" class="nav-item">
+                      <a href="#">価格</a>
                         <div class="nav-item_sub">
                           <div class="inner">
                             <ul>
@@ -144,9 +144,9 @@
                           </div><!--inner-->
                         </div><!--nav-item_sub-->
                     </li><!--nav-item-->
-                    <li class="nav-item"><a href="#">ページ C</a></li>
-                    <li class="nav-item"><a href="#">ページ D</a></li>
-                    <li class="nav-item"><a href="#">ページ E</a></li>
+                    <li class="nav-item"><a href="#">店舗案内</a></li>
+                    <li class="nav-item"><a href="#">会社概要</a></li>
+                    <li class="nav-item"><a href="#">お問合せ</a></li>
                   </ul>
                 </nav>
                 <!--▲ メガグローバルナビゲーション -->
