@@ -37,5 +37,41 @@
         },
     });
 </script>
+<!-- slick -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  jQuery(".slider").slick({
+   dots:true,
+   autoplay: true,
+   autoplaySpeed: 5000,
+   infinite: true,
+   slidesToShow: 4,
+   slidesToScroll: 4,
+   responsive: [
+      {
+        breakpoint: 1200, // 768〜1023px以下のサイズに適用
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 768, // 480〜767px以下のサイズに適用
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480, // 〜479px以下のサイズに適用
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+</script>
+<!-- slick -->
 </body>
 </html>

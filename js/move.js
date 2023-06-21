@@ -70,3 +70,50 @@ $(window).on('load', function () {
 	GethashID (hashName);//設定したタブの読み込み
 });
 
+
+//fadein用のアニメーション設定
+// 動きのきっかけとなるアニメーションの名前を定義
+function fadeAnime(){
+
+    // ふわっ
+    $('.fadeInTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top-50;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight){
+      $(this).addClass('fadeIn');// 画面内に入ったらfadeUpというクラス名を追記
+      }else{
+      $(this).removeClass('fadeIn');// 画面外に出たらfadeUpというクラス名を外す
+      }
+      });
+  }
+
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
+  //textが流れるアニメーションの設定(sectionのh2で使用)
+// 動きのきっかけとなるアニメーションの名前を定義
+function slideAnime(){
+
+    // 流れる
+    $('.leftAnime').each(function(){ //leftAnimeというクラス名が
+      var elemPos = $(this).offset().top-50;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight){
+      $(this).addClass("slideAnimeLeftRight");//クラスを付与
+      $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");//子要素のクラスを取得してクラスを付与
+      }else{
+      $(this).removeClass("slideAnimeLeftRight");
+      $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
+      }
+      });
+  }
+
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    slideAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述

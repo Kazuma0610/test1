@@ -1,97 +1,779 @@
+@charset "UTF-8";
+/*レスポンシブル*/
+/*文字フォント*/
+/*セクションpadding*/
 /* --------------------------------------------------------------------------------
 Tabのレイアウト
 -------------------------------------------------------------------------------- */
 /*レイアウトのためのCSS*/
-.wrapper{
-	width:100%;
-	max-width: 1500px;
-	margin:30px auto;
-    background:#a5e2ff;
+.wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 30px auto;
+  margin-bottom: -10px;
+  background: #a5e2ff;
 }
 
-.area h2{
-	font-size:1.3rem;
-	margin:0 0 20px 10px;
+.area h2 {
+  font-size: 1.3rem;
+  margin: 0 0 20px 10px;
 }
 
+.inner-section {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 30px 30px 30px;
+}
+@media (min-width: 38.25em) {
+  .inner-section {
+    padding: 20px;
+  }
+}
+@media (min-width: 880px) {
+  .inner-section {
+    padding: 70px;
+  }
+}
 
 /*tabの形状*/
-.tab{
-	display: flex;
-	flex-wrap: wrap;
-    justify-content: center;
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.tab li{
-    width: calc(50% - 10%/2);
-    
+.tab li {
+  width: 45%;
 }
-.tab li a{
-	display: block;
-	background:#fff;
-	margin:0 0px;
-	padding:10px 20px;
-    color: darkgray;
-    text-align: center;
-	font-size: 1em;
-	font-weight: bold;
-	border: darkgray 1px solid;
-	border-bottom: 2px solid #000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+@media (min-width: 1030px) {
+  .tab li {
+    width: 25%;
+  }
 }
-/*liにactiveクラスがついた時の形状*/
-.tab li.active a{
-	background:#000;
-    color: #fff;
+.tab li a {
+  display: block;
+  background: #fff;
+  margin: 0 0px;
+  padding: 10px 20px;
+  color: darkgray;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  border: darkgray 1px solid;
+  border-bottom: 2px solid #000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 1030px) {
+  .tab li a {
+    font-size: 1.5em;
+    border-bottom: 0px solid #000;
+  }
 }
 
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a {
+  background: #000;
+  color: #fff;
+}
 
 /*エリアの表示非表示と形状*/
 .area {
-	display: none;/*はじめは非表示*/
-	opacity: 0;/*透過0*/
-	background: #fff;
-	padding:50px 20px;
+  display: none; /*はじめは非表示*/
+  opacity: 0; /*透過0*/
+  background: #f8f9fa;
+  padding: 50px 20px;
+}
+.area.is-active { /*areaにis-activeというクラスがついた時の形状*/
+  display: block; /*表示*/
+  -webkit-animation-name: displayAnime;
+          animation-name: displayAnime; /*ふわっと表示させるためのアニメーション*/
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
-/*areaにis-activeというクラスがついた時の形状*/
-.area.is-active {
-    display: block;/*表示*/
-    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+@-webkit-keyframes displayAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@keyframes displayAnime{
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+@keyframes displayAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-/*** 16.3 Tablet Large 880px */
-@media screen and (min-width: 55em) {
-/*tabの形状*/
-.tab li{
-    width: calc(50% - 50%/2);   
+/*lead内の装飾*/
+#lead {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30px 0 30px 0;
+  flex-direction: column-reverse;
 }
-.tab li a{
-	display: block;
-	background:#fff;
-	margin:0 0px;
-	padding:10px 20px;
-    color: darkgray;
-    text-align: center;
-    font-size: 1.5em;
-	border-bottom: 0px solid #000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+@media (min-width: 880px) {
+  #lead {
+    flex-direction: unset;
+    padding: 70px 0 70px 0;
+  }
 }
-/*liにactiveクラスがついた時の形状*/
-.tab li.active a{
-	background:#000;
-    color: #fff;
+
+.lead-img {
+  width: 100%;
+  min-height: 250px;
+  background: url(../images/sample-pic1.jpg) no-repeat center;
+  background-size: cover;
 }
+@media (min-width: 880px) {
+  .lead-img {
+    width: 46%;
+    min-height: 400px;
+    background: url(../images/sample-pic1.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
-/*------------------------*/
+
+.lead-area {
+  width: 100%;
+  min-height: 20em;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row-reverse;
+  position: relative;
+  top: -50px;
+}
+@media (min-width: 880px) {
+  .lead-area {
+    width: 52%;
+    min-height: 0em;
+    margin-bottom: 0px;
+    justify-content: space-around;
+    top: 0px;
+  }
+}
+.lead-area h2 {
+  width: auto;
+  line-height: 2;
+  letter-spacing: 10px;
+  font-size: 1rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .lead-area h2 {
+    width: 28%;
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1030px) {
+  .lead-area h2 {
+    line-height: 2.5;
+    font-size: 2rem;
+  }
+}
+.lead-area p {
+  width: auto;
+  height: 23em;
+  padding: 50px 0 0 0;
+  line-height: 2;
+  letter-spacing: 5px;
+  font-size: 0.8rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .lead-area p {
+    width: 48%;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1030px) {
+  .lead-area p {
+    font-size: 1.5rem;
+  }
+}
+.lead-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .lead-btn {
+    width: 10%;
+    margin-top: 0px;
+    position: relative;
+    top: 130px;
+    left: 50px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}
+@media (min-width: 1030px) {
+  .lead-btn {
+    left: 0;
+  }
+}
+
+/*---------------------*/
+/*アニメーションボタン*/
+/*共通*/
+.btn04 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  color: #333;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  overflow: hidden;
+}
+.btn04:hover {
+  color: #fff;
+  border-color: transparent;
+  transition-delay: 0.6s;
+}
+.btn04 span {
+  display: block;
+  z-index: 2;
+}
+
+/*線から塗に変化（上から下）*/
+/*線*/
+.bordertop {
+  width: auto;
+  /*背景の設定*/
+}
+.bordertop span::before, .bordertop span::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 0;
+  /*線の形状*/
+  background: #e2a2ba;
+  /*アニメーション設定*/
+  transition: all 0.3s;
+}
+.bordertop span::before {
+  left: 0;
+  top: 0;
+}
+.bordertop span::after {
+  right: 0;
+  top: 0;
+}
+
+.bordertop:hover span::before, .bordertop:hover span::after {
+  height: 100%;
+}
+.bordertop::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+  background: #e2a2ba;
+  transition: all 0.3s;
+}
+.bordertop:hover::before {
+  height: 100%;
+  transition-delay: 0.4s;
+}
+
+/*fadeInアニメーションの設定*/
+.fadeIn {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeInTrigger {
+  opacity: 0;
+}
+
+/*---------------------*/
+/*MENU内の装飾*/
+#menu {
+  padding: 30px 0 30px 0;
+}
+@media (min-width: 880px) {
+  #menu {
+    padding: 70px 0 70px 0;
+  }
+}
+#menu h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #menu h2 {
+    font-size: 5rem;
+  }
+}
+.menu-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .menu-btn {
+    font-size: 1rem;
+  }
+}
+
+/*--------------------------------*/
+/*textが流れるアニメーションの設定*/
+/*共通*/
+.slide-in {
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.slide-in_inner {
+  display: inline-block;
+}
+
+/*設定*/
+.leftAnime {
+  opacity: 0;
+}
+
+.slideAnimeLeftRight {
+  -webkit-animation-name: slideTextX100;
+          animation-name: slideTextX100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slideAnimeRightLeft {
+  -webkit-animation-name: slideTextX-100;
+          animation-name: slideTextX-100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*---------------------*/
+/*MENU内のスライダー設定*/
+/* slick */
+.slider li {
+  margin: 10px;
+}
+
+.slick-next:before {
+  color: #000;
+  position: relative;
+  left: -10px;
+}
+
+.slick-prev:before {
+  color: #000;
+  position: relative;
+  right: -10px;
+}
+
+.slick-dots {
+  bottom: -55px;
+}
+
+/*MENU内のスライダー内の要素装飾*/
+.slider-wrap {
+  max-width: 369px;
+  height: auto;
+}
+
+.menu-area {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 5px 0 10px #ccc;
+}
+
+/*写真をホバーで円状の波紋*/
+.circle span.mask {
+  position: relative;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+.circle span.mask::before {
+  position: absolute;
+  content: "";
+  transform: scale(0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.circle span.mask:hover::before {
+  -webkit-animation: circle 0.75s;
+          animation: circle 0.75s;
+}
+@-webkit-keyframes circle {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+/*---------------------*/
+/*reserve内の装飾*/
+#reserve {
+  position: relative;
+  background: #f8f9fa;
+  z-index: 0;
+  padding-bottom: 100px;
+}
+#reserve h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #reserve h2 {
+    font-size: 5rem;
+    padding-bottom: 0px;
+  }
+}
+.reserve-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  font-family: "Noto Serif JP", serif;
+}
+
+#reserve h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555555;
+  font-family: "Noto Serif JP", serif;
+  padding: 20px;
+}
+.reserve-text {
+  padding: 0px;
+}
+@media (min-width: 1030px) {
+  .reserve-text {
+    padding: 50px;
+  }
+}
+
+.reserve-text dl {
+  text-align: center;
+  color: #555555;
+  letter-spacing: 5px;
+  font-family: "Noto Serif JP", serif;
+}
+.reserve-text dt {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.reserve-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+@media (min-width: 38.25em) {
+  .reserve-wrap {
+    justify-content: space-between;
+  }
+}
+.reserve-img {
+  width: 100%;
+  height: 300px;
+  background: url(../images/reserve-sample.png) no-repeat center;
+  background-size: cover;
+}
+@media (min-width: 38.25em) {
+  .reserve-img {
+    width: 55%;
+  }
+}
+@media (min-width: 880px) {
+  .reserve-img {
+    width: 70%;
+  }
+}
+
+/*---------------------*/
+/*staff内の装飾*/
+#cast {
+  position: relative;
+  background: #f8f9fa;
+  z-index: 0;
+}
+#cast h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #cast h2 {
+    font-size: 5rem;
+  }
+}
+
+.cast-wrap {
+  text-align: center;
+}
+@media (min-width: 38.25em) {
+  .cast-wrap {
+    text-align: unset;
+  }
+}
+
+.cast-flex {
+  display: inline-block;
+  padding: 0px 20px 0 20px;
+}
+@media (min-width: 38.25em) {
+  .cast-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 20px 0 20px;
+  }
+}
+@media (min-width: 880px) {
+  .cast-flex {
+    padding: 50px 30px 0 30px;
+  }
+}
+@media (min-width: 1030px) {
+  .cast-flex {
+    padding: 50px 70px 0 70px;
+  }
+}
+.cast-flex li {
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 100px;
+}
+@media (min-width: 38.25em) {
+  .cast-flex li {
+    max-width: 200px;
+  }
+  .cast-flex li:nth-child(2) {
+    margin-top: -50px;
+  }
+}
+@media (min-width: 1030px) {
+  .cast-flex li {
+    max-width: 369px;
+  }
+}
+.cast-detail {
+  position: absolute;
+  top: 300px;
+  left: 0px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 38.25em) {
+  .cast-detail {
+    top: 200px;
+  }
+}
+@media (min-width: 1030px) {
+  .cast-detail {
+    top: 420px;
+  }
+}
+
+.cast-area {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 5px 0 10px #ccc;
+  margin-top: -40px;
+  padding: 50px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 38.25em) {
+  .cast-area {
+    padding-left: 20px;
+  }
+}
+
+/*画像のホバー時のテキスト*/
+.bgDU {
+  position: relative;
+}
+.bgDU span.mask-text {
+  position: relative;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+.bgDU span.mask-text::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  transform: translateY(100%);
+  background: #e2a2b1;
+  width: 100%;
+  height: 100%;
+}
+.bgDU:hover span.mask-text::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  z-index: 3;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: "Noto Serif JP", serif;
+  padding: 15px;
+}
+@media (min-width: 38.25em) {
+  .cap {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1030px) {
+  .cap {
+    font-size: 1.5rem;
+  }
+}
+.cap:hover {
+  opacity: 1;
+}
+
+/*--------------------*/
+/*# sourceMappingURL=index.css.map */

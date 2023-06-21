@@ -426,7 +426,7 @@ html {
 }
 .contents-main,.content-area,.footer-inner{
     box-sizing: border-box;
-    max-width: 1400px;
+    max-width: 1800px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 0.5rem;/*2rem*/

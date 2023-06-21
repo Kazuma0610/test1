@@ -1,0 +1,659 @@
+/* --------------------------------------------------------------------------------
+Tabのレイアウト
+-------------------------------------------------------------------------------- */
+/*レイアウトのためのCSS*/
+
+@use "mixin" as m;
+
+
+.wrapper{
+	width:100%;
+	max-width: 1600px;
+	margin:30px auto;
+    margin-bottom: -10px;
+    background:#a5e2ff;
+}
+
+.area h2{
+	font-size:1.3rem;
+	margin:0 0 20px 10px;
+}
+
+.inner-section{
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 30px 30px 30px;
+    @include m.breakpoint(tablet){
+        padding: 20px;
+       }
+    @include m.breakpoint(only-tab){
+        padding: 70px;
+       }
+}
+
+
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    li{
+       width: calc(50% - 10%/2);
+       @include m.breakpoint(pc){
+        width: calc(50% - 50%/2); 
+       }  
+    }
+    li a{
+       display: block;
+	   background:#fff;
+	   margin:0 0px;
+	   padding:10px 20px;
+       color: darkgray;
+       text-align: center;
+	   font-size: 1em;
+	   font-weight: bold;
+	   border: darkgray 1px solid;
+	   border-bottom: 2px solid #000;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       @include m.font;
+       @include m.breakpoint(pc){
+        font-size: 1.5em;
+	    border-bottom: 0px solid #000;
+       }  
+    }     
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background:#000;
+    color: #fff;
+}
+
+
+/*エリアの表示非表示と形状*/
+@mixin anime-1{
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #f8f9fa;
+	padding:50px 20px;
+    &.is-active{/*areaにis-activeというクラスがついた時の形状*/
+        display: block;/*表示*/
+        @include anime-1;
+    }
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/*lead内の装飾*/
+@mixin font-tate{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+#lead{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include m.padding-sec-sp;
+    flex-direction: column-reverse;
+    @include m.breakpoint(only-tab){
+        flex-direction: unset;
+        @include m.padding-sec-pc;
+    }  
+}
+.lead-img{
+    width: 100%;
+    min-height: 250px;
+    background: url(../images/sample-pic1.jpg) no-repeat center;
+    background-size: cover;
+    @include m.breakpoint(only-tab){
+        width: 46%;
+        min-height: 400px;
+        background: url(../images/sample-pic1.jpg) no-repeat center;
+        background-size: cover;
+    }
+}
+.lead-area{
+    width: 100%;
+    min-height: 20em;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row-reverse;
+    position: relative;
+    top: -50px;
+    @include m.breakpoint(only-tab){
+        width: 52%;
+        min-height: 0em;
+        margin-bottom: 0px;
+        justify-content: space-around;
+        top: 0px;
+    }
+    h2{
+        width: auto;
+        line-height: 2;
+        letter-spacing: 10px;
+        font-size: 1rem;
+        @include font-tate;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 28%;
+            font-size: 1.4rem;
+        }
+        @include m.breakpoint(pc){
+            line-height: 2.5;
+            font-size: 2rem;
+        }
+    }
+    p{
+        width: auto;
+        height: 23em;
+        padding: 50px 0 0 0;
+        line-height: 2;
+        letter-spacing: 5px;
+        font-size: 0.8rem;
+        @include font-tate;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 48%;
+            font-size: 1rem;
+        }
+        @include m.breakpoint(pc){
+            font-size: 1.5rem;
+           }
+    }
+    @at-root .lead-btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 10%;
+            margin-top: 0px;
+            position: relative;
+            top:130px;
+            left:50px;
+            @include font-tate;
+           }
+        @include m.breakpoint(pc){
+            left:0;
+           }
+    }
+}
+/*---------------------*/
+
+
+/*アニメーションボタン*/
+/*共通*/
+.btn04{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color:#333;
+    border:1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+    &:hover{
+        color:#fff;
+        border-color: transparent;
+        transition-delay: .6s;
+    }
+
+    span{
+        display: block;
+        z-index: 2;
+    }
+}
+/*線から塗に変化（上から下）*/
+/*線*/
+.bordertop{width: auto;
+    span::before,span::after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 0;
+        /*線の形状*/
+        background: #e2a2ba;
+        /*アニメーション設定*/
+        transition: all .3s;
+    }
+    @at-root .bordertop{
+        span::before{
+            left:0;
+            top:0;
+        }
+        span::after{
+            right: 0;
+            top:0;
+        }
+    }
+    &:hover span::before,&:hover span::after{
+        height: 100%;
+    }
+    /*背景の設定*/
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top:0;
+        z-index: -1;
+        width: 100%;
+        height: 0;
+        background: #e2a2ba;
+        transition: all .3s;
+    }
+    &:hover::before{
+        height: 100%;
+        transition-delay: .4s;
+    }
+}
+
+
+
+/*fadeInアニメーションの設定*/
+.fadeIn{
+    animation-name: fadeInAnime;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeInTrigger{
+    opacity: 0;
+}
+/*---------------------*/
+
+
+/*MENU内の装飾*/
+#menu{
+    @include m.padding-sec-sp;
+    @include m.breakpoint(only-tab){
+        @include m.padding-sec-pc;
+       }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    @at-root .menu-btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 80px;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            font-size: 1rem;
+           }
+    }
+}
+/*--------------------------------*/
+
+
+/*textが流れるアニメーションの設定*/
+/*共通*/
+.slide-in{
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 10px;
+}
+.slide-in_inner{
+    display: inline-block;
+}
+/*設定*/
+.leftAnime{
+    opacity: 0;
+}
+.slideAnimeLeftRight{
+    animation-name: slideTextX100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX100{
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slideAnimeRightLeft{
+    animation-name: slideTextX-100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX-100{
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/*---------------------*/
+
+
+/*MENU内のスライダー設定*/
+/* slick */
+$arrow-color:#000;
+.slider{
+    li{
+        margin: 10px;
+    }
+}
+.slick-next{
+    &:before{
+        color:$arrow-color;
+        position: relative;
+        left: -10px;
+    }
+}
+.slick-prev{
+    &:before{
+        color:$arrow-color;
+        position: relative;
+        right: -10px;
+    }
+}
+.slick-dots{
+    bottom:-55px;
+}
+/*MENU内のスライダー内の要素装飾*/
+.slider-wrap{
+    max-width: 369px;
+    height: auto;
+}
+.menu-area{
+    padding: 20px;
+    background: #fff;
+    box-shadow: 5px 0 10px #ccc;
+}
+/*写真をホバーで円状の波紋*/
+.circle span.mask{
+    position: relative;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    &::before{
+        position: absolute;
+        content: "";
+        transform: scale(0);
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+    }
+    &:hover::before{
+        animation: circle 0.75s;
+    }
+
+    @keyframes circle{
+        0%{
+            transform: scale(0);
+            opacity: 1;
+        }
+        30%{
+            opacity: 1;
+        }
+        100%{
+            transform: scale(2);
+        }
+    }
+}
+/*---------------------*/
+
+
+/*reserve内の装飾*/
+#reserve{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    padding-bottom: 100px;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+         padding-bottom: 0px;
+       }
+    }
+    @at-root .reserve-btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        @include m.font;
+    }
+    h3{
+        text-align: center;
+        font-size: 1.5rem;
+        color: #555555;
+        @include m.font;
+        padding: 20px;
+    }
+    @at-root .reserve-text{
+        padding: 0px;
+        @include m.breakpoint(pc){
+            padding: 50px;
+           }
+    }
+    @at-root .reserve-text{
+        dl{
+            text-align: center;
+            color: #555555;
+            letter-spacing: 5px;
+            @include m.font;
+        }
+        dt{
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    }
+}
+.reserve-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    @include m.breakpoint(tablet){
+        justify-content: space-between;
+       }
+    @at-root .reserve-img{
+        width: 100%;
+        height: 300px;
+        background: url(../images/reserve-sample.png) no-repeat center;
+        background-size: cover;
+        @include m.breakpoint(tablet){
+            width: 55%;
+           }
+        @include m.breakpoint(only-tab){
+            width: 70%;
+           }
+    }
+}
+/*---------------------*/
+
+
+/*staff内の装飾*/
+#cast{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+}
+.cast-wrap{
+    text-align: center;
+    @include m.breakpoint(tablet){
+        text-align: unset;
+      }
+}
+.cast-flex{
+    display: inline-block;
+    padding: 0px 20px 0 20px;
+    @include m.breakpoint(tablet){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 50px 20px 0 20px;
+      }
+    @include m.breakpoint(only-tab){
+        padding: 50px 30px 0 30px;
+      }
+    @include m.breakpoint(pc){
+        padding: 50px 70px 0 70px;
+      }
+    li{
+        position: relative;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 100px;
+        @include m.breakpoint(tablet){
+            max-width: 200px;
+            &:nth-child(2){
+                margin-top: -50px;
+            }
+          }
+        @include m.breakpoint(pc){
+            max-width: 369px;
+          }
+    }
+    @at-root .cast-detail{
+        position: absolute;
+        top:300px;
+        left: 0px;
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 10px;
+        @include m.font;
+        @include m.breakpoint(tablet){
+            top:200px;
+          }
+        @include m.breakpoint(pc){
+            top:420px;
+          }
+    }
+    @at-root .cast-area{
+        padding: 20px;
+        background: #fff;
+        box-shadow: 5px 0 10px #ccc;
+        margin-top: -40px;
+        padding: 50px;
+        @include m.font;
+        @include m.breakpoint(tablet){
+            padding-left: 20px;
+          }
+    }
+}
+
+/*画像のホバー時のテキスト*/
+.bgDU{
+    position: relative;
+    span.mask-text{
+        position: relative;
+        display: block;
+        line-height: 0;
+        overflow: hidden;
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top:0;
+            opacity: 0;
+            transition: .2s ease-in-out;
+            transform: translateY(100%);
+            background:#e2a2b1;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &:hover span.mask-text::before{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    @at-root .cap{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: .2s ease-in-out;
+        z-index: 3;
+        top: 70%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        color:#fff;
+        line-height: 1.5;
+        font-size: 1rem;
+        @include m.font;
+        padding: 15px;
+        @include m.breakpoint(tablet){
+            font-size: 1rem;
+          }
+        @include m.breakpoint(pc){
+            font-size: 1.5rem;
+          }
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+}
+/*--------------------*/
