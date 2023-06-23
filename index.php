@@ -197,6 +197,22 @@
                 </div>
               </div>
             </section><!--reserve-->
+            <section id="access" class="inner-section">
+            <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span></span></h2>
+            <div class="map-wrap fadeInTrigger">
+              <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5607240306477!2d139.70896841964714!3d35.64638678810843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4046e3f71d%3A0x85ab1d92ef294edf!2z5oG15q-U5a-_6aeF!5e0!3m2!1sja!2sjp!4v1687411838216!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="map-area">
+                <h3>当店へのアクセス方法</h3>
+                <div class="access-text-foot">電車でのお越しの方</div>
+                <p class="access-text-lead">山の手線「恵比寿駅」下車　徒歩30秒<br>
+                西口の出口から階段を降り<br>左手の青いビルの１階<br><br>
+                東京都渋谷区　福田2-2-3<br>○○○○内１F（店舗</p>
+              </div>
+            </div>
+
+            </section>
           </div><!--wrapper-->
            
           
