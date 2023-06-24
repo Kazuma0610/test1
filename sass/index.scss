@@ -27,7 +27,7 @@ Tabのレイアウト
         padding: 20px;
        }
     @include m.breakpoint(only-tab){
-        padding: 70px;
+        padding: 50px;
        }
 }
 
@@ -675,6 +675,7 @@ $arrow-color:#000;
     position: relative;
     background: #f8f9fa;
     z-index: 0;
+    margin-top: -50px;
     h2{
         font-family: 'Parisienne', cursive;
         font-size: 3rem;

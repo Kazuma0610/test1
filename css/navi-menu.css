@@ -503,6 +503,25 @@ version： 2.0.0
 	display: none;
 }
 /*---------------------------------*/
+/*メガメニュー内「価格欄」*/
+.cost-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 30px 0 30px;
+}
+.system{
+	margin-right: 20px;
+}
+.cost-flex h3{
+	margin-bottom: 10px;
+}
+.cost-flex li{
+	margin-right: 20px;
+}
+.hour{
+	margin-right: 20px;
+}
 
 
 /*====================================================================

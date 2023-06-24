@@ -31,7 +31,7 @@ Tabのレイアウト
 }
 @media (min-width: 880px) {
   .inner-section {
-    padding: 70px;
+    padding: 50px;
   }
 }
 
@@ -785,6 +785,7 @@ Tabのレイアウト
   position: relative;
   background: #f8f9fa;
   z-index: 0;
+  margin-top: -50px;
 }
 #access h2 {
   font-family: "Parisienne", cursive;

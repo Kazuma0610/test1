@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*
+theme Name: WordPress Sample-site by Kazuma
+Author: Kazuma
+Description: Sample original theme
+version： 2.0.0
+*/
+/*個別投稿のCSS*/
+/*投稿本文*/
+.test {
+  padding: 1rem;
+}
+/*# sourceMappingURL=test.css.map */

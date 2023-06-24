@@ -131,22 +131,21 @@
                       <a href="#">料金価格</a>
                         <div class="nav-item_sub">
                           <div class="inner">
-                            <ul>
-                              <h3>施術価格</h3>
-                              <li><a href="">sample1</a></li>
-                              <li><a href="">sample2</a></li>
-                              <li><a href="">sample3</a></li>
-                              <li><a href="">sample4</a></li>
-                              <li><a href="">sample5</a></li>
-                            </ul>
-                            <ul>
-                              <h3>オプション</h3>
-                              <li><a href="">sample1-a</a></li>
-                              <li><a href="">sample2-a</a></li>
-                              <li><a href="">sample3-a</a></li>
-                              <li><a href="">sample4-a</a></li>
-                              <li><a href="">sample5-a</a></li>
-                            </ul>
+                            <div class="cost-flex">
+                              <ul>
+                                <h3>通常価格</h3>
+                                <li><span class="system">快眠ヘッドマッサージ</span><span class="hour">1h</span><span class="cost">¥5000</span></li>
+                                <li><span class="system">快眠ヘッドマッサージ</span><span class="hour">1h</span><span class="cost">¥5000</span></li>
+                              </ul>
+                              <ul>
+                                <h3>オプション</h3>
+                                <li><span class="system">快眠ヘッドマッサージ</span><span class="hour">1h</span><span class="cost">¥5000</span>
+                              </ul>
+                              <ul>
+                                <h3>セットスパ</h3>
+                                <li><span class="system">快眠ヘッドマッサージ</span><span class="hour">1h</span><span class="cost">¥5000</span>
+                              </ul>
+                            </div><!--cost-flex-->
                           </div><!--inner-->
                         </div><!--nav-item_sub-->
                     </li><!--nav-item-->
