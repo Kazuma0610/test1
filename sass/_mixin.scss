@@ -25,9 +25,20 @@
 
 /*セクションpadding*/
 @mixin padding-sec-sp{
-	padding: 30px 0 30px 0;
+	padding: 30px;
 }
 
 @mixin padding-sec-pc{
-	padding:70px 0 70px 0;
+	padding:70px 50px 70px 50px;
+}
+
+
+/*ボタン*/
+@mixin buttun-basic{
+	width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    font-family: "Noto Serif JP", serif;
 }

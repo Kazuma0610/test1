@@ -160,7 +160,7 @@ Tabのレイアウト
             font-size: 2rem;
         }
     }
-    p{
+    @at-root .text{
         width: auto;
         height: 23em;
         padding: 50px 0 0 0;
@@ -197,6 +197,128 @@ Tabのレイアウト
            }
     }
 }
+/*モーダル内装飾*/
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+    @include m.breakpoint(tablet){
+        display: none;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 1000;
+      }
+  }
+.modal_bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+.modalScroll{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modalScroll {
+    background: #fff;
+    height: auto;
+    width: 90%;
+    max-height: 800px;
+    padding: 20px;
+    border-radius: 20px;
+    -ms-overflow-style: none;
+    z-index: 150;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.modal_content {
+    color: rgb(49, 49, 49);
+    text-align: center;
+}
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    border: 1px solid #fff;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 9999;
+    @include m.breakpoint(tablet){
+        top: 20px;
+        right: 20px;
+      }
+    @include m.breakpoint(only-tab){
+        top: 30px;
+        right: 30px;
+      }
+    @include m.breakpoint(pc){
+        top: 50px;
+        right: 50px;
+      }
+  }
+  .popup-close:after, .popup-close:before {
+    width: 14px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    background: #667075
+  }
+  .popup-close:before {
+    -ms-transform: rotate(-45deg);
+    transform: rotateZ(-45deg)
+  }
+  .popup-close:after {
+    -ms-transform: rotate(45deg);
+    transform: rotateZ(45deg)
+  }
+  .popup-close {
+    width: 25px;
+    height: 23px
+  }
+  .popup-close:after, .popup-close:before {
+    width: 11px;
+    height: 2px;
+    left: 6px;
+    top: 9px
+  }
+/*モーダルの中身*/
+.modal_content{
+    padding: 30px;
+    h2{
+        @include m.font;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+        @include m.breakpoint(tablet){
+            font-size: 1.5rem;
+          }
+        @include m.breakpoint(only-tab){
+            font-size: 2rem;
+          }
+        @include m.breakpoint(pc){
+            font-size: 3rem;
+          }
+    }
+}
 /*---------------------*/
 
 
@@ -216,9 +338,11 @@ Tabのレイアウト
         border-color: transparent;
         transition-delay: .6s;
     }
-
     span{
         display: block;
+    }
+    p{
+        position: relative;
         z-index: 2;
     }
 }
@@ -254,7 +378,7 @@ Tabのレイアウト
         position: absolute;
         left: 0;
         top:0;
-        z-index: -1;
+        z-index:0;
         width: 100%;
         height: 0;
         background: #e2a2ba;
@@ -293,6 +417,7 @@ Tabのレイアウト
 
 /*MENU内の装飾*/
 #menu{
+    background: #f8f9fa;
     @include m.padding-sec-sp;
     @include m.breakpoint(only-tab){
         @include m.padding-sec-pc;
@@ -309,15 +434,7 @@ Tabのレイアウト
        }
     }
     @at-root .menu-btn{
-        width: 100%;
-        text-align: center;
-        margin-top: 80px;
-        font-size: 1rem;
-        letter-spacing: 5px;
-        @include m.font;
-        @include m.breakpoint(only-tab){
-            font-size: 1rem;
-           }
+        @include m.buttun-basic;
     }
 }
 /*--------------------------------*/
@@ -408,6 +525,7 @@ $arrow-color:#000;
     padding: 20px;
     background: #fff;
     box-shadow: 5px 0 10px #ccc;
+    @include m.font;
 }
 /*写真をホバーで円状の波紋*/
 .circle span.mask{
@@ -544,6 +662,10 @@ $arrow-color:#000;
          font-size: 5rem;
        }
     }
+    @at-root .cast-btn{
+        @include m.buttun-basic;
+        margin-top: -50px;
+    }
 }
 .cast-wrap{
     text-align: center;
@@ -675,7 +797,6 @@ $arrow-color:#000;
     position: relative;
     background: #f8f9fa;
     z-index: 0;
-    margin-top: -50px;
     h2{
         font-family: 'Parisienne', cursive;
         font-size: 3rem;

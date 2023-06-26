@@ -136,7 +136,7 @@ jQuery(function() {
 });
 
 //500pxスクロールしたらfoot-innerが出現
-jQuery(function() {
+jQuery(function($) {
   var pagetop = $('.foot-inner');
 pagetop.hide();
 $(window).scroll(function () {
@@ -147,3 +147,14 @@ $(window).scroll(function () {
   }
 });
 });
+
+//ボタンを押したらモーダルが出現
+function buttonClick() {
+  $(".modal").fadeIn();
+}
+
+$(".popup-close").on("click", function () {
+  $(".modal").fadeOut();
+  return false;
+});
+

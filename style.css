@@ -200,6 +200,7 @@ input[type='url'] {
 	height: 44px;
 	border: 1px solid #aaa;
 	border-radius: 4px;
+	font-family: "Noto Serif JP", serif;
 }
 
 /* -- input: button, submit, reset -- */
@@ -376,15 +377,16 @@ cite {
 
 
 /*レイアウト確認用に一時記述----------*/
-.contents-main,.contents,#primary,.content-area {height: 6800px; }
+/*.contents-main,.contents,#primary,.content-area {height: 6800px; }*/
 
-#sidebar{height: 3000px}
+#sidebar{height: 2000px}
  
 .site-header{background-color: #888;}
  
 .header-inner{ background-color: #ccc; height: 80px;}
  
 .container,.content-area {background-color: #9db2ea; }
+
  
 .contents,.contents-main {background-color: #a5e2ff; }
  
@@ -426,7 +428,7 @@ html {
 }
 .contents-main,.content-area,.footer-inner{
     box-sizing: border-box;
-    max-width: 1800px;
+    max-width: 1500px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 0.5rem;/*2rem*/
@@ -465,11 +467,12 @@ html {
     top: 0px;
     height: 80px;
     width: 100%;
-    z-index: 999;
+    z-index: 30;
     display: flex;
     justify-content: center;
     align-items: center;
 	transition: .5s;
+	font-family: "Noto Serif JP", serif;
 }
 .site-title a{
 	font-weight: bold;

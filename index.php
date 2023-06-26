@@ -1,5 +1,16 @@
 <?php get_header(); ?>
     <main id="container-main"class="container">
+              <div class="modal">
+                <div class="modal_bg js-modal-close"></div>
+                  <div class="modalScroll">
+                      <div class="modal_content">
+                        <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">リラックス出来る空間を</span></span></h2>
+                      
+                        
+                        <span class="popup-close" onclick="closePopUp()"></span>
+                      </div>
+                  </div>
+              </div><!--modal-->
         <div class="mv-contents">
             <div class="swiperCont">
                 <div class="swiper mySwiper">
@@ -39,10 +50,11 @@
                 </div>
                 <div class="lead-area fadeIn">
                   <h2>恵比寿にある<br>癒しの<br>プライベート空間</h2>
-                    <p>エステサロン<br class="pc-only">肌十色は<br class="pc-only">頑張るあなたが<br class="pc-only">ちょっと疲れた時に<br class="pc-only">立ち寄れる<br class="pc-only">ほっとする時間を<br>つくります。</p>
-                    <div class="lead-btn">
-                        <a href="#" class="btn04 bordertop"><span>お店のご紹介</span></a>
-                    </div>
+                    <div class="text">エステサロン<br class="pc-only">肌十色は<br class="pc-only">頑張るあなたが<br class="pc-only">ちょっと疲れた時に<br class="pc-only">立ち寄れる<br class="pc-only">ほっとする時間を<br>つくります。</div>
+                    <buttun class="lead-btn buttun" onclick="buttonClick()">
+                        <a href="#" class="btn04 bordertop"><span><p>お店のご紹介</p></span></a>
+                    </buttun>
+                </div>
                 </div><!--lead-area-->
               </article><!--lead-->
               <section id="menu">
@@ -125,7 +137,7 @@
                   </li>
                 </ul><!--slider-->
                 <div class="menu-btn">
-                  <a href="#" class="btn04 bordertop"><span>メニュー一覧を見る</span></a>
+                  <a href="#" class="btn04 bordertop"><span><p>メニュー一覧を見る</p></span></a>
                 </div>
               </section><!--#menu-->   
 		        </div><!--shop/area-contents-->
@@ -144,7 +156,7 @@
                     <dd>営業時間 : 10.00-19.00</dd>
                   </dl>
                   <div class="reserve-btn">
-                    <a href="#" class="btn04 bordertop"><span>ご予約はコチラ</span></a>
+                    <a href="#" class="btn04 bordertop"><span><p>ご予約はコチラ</p></span></a>
                   </div>
                 </div>
               </div>
@@ -194,23 +206,29 @@
                       </div>
                     </li>
                   </ul>
+                  <div class="cast-btn">
+                    <a href="#" class="btn04 bordertop"><span><p>キャスト一覧</p></span></a>
+                  </div>
                 </div>
               </div>
             </section><!--reserve-->
             <section id="access" class="inner-section">
-            <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span></span></h2>
-            <div class="map-wrap fadeInTrigger">
-              <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5607240306477!2d139.70896841964714!3d35.64638678810843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4046e3f71d%3A0x85ab1d92ef294edf!2z5oG15q-U5a-_6aeF!5e0!3m2!1sja!2sjp!4v1687411838216!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span></span></h2>
+              <div class="map-wrap fadeInTrigger">
+                <div class="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5607240306477!2d139.70896841964714!3d35.64638678810843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4046e3f71d%3A0x85ab1d92ef294edf!2z5oG15q-U5a-_6aeF!5e0!3m2!1sja!2sjp!4v1687411838216!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map-area">
+                  <h3>当店へのアクセス方法</h3>
+                  <div class="access-text-foot">電車でのお越しの方</div>
+                  <p class="access-text-lead">山の手線「恵比寿駅」下車　徒歩30秒<br>
+                  西口の出口から階段を降り<br>左手の青いビルの１階<br><br>
+                  東京都渋谷区　福田2-2-3<br>○○○○内１F（店舗</p>
+                </div>
               </div>
-              <div class="map-area">
-                <h3>当店へのアクセス方法</h3>
-                <div class="access-text-foot">電車でのお越しの方</div>
-                <p class="access-text-lead">山の手線「恵比寿駅」下車　徒歩30秒<br>
-                西口の出口から階段を降り<br>左手の青いビルの１階<br><br>
-                東京都渋谷区　福田2-2-3<br>○○○○内１F（店舗</p>
-              </div>
-            </div>
+
+
+
 
             </section>
           </div><!--wrapper-->
