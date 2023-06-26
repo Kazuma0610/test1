@@ -5,6 +5,17 @@
                   <div class="modalScroll">
                       <div class="modal_content">
                         <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">リラックス出来る空間を</span></span></h2>
+                        <div class="shop-img owl-carousel">
+                          <div class="select">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu1.png" alt="画像"/>
+                          </div>
+                          <div class="select">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu2.png" alt="画像"/>
+                          </div>
+                          <div class="select">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu3.png" alt="画像"/>
+                          </div>
+                        </div>
                       
                         
                         <span class="popup-close" onclick="closePopUp()"></span>
@@ -52,7 +63,7 @@
                   <h2>恵比寿にある<br>癒しの<br>プライベート空間</h2>
                     <div class="text">エステサロン<br class="pc-only">肌十色は<br class="pc-only">頑張るあなたが<br class="pc-only">ちょっと疲れた時に<br class="pc-only">立ち寄れる<br class="pc-only">ほっとする時間を<br>つくります。</div>
                     <buttun class="lead-btn buttun" onclick="buttonClick()">
-                        <a href="#" class="btn04 bordertop"><span><p>お店のご紹介</p></span></a>
+                        <a href="#" class="btn04 bordertop"><span><p>店内の風景</p></span></a>
                     </buttun>
                 </div>
                 </div><!--lead-area-->

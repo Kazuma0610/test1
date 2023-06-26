@@ -467,7 +467,7 @@ html {
     top: 0px;
     height: 80px;
     width: 100%;
-    z-index: 30;
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -480,6 +480,9 @@ html {
 /*PCオンリー・プルダウンメニュー（メガメニュー）時の基本設定*/
 #mega-menu-wrap-main-menu{
 	margin-left: 100px;
+}
+.header-inner{
+	z-index: 5;
 }
 /*** 16.3 Tablet Large 880px */
  @media screen and (min-width: 55em) {
@@ -551,6 +554,7 @@ html {
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
 	bottom: -30px;
+	z-index: 1;
   }
 .swiper-backface-hidden .swiper-slide {
 	transition: .3s;
@@ -559,6 +563,9 @@ html {
 .swiper-backface-hidden .swiper-slide.swiper-slide-next {
 	opacity: .3;
 	transform: scale(.8);
+  }
+  .swiper-button-next, .swiper-button-prev{
+	z-index: 1;
   }
 @media screen and (min-width: 38.25em) {
 	.swiper-button-next,
