@@ -42,3 +42,18 @@
     letter-spacing: 5px;
     font-family: "Noto Serif JP", serif;
 }
+
+
+/*サブタイトル*/
+@mixin subtitle{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Parisienne', cursive;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-weight: normal;
+    color: #e2a2b1;
+}

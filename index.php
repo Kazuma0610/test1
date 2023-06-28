@@ -84,7 +84,7 @@
 		
             <div id="media" class="area">
 			        <article id="colum">
-                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Resent</span></span><span class="subtitle">新着コラム</span></h2>
+                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Resent</span><span class="subtitle slide-in_inner leftAnimeInner">新着コラム</span></span></h2>
                 <div class="post-wrap fadeInTrigger">
                   <ul class="newpost-flex">
                     <?php
@@ -116,7 +116,7 @@
 	          </div><!--media/area-contents-->
 
             <section id="menu">
-                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Menu</span></span></h2>
+                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Menu</span><span class="subtitle slide-in_inner leftAnimeInner">施術メニュー</span></span></h2>
                 <ul class="slider fadeInTrigger">
                   <li>
                     <section class="slider-wrap">
@@ -199,7 +199,7 @@
                 </div>
             </section><!--#menu-->
             <section id="reserve" class="inner-section">
-              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Reserve</span></span></h2>
+              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Reserve</span><span class="subtitle slide-in_inner leftAnimeInner">ご予約</span></span></h2>
               <div class="reserve-wrap fadeInTrigger">
                 <div class="reserve-img"></div>
                 <div class="reserve-text">
@@ -215,7 +215,7 @@
               </div>
             </section><!--reserve-->
             <section id="cast" class="inner-section">
-              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Cast</span></span></h2>
+              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Cast</span><span class="subtitle slide-in_inner leftAnimeInner">施術者</span></span></h2>
               <div class="cast-container">
                 <div class="cast-wrap fadeInTrigger">
                   <ul class="cast-flex">
@@ -266,7 +266,7 @@
               </div>
             </section><!--cast-->
             <section id="access" class="inner-section">
-              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span></span></h2>
+              <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span><span class="subtitle slide-in_inner leftAnimeInner">アクセス</span></span></h2>
               <div class="map-wrap fadeInTrigger">
                 <div class="map">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.5607240306477!2d139.70896841964714!3d35.64638678810843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b4046e3f71d%3A0x85ab1d92ef294edf!2z5oG15q-U5a-_6aeF!5e0!3m2!1sja!2sjp!4v1687411838216!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

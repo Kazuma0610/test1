@@ -3,6 +3,7 @@
 /*文字フォント*/
 /*セクションpadding*/
 /*ボタン*/
+/*サブタイトル*/
 /* --------------------------------------------------------------------------------
 Tabのレイアウト
 -------------------------------------------------------------------------------- */
@@ -395,6 +396,19 @@ Tabのレイアウト
     font-size: 5rem;
   }
 }
+#colum h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
+}
 .newpost-flex {
   display: flex;
   justify-content: space-between;
@@ -563,6 +577,19 @@ Tabのレイアウト
   #menu h2 {
     font-size: 5rem;
   }
+}
+#menu .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
 }
 .menu-btn {
   width: 100%;
@@ -757,6 +784,19 @@ Tabのレイアウト
     padding-bottom: 0px;
   }
 }
+#reserve h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
+}
 .reserve-btn {
   width: 100%;
   text-align: center;
@@ -851,6 +891,19 @@ Tabのレイアウト
   #cast h2 {
     font-size: 5rem;
   }
+}
+#cast .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
 }
 .cast-btn {
   width: 100%;
@@ -1016,6 +1069,19 @@ Tabのレイアウト
   #access h2 {
     font-size: 5rem;
   }
+}
+#access .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
 }
 
 .map {

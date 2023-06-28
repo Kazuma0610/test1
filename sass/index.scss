@@ -332,6 +332,10 @@ Tabのレイアウト
     @include m.breakpoint(only-tab){
          font-size: 5rem;
        }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    }
     }
     @at-root .newpost-flex{
         display: flex;
@@ -489,6 +493,10 @@ Tabのレイアウト
          font-size: 5rem;
        }
     }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    }
     @at-root .menu-btn{
         @include m.buttun-basic;
     }
@@ -636,6 +644,10 @@ $arrow-color:#000;
          font-size: 5rem;
          padding-bottom: 0px;
        }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    }
     }
     @at-root .reserve-btn{
         width: 100%;
@@ -717,6 +729,10 @@ $arrow-color:#000;
     @include m.breakpoint(only-tab){
          font-size: 5rem;
        }
+    }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
     }
     @at-root .cast-btn{
         @include m.buttun-basic;
@@ -863,6 +879,10 @@ $arrow-color:#000;
     @include m.breakpoint(only-tab){
          font-size: 5rem;
        }
+    }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
     }
 }
 .map{
