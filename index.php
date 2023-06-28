@@ -5,17 +5,26 @@
                   <div class="modalScroll">
                       <div class="modal_content">
                         <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">リラックス出来る空間を</span></span></h2>
-                        <div class="shop-img owl-carousel">
-                          <div class="select">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu1.png" alt="画像"/>
-                          </div>
-                          <div class="select">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu2.png" alt="画像"/>
-                          </div>
-                          <div class="select">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/menu3.png" alt="画像"/>
-                          </div>
-                        </div>
+                        <div class="swiperCont">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/1.png" alt="画像"/>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/3.png" alt="画像"/>
+                              </div>
+                              <div class="swiper-slide">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                              </div>
+                            </div><!--swiper-wrapper-->
+                          </div><!--swiper mySwiper-->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div><!--swipercont-->
                       
                         
                         <span class="popup-close" onclick="closePopUp()"></span>
@@ -68,7 +77,45 @@
                 </div>
                 </div><!--lead-area-->
               </article><!--lead-->
-              <section id="menu">
+              
+              
+
+		        </div><!--shop/area-contents-->
+		
+            <div id="media" class="area">
+			        <article id="colum">
+                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Resent</span></span><span class="subtitle">新着コラム</span></h2>
+                <div class="post-wrap fadeInTrigger">
+                  <ul class="newpost-flex">
+                    <?php
+                      $args = array(
+                        'posts_per_page' => 8 //表示件数の指定
+                      );
+                      $posts = get_posts($args);
+                      foreach ($posts as $post):
+                      setup_postdata($post);
+                    ?>
+                      <li>
+                        <a href="<?php the_permalink(); ?>">
+                          <!-- アイキャッチ表示 -->
+                          <div class="newpost_thumb"><?php the_post_thumbnail('medium'); ?></div>
+                          <!-- タイトル表示 -->
+                          <p class="newpost_title"><?php the_title(); ?></p>
+                          <!--日付表示-->
+                          <p class="newpost_date"><?php the_date(); ?></p>
+                        </a>
+                      </li>
+                    <?php 
+                      endforeach;//ループの終了
+                      wp_reset_postdata();
+                    ?>
+                  </ul>
+                </div>
+
+              </article>
+	          </div><!--media/area-contents-->
+
+            <section id="menu">
                 <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Menu</span></span></h2>
                 <ul class="slider fadeInTrigger">
                   <li>
@@ -150,12 +197,7 @@
                 <div class="menu-btn">
                   <a href="#" class="btn04 bordertop"><span><p>メニュー一覧を見る</p></span></a>
                 </div>
-              </section><!--#menu-->   
-		        </div><!--shop/area-contents-->
-		
-            <div id="media" class="area">
-			        <h2>MEDIA</h2>
-	          </div><!--media/area-contents-->
+            </section><!--#menu-->
             <section id="reserve" class="inner-section">
               <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Reserve</span></span></h2>
               <div class="reserve-wrap fadeInTrigger">
@@ -222,7 +264,7 @@
                   </div>
                 </div>
               </div>
-            </section><!--reserve-->
+            </section><!--cast-->
             <section id="access" class="inner-section">
               <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span></span></h2>
               <div class="map-wrap fadeInTrigger">
@@ -241,7 +283,7 @@
 
 
 
-            </section>
+            </section><!--access-->
           </div><!--wrapper-->
            
           

@@ -271,7 +271,7 @@ Tabのレイアウト
   height: auto;
   width: 90%;
   max-height: 800px;
-  padding: 20px;
+  padding: 5px;
   border-radius: 20px;
   -ms-overflow-style: none;
   z-index: 150;
@@ -352,7 +352,7 @@ Tabのレイアウト
 
 /*モーダルの中身*/
 .modal_content {
-  padding: 30px;
+  padding: 10px;
 }
 .modal_content h2 {
   font-family: "Noto Serif JP", serif;
@@ -379,6 +379,66 @@ Tabのレイアウト
 }
 
 /*---------------------*/
+#colum {
+  padding: 0px 10px;
+}
+#colum h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #colum h2 {
+    font-size: 5rem;
+  }
+}
+.newpost-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: -20px 0px 20px 0px;
+}
+.newpost-flex li {
+  width: calc(50% - 10px);
+  margin: 0 5px 20px 0;
+}
+@media (min-width: 38.25em) {
+  .newpost-flex li {
+    width: calc(22% - 5px);
+    margin: 0 20px 20px 0;
+  }
+  .newpost-flex li:nth-child(1) {
+    margin-left: 10px;
+  }
+  .newpost-flex li:nth-child(5) {
+    margin-left: 10px;
+  }
+  .newpost-flex li:nth-child(4) {
+    margin-right: 0px;
+  }
+  .newpost-flex li:nth-child(8) {
+    margin-right: 0px;
+  }
+}
+.newpost-flex .newpost_thumb {
+  margin-bottom: 10px;
+}
+.newpost-flex .newpost_title, .newpost-flex .newpost_date {
+  font-size: 0.8rem;
+  padding-left: 10px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .newpost-flex .newpost_title, .newpost-flex .newpost_date {
+    font-size: 1rem;
+  }
+}
+
+/*コラム内セクション*/
+/*Columのエリア*/
 /*アニメーションボタン*/
 /*共通*/
 .btn04 {

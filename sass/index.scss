@@ -232,7 +232,7 @@ Tabのレイアウト
     height: auto;
     width: 90%;
     max-height: 800px;
-    padding: 20px;
+    padding: 5px;
     border-radius: 20px;
     -ms-overflow-style: none;
     z-index: 150;
@@ -300,7 +300,7 @@ Tabのレイアウト
   }
 /*モーダルの中身*/
 .modal_content{
-    padding: 30px;
+    padding: 10px;
     h2{
         @include m.font;
         font-size: 1rem;
@@ -320,6 +320,62 @@ Tabのレイアウト
     }
 }
 /*---------------------*/
+#colum{
+    padding: 0px 10px;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    @at-root .newpost-flex{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: -20px 0px 20px 0px;
+        li{
+            width: calc(50% - 20px / 2);
+            margin: 0 5px 20px 0;
+            @include m.breakpoint(tablet){
+                width: calc(22% - 20px / 4);
+                margin: 0 20px 20px 0;
+                &:nth-child(1){
+                    margin-left: 10px;
+                }
+                &:nth-child(5){
+                    margin-left: 10px;
+                }
+                &:nth-child(4){
+                    margin-right: 0px;
+                }
+                &:nth-child(8){
+                    margin-right: 0px;
+                }
+              }
+        }
+        .newpost_thumb{
+            margin-bottom: 10px;
+        }
+        .newpost_title,.newpost_date{
+            font-size: 0.8rem;
+            padding-left: 10px;
+            @include m.font;
+            @include m.breakpoint(only-tab){
+                font-size: 1rem;
+              }
+        }
+    }
+}
+
+/*コラム内セクション*/
+
+/*Columのエリア*/
+
 
 
 /*アニメーションボタン*/

@@ -945,7 +945,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 .post-thumbnail-excerpt{
 	position: relative;
 	overflow: hidden;
-	padding-top: 100%;
+	padding-top: 50%;
 	margin: 10px 5px;
 	margin-bottom: 5px;
 }
@@ -980,7 +980,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
     .post-thumbnail-excerpt{
 	    position: relative;
 	    overflow: hidden;
-	    padding-top: 80%;
+	    padding-top: 50%;
 	    margin: 10px 5px;
 	    margin-bottom: 5px;
     }
