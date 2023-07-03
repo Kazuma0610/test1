@@ -355,6 +355,11 @@ Tabのレイアウト
 .modal_content {
   padding: 10px;
 }
+@media (min-width: 880px) {
+  .modal_content {
+    padding: 50px;
+  }
+}
 .modal_content h2 {
   font-family: "Noto Serif JP", serif;
   font-size: 1rem;

@@ -4,11 +4,24 @@ footerのレイアウト
 
 @use "mixin" as m;
 
+.footer-inner{
+    height: 300px;
+    text-align: center;
+    @include m.breakpoint(tablet){
+        height: auto;
+      }
+}
+
 .footer-flex{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 30px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    @include m.breakpoint(tablet){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 30px;
+      }
 }
 
 .footer-tl{
@@ -32,17 +45,35 @@ footerのレイアウト
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        @include m.breakpoint(tablet){
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+          }
         li{
-            padding: 10px;
-            font-size: 1rem;
+            padding: 5px;
+            font-size: .8rem;
             @include m.font;
+            @include m.breakpoint(mini){
+                padding: 10px;
+              }
+            @include m.breakpoint(tablet){
+                font-size: 1rem;
+              }
         }
     }
 }
 .footer-inner small {
     display: block;
     width: 100%;
-    text-align: right;
+    text-align: center;
     margin-top: 20px;
-    padding-right: 40px;
+    @include m.font;
+    @include m.breakpoint(tablet){
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-top: 20px;
+        padding-right: 40px;
+    }
 }

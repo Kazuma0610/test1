@@ -1,5 +1,10 @@
 /*レスポンシブル*/
 @mixin breakpoint($point) {
+	@if $point == mini {
+		@media (min-width: 400px) {
+			@content;
+		}
+	}
 	@if $point == tablet {
 		@media (min-width: 38.25em) {
 			@content;

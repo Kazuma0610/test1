@@ -7,11 +7,28 @@
 /* --------------------------------------------------------------------------------
 footerのレイアウト
 -------------------------------------------------------------------------------- */
+.footer-inner {
+  height: 300px;
+  text-align: center;
+}
+@media (min-width: 38.25em) {
+  .footer-inner {
+    height: auto;
+  }
+}
+
 .footer-flex {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 30px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+@media (min-width: 38.25em) {
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
 }
 
 .footer-tl {
@@ -36,17 +53,43 @@ footerのレイアウト
   justify-content: space-between;
   flex-wrap: wrap;
 }
+@media (min-width: 38.25em) {
+  .footer-list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
 .footer-list ul li {
-  padding: 10px;
-  font-size: 1rem;
+  padding: 5px;
+  font-size: 0.8rem;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 400px) {
+  .footer-list ul li {
+    padding: 10px;
+  }
+}
+@media (min-width: 38.25em) {
+  .footer-list ul li {
+    font-size: 1rem;
+  }
 }
 
 .footer-inner small {
   display: block;
   width: 100%;
-  text-align: right;
+  text-align: center;
   margin-top: 20px;
-  padding-right: 40px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 38.25em) {
+  .footer-inner small {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 40px;
+  }
 }
 /*# sourceMappingURL=footer.css.map */

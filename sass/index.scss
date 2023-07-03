@@ -301,6 +301,9 @@ Tabのレイアウト
 /*モーダルの中身*/
 .modal_content{
     padding: 10px;
+    @include m.breakpoint(only-tab){
+        padding: 50px;
+      }
     h2{
         @include m.font;
         font-size: 1rem;
