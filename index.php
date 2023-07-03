@@ -113,6 +113,22 @@
                 </div>
 
               </article>
+              <article id="topics">
+                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Topics</span><span class="subtitle slide-in_inner leftAnimeInner">トピックス</span></span></h2>
+                <div class="topics-wrap">
+                  <ul class="delayScroll">
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics1.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics2.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics3.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics4.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics5.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics6.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics7.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                    <li class="box"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/topics8.png" alt="topic画像"/><div class="topics-area"><p>６月のキャンペーンの内容です</p></div></a></li>
+                  </ul>
+                </div>
+
+              </article>
 	          </div><!--media/area-contents-->
 
             <section id="menu">

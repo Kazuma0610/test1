@@ -1,0 +1,48 @@
+/* --------------------------------------------------------------------------------
+footerのレイアウト
+-------------------------------------------------------------------------------- */
+
+@use "mixin" as m;
+
+.footer-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.footer-tl{
+    text-align: center;
+    dt{
+        font-size: .8rem;
+        letter-spacing: 5px;
+        @include m.font;
+    }
+    dd{
+        padding: 5px 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 20px;
+        color: #e2a2b1;
+        @include m.font;
+    }
+}
+.footer-list{
+    ul{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li{
+            padding: 10px;
+            font-size: 1rem;
+            @include m.font;
+        }
+    }
+}
+.footer-inner small {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 40px;
+}

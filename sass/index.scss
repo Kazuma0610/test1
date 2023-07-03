@@ -16,15 +16,15 @@ Tabのレイアウト
 
 .area h2{
 	font-size:1.3rem;
-	margin:0 0 20px 10px;
+	margin:20px 0 20px 10px;
 }
 
 .inner-section{
     margin: 0 auto;
     width: 100%;
-    padding: 0 30px 30px 30px;
+    padding: 30px;
     @include m.breakpoint(tablet){
-        padding: 20px;
+        padding: 50px;
        }
     @include m.breakpoint(only-tab){
         padding: 50px;
@@ -81,7 +81,7 @@ Tabのレイアウト
 	display: none;/*はじめは非表示*/
 	opacity: 0;/*透過0*/
 	background: #f8f9fa;
-	padding:50px 20px;
+	padding:30px;
     &.is-active{/*areaにis-activeというクラスがついた時の形状*/
         display: block;/*表示*/
         @include anime-1;
@@ -319,9 +319,14 @@ Tabのレイアウト
           }
     }
 }
+
+
 /*---------------------*/
 #colum{
-    padding: 0px 10px;
+    padding: 0px 10px 30px;
+    @include m.breakpoint(only-tab){
+        padding: 0px 10px 50px;
+      }
     h2{
         font-family: 'Parisienne', cursive;
         font-size: 3rem;
@@ -335,6 +340,9 @@ Tabのレイアウト
     .subtitle{
         @include m.subtitle;
         @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
     }
     }
     @at-root .newpost-flex{
@@ -376,9 +384,86 @@ Tabのレイアウト
     }
 }
 
-/*コラム内セクション*/
 
-/*Columのエリア*/
+/*----------topics-----------*/
+#topics{
+    padding: 10px;
+    @include m.breakpoint(only-tab){
+        padding: 70px 10px 50px;
+      }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+    }
+}
+/*順番にフェードイン*/
+.delayScroll{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    li{
+        width: calc(50% - 10px);
+        margin: 0 5px 50px 0;
+        @include m.breakpoint(tablet){
+            width: calc(22% - 5px);
+            margin: 0 20px 50px 0;
+           }  
+        img{
+            &:hover{
+            opacity: 0.8;
+        }
+        }
+    }
+}
+.box{
+    opacity: 0;
+}
+.fadeUp{
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeUpAnime{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*---------文字の個所---------*/
+.topics-area{
+    max-width: 230px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 5px 0 10px #ccc;
+    font-size: 0.8rem;
+    @include m.font;
+    @include m.breakpoint(only-tab){
+        font-size: 1rem;
+       }  
+}
+/*----------topics-----------*/
 
 
 
@@ -496,6 +581,9 @@ Tabのレイアウト
     .subtitle{
         @include m.subtitle;
         @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
     }
     @at-root .menu-btn{
         @include m.buttun-basic;
@@ -632,7 +720,6 @@ $arrow-color:#000;
     position: relative;
     background: #f8f9fa;
     z-index: 0;
-    padding-bottom: 100px;
     h2{
         font-family: 'Parisienne', cursive;
         font-size: 3rem;
@@ -647,6 +734,9 @@ $arrow-color:#000;
     .subtitle{
         @include m.subtitle;
         @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
     }
     }
     @at-root .reserve-btn{
@@ -733,6 +823,9 @@ $arrow-color:#000;
     .subtitle{
         @include m.subtitle;
         @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
     }
     @at-root .cast-btn{
         @include m.buttun-basic;
@@ -883,6 +976,9 @@ $arrow-color:#000;
     .subtitle{
         @include m.subtitle;
         @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
     }
 }
 .map{
@@ -921,7 +1017,7 @@ $arrow-color:#000;
     @include m.breakpoint(pc){
         max-width: 300px;
         max-height: 1050px;
-        top:260px;
+        top:300px;
         right:70px;
         padding: 20px;
       }

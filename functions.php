@@ -70,6 +70,13 @@ add_action('wp_enqueue_scripts', 'add_styles');
         array('main_style'), // main_styleが読み込まれた後にindex_styleを読み込む 
         '1.0'
       );
+
+      wp_enqueue_style(
+        'footer_style',
+        get_template_directory_uri() . '/css/footer.css',
+        array('main_style'), // main_styleが読み込まれた後にfooter_styleを読み込む 
+        '1.0'
+      );
   }
 
 //JSの読み込み//

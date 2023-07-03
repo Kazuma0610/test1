@@ -18,17 +18,17 @@ Tabのレイアウト
 
 .area h2 {
   font-size: 1.3rem;
-  margin: 0 0 20px 10px;
+  margin: 20px 0 20px 10px;
 }
 
 .inner-section {
   margin: 0 auto;
   width: 100%;
-  padding: 0 30px 30px 30px;
+  padding: 30px;
 }
 @media (min-width: 38.25em) {
   .inner-section {
-    padding: 20px;
+    padding: 50px;
   }
 }
 @media (min-width: 880px) {
@@ -84,7 +84,7 @@ Tabのレイアウト
   display: none; /*はじめは非表示*/
   opacity: 0; /*透過0*/
   background: #f8f9fa;
-  padding: 50px 20px;
+  padding: 30px;
 }
 .area.is-active { /*areaにis-activeというクラスがついた時の形状*/
   display: block; /*表示*/
@@ -381,7 +381,12 @@ Tabのレイアウト
 
 /*---------------------*/
 #colum {
-  padding: 0px 10px;
+  padding: 0px 10px 30px;
+}
+@media (min-width: 880px) {
+  #colum {
+    padding: 0px 10px 50px;
+  }
 }
 #colum h2 {
   font-family: "Parisienne", cursive;
@@ -404,10 +409,15 @@ Tabのレイアウト
   font-family: "Parisienne", cursive;
   font-size: 1rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #colum h2 .subtitle {
+    margin-top: -20px;
+  }
 }
 .newpost-flex {
   display: flex;
@@ -451,8 +461,121 @@ Tabのレイアウト
   }
 }
 
-/*コラム内セクション*/
-/*Columのエリア*/
+/*----------topics-----------*/
+#topics {
+  padding: 10px;
+}
+@media (min-width: 880px) {
+  #topics {
+    padding: 70px 10px 50px;
+  }
+}
+#topics h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #topics h2 {
+    font-size: 5rem;
+  }
+}
+#topics h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0px 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #topics h2 .subtitle {
+    margin-top: -20px;
+  }
+}
+
+/*順番にフェードイン*/
+.delayScroll {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.delayScroll li {
+  width: calc(50% - 10px);
+  margin: 0 5px 50px 0;
+}
+@media (min-width: 38.25em) {
+  .delayScroll li {
+    width: calc(22% - 5px);
+    margin: 0 20px 50px 0;
+  }
+}
+.delayScroll li img:hover {
+  opacity: 0.8;
+}
+
+.box {
+  opacity: 0;
+}
+
+.fadeUp {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*---------文字の個所---------*/
+.topics-area {
+  max-width: 230px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  background: #fff;
+  box-shadow: 5px 0 10px #ccc;
+  font-size: 0.8rem;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .topics-area {
+    font-size: 1rem;
+  }
+}
+
+/*----------topics-----------*/
 /*アニメーションボタン*/
 /*共通*/
 .btn04 {
@@ -586,10 +709,15 @@ Tabのレイアウト
   font-family: "Parisienne", cursive;
   font-size: 1rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #menu .subtitle {
+    margin-top: -20px;
+  }
 }
 .menu-btn {
   width: 100%;
@@ -768,7 +896,6 @@ Tabのレイアウト
   position: relative;
   background: #f8f9fa;
   z-index: 0;
-  padding-bottom: 100px;
 }
 #reserve h2 {
   font-family: "Parisienne", cursive;
@@ -792,10 +919,15 @@ Tabのレイアウト
   font-family: "Parisienne", cursive;
   font-size: 1rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #reserve h2 .subtitle {
+    margin-top: -20px;
+  }
 }
 .reserve-btn {
   width: 100%;
@@ -900,10 +1032,15 @@ Tabのレイアウト
   font-family: "Parisienne", cursive;
   font-size: 1rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #cast .subtitle {
+    margin-top: -20px;
+  }
 }
 .cast-btn {
   width: 100%;
@@ -1078,10 +1215,15 @@ Tabのレイアウト
   font-family: "Parisienne", cursive;
   font-size: 1rem;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
   font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #access .subtitle {
+    margin-top: -20px;
+  }
 }
 
 .map {
@@ -1127,7 +1269,7 @@ Tabのレイアウト
   .map-area {
     max-width: 300px;
     max-height: 1050px;
-    top: 260px;
+    top: 300px;
     right: 70px;
     padding: 20px;
   }

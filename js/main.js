@@ -38,6 +38,54 @@ jQuery(function ($) {
   });
 });
 
+//ハンバーガーメニューをクリックしたら背景が止まる
+// 要素の取得
+const html = document.documentElement;
+const menuBtn = document.querySelector('.openbtn');
+const nav = document.querySelector('.g-nav-list');
+
+// .menu-btnをクリックした時、
+menuBtn.addEventListener('click', function() {
+  // .menu-btnに.activeがなかったら、
+  // .activeを追加し、html要素に.fixed、.navに.activeを追加する。
+  if (!this.classList.contains('active')) {
+    html.classList.add('fixed');
+    nav.classList.add('active');
+  } else {
+    // .menu-btnに.activeがすでに追加されていれば、
+    // .activeを削除し、html要素の.fixed、.navの.activeを削除する。
+    html.classList.remove('fixed');
+    nav.classList.remove('active');
+  }
+});
+
+//ハンバーガーメニューをクリックしたら背景が止まる
+// 要素の取得
+const body = document.documentElement;
+const searchBtn = document.querySelector('.searchbtn');
+const searchNav = document.querySelector('#search-modal');
+const searchClose = document.querySelector('.search-model__close-btn');
+
+// .searchbtnをクリックした時、
+searchBtn.addEventListener('click', function() {
+  // .searchBtnに.activeがなかったら、
+  // .activeを追加し、html要素に.fixed、.navに.activeを追加する。
+  if (!this.classList.contains('active')) {
+    body.classList.add('fixed');
+    searchNav.classList.add('active');
+  } else {
+    // .searchBtnに.activeがすでに追加されていれば、
+    // .activeを削除し、html要素の.fixed、.navの.activeを削除する。
+    body.classList.remove('fixed');
+    searchNav.classList.remove('active');
+  }
+});
+searchClose.addEventListener('click', function() {
+    body.classList.remove('fixed');
+    searchNav.classList.remove('active');
+});
+
+
 //検索コンテンツ内のアコーディオン
 jQuery(function ($) {
   $(".js-accordion-title").on("click", function() {

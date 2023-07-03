@@ -1,11 +1,40 @@
     <footer id="footer" class="site-footer">
         <div class="footer-inner">
-            <?php bloginfo('name'); ?>
-            <?php the_privacy_policy_link(); ?>
-        </div><!--site-info-->
+          <div class="footer-flex">
+            <div class="footer-tl slide-in leftAnime"><div class="slide-in_inner leftAnimeInner">
+              <dl><dt>恵比寿にあるエステサロン</dt><dd>肌十色</dd></dl>
+            </div></div>
+            <div class="footer-list">
+              <div class="slide-in leftAnime"><div class="slide-in_inner leftAnimeInner">
+                <ul>
+                  <li>
+                    <a href="#">Top</a>
+                  </li>
+                  <li>
+                    <a href="#">Menu</a>
+                  </li>
+                  <li>
+                    <a href="#">Reserve</a>
+                  </li>
+                  <li>
+                    <a href="#">Cast</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                  <li>
+                    <a href="#">Colum</a>
+                  </li>
+                </ul>
+              </div></div>
+            </div>
+          </div>
+          <small>
+            <span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">© 肌十色</span></span>
+          </small>
+        </div><!--footer-inner-->
         <div id="page_top"><a href="#"></a></div>
     </footer><!--#footer -->
-
 </div><!--#page-->
 <?php wp_footer(); ?>
 <script>
