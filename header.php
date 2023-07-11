@@ -117,7 +117,7 @@
                                     <li class="sub-list"><a href="#">当店の価格一覧</a>
                                     </li>
                                 </ul>
-                                <ul>
+                                <ul class="sns-wrap">
                                   <li class="sub-list"><a href="#">当店のインスタグラムはコチラから</a>
                                   </li>
                                   <li class="sub-list"><a href="#">当店のTwitterはコチラから</a>
@@ -258,6 +258,10 @@
                                               <div class="accordion_header">B</div><!--accordion_header3-->
                                         </div><!--accordion_one-->
                                     </div><!--accordion_inner-->
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                                 <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                           </div><!--accordion_one-->
                     </div><!--section s_07-->

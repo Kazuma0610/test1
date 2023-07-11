@@ -131,7 +131,7 @@ version： 2.0.0
 .post__pagination__right__text{
     position: absolute;
     top: 40px;
-    z-index: 999;
+    z-index: 1;
     color: #fff;
     font-size:14px;
 }

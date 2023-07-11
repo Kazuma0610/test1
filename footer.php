@@ -38,7 +38,7 @@
 </div><!--#page-->
 <?php wp_footer(); ?>
 <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.mySwiper', {
         loop: true,                        
         slidesPerView: 1,
         centeredSlides : true,
@@ -53,7 +53,7 @@
                 },
             },
         centeredSlides : true,
-        spaceBetween: 10,               //追記
+        spaceBetween: 5,               //追記
         autoplay: {                         
             delay: 7000,  
         },                   

@@ -98,13 +98,10 @@ hr {
 
 /*	Font Family
 /* -------------------------------------------------------------------------- */
-html {
-	overflow: scroll;
-	overflow-x: hidden;
-}
 
 body {
 	font-family: "YakuHanJPs_Noto", "Roboto", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", "YuGothic", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-family: 'Noto Serif JP', serif;
 }
 .other {
 	font-family:  'sans-serif';
@@ -115,6 +112,9 @@ body {
 
 /*	Basic
 /* -------------------------------------------------------------------------- */
+html{
+	overflow-x: hidden;
+}
 
 * {
 	-moz-box-sizing: border-box;
@@ -125,15 +125,20 @@ body {
 }
 
 body {
-	background: #fff;
-	overflow-x: hidden;
+	background: #f8f9fa;
 	margin: 0;
 	padding: 0;
 	color: #333;
 	font-size: 13px;
 	line-height: 1.8;
 	-webkit-text-size-adjust: 100%;
+	overflow-x: hidden;
 }
+
+	::-webkit-scrollbar{
+    display: none;
+    }
+
 
 /* - -  h1.h2.h3....  - - */
 h1, h2, h3, h4, h5, h6 {
@@ -377,22 +382,21 @@ cite {
 
 
 /*レイアウト確認用に一時記述----------*/
-/*.contents-main,.contents,#primary,.content-area {height: 6800px; }*/
+/*.contents-main,.contents,#primary,.content-area {height: 100%; }*/
 
-#sidebar{height: 2000px}
+#sidebar{height: 100%}
  
-.site-header{background-color: #888;}
+/*.site-header{background-color: #888;}
  
-.header-inner{ background-color: #ccc; height: 80px;}
+.header-inner{ background-color: #ccc; height: 80px;}*/
  
-.container,.content-area {background-color: #9db2ea; }
+.container,.content-area {background-color: #f8f9fa;}
 
+.contents,.contents-main {background-color: #f8f9fa;}
  
-.contents,.contents-main {background-color: #a5e2ff; }
+#sidebar{background-color: #f8f9fa; }
  
-#sidebar{background-color: #aefffc; }
- 
-.site-footer{background-color: #777; }
+.site-footer{background: #839bad;}
  
 .footer-inner{background-color: #ddd; height: 250px; }
 /*------------------------*/
@@ -432,12 +436,14 @@ html {
     margin-right: auto;
     margin-left: auto;
     padding-top: 0.5rem;/*2rem*/
+	height: 100%;
 }
 .footer-inner{
 	margin-bottom: 70px;
 }
 .container{
 	width: 100%;
+	height: 100%;
 }
 .container,.content-area{
 	margin-top: 0px;
@@ -461,7 +467,7 @@ html {
 
 
 /*------------------------*/
-/*ヘッダーの基本設定*/
+/*ヘッダー・フッターの基本設定*/
 .site-header{
 	position: fixed;
     top: 0px;
@@ -473,6 +479,7 @@ html {
     align-items: center;
 	transition: .5s;
 	font-family: "Noto Serif JP", serif;
+	background: #f8f9fa;
 }
 .site-title a{
 	font-weight: bold;
@@ -483,6 +490,9 @@ html {
 }
 .header-inner{
 	z-index: 5;
+}
+.footer-inner{
+	background: #839bad;
 }
 /*** 16.3 Tablet Large 880px */
  @media screen and (min-width: 55em) {
@@ -600,6 +610,7 @@ html {
 .breadcrumb{
 	margin-top: 90px;
 	padding-left: 10px;
+	background: #f8f9fa;
 }
 /*------------------------*/
 
@@ -714,6 +725,7 @@ html {
 /*検索表示で見つからなかった場合*/
 .content-area{
 	padding: 0rem 1.25rem;
+	background: #f8f9fa;
 }
 .site-main p{
 	font-size: 1em;
@@ -772,6 +784,9 @@ html {
 
 /*------------------------*/
 /*サイドバーウィジェットの設定*/
+.sidebar{
+	margin-bottom: 100px;
+}
 .sidebar h3{
 	font-size: 1em;
 	position: relative;
@@ -1071,7 +1086,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 	text-align: center;
 	border-radius: 5px;
 	background: #eff0f5;
-	box-shadow: 0 3px #809BB0; 
+	box-shadow: 0 3px #e2a2b1; 
 }
 .sp-tel-text {
 	font-size: 0.5rem;
@@ -1113,7 +1128,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 	text-align: center;
 	border-radius: 5px;
 	background: #eff0f5;
-	box-shadow: 0 3px #809BB0;
+	box-shadow: 0 3px #e2a2b1;
 	font-size: 0.7rem;
 	padding-top: 23px;
 	padding-bottom: 8px;
@@ -1131,7 +1146,7 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 	display: block;
 	width: 100%;
 	height: 70px;
-	background: #95AEC1;
+	background: #d8b1b2;
 	box-sizing: border-box;
 }
 /*** 16.3 Tablet Large 880px */

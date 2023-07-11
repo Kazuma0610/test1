@@ -15,7 +15,7 @@ version： 2.0.0
     /*fixedで全面に固定*/
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: 2999;
 	background:#fff;
 	text-align:center;
@@ -76,7 +76,7 @@ body.appear .splashbg{
     top: 0;
 	left: 0;
     transform: scaleX(0);
-    background-color: #333;/*伸びる背景色の設定*/
+    background-color: #d8b1b2;/*伸びる背景色の設定*/
 	animation-name:PageAnime;
 	animation-duration:1.2s;
 	animation-timing-function:ease-in-out;

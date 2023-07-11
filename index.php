@@ -9,16 +9,48 @@
                           <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/1.png" alt="画像"/>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" alt="画像"/>
+                                <div class="swiper-text">
+                                  <h3>安らぎを与える空間作り</h3>
+                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
+                                  <h4>店長からのコメント</h4>
+                                  <p>ああああああああああああああああああああああああああああああああああ<br>
+                                      ああああああああああああああああああああああああああああああああああああ<br>
+                                    ああああああああああああああああああああああああああああああああああああああああ</p>
+                                </div>
                               </div>
                               <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside2.png" alt="画像"/>
+                                <div class="swiper-text">
+                                  <h3>安らぎを与える空間作り</h3>
+                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
+                                  <h4>店長からのコメント</h4>
+                                  <p>ああああああああああああああああああああああああああああああああああ<br>
+                                      ああああああああああああああああああああああああああああああああああああ<br>
+                                    ああああああああああああああああああああああああああああああああああああああああ</p>
+                                </div>
                               </div>
                               <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/3.png" alt="画像"/>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside3.png" alt="画像"/>
+                                <div class="swiper-text">
+                                  <h3>安らぎを与える空間作り</h3>
+                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
+                                  <h4>店長からのコメント</h4>
+                                  <p>ああああああああああああああああああああああああああああああああああ<br>
+                                      ああああああああああああああああああああああああああああああああああああ<br>
+                                    ああああああああああああああああああああああああああああああああああああああああ</p>
+                                </div>
                               </div>
                               <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside2.png" alt="画像"/>
+                                <div class="swiper-text">
+                                  <h3>安らぎを与える空間作り</h3>
+                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
+                                  <h4>店長からのコメント</h4>
+                                  <p>ああああああああああああああああああああああああああああああああああ<br>
+                                      ああああああああああああああああああああああああああああああああああああ<br>
+                                    ああああああああああああああああああああああああああああああああああああああああ</p>
+                                </div>
                               </div>
                             </div><!--swiper-wrapper-->
                           </div><!--swiper mySwiper-->
@@ -36,16 +68,16 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/1.png" alt="画像"/>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main1.png" alt="画像"/>
                         </div>
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main2.png" alt="画像"/>
                         </div>
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/3.png" alt="画像"/>
+                            <a href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main3.png" alt="画像"/></a>
                         </div>
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/2.png" alt="画像"/>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main2.png" alt="画像"/>
                         </div>
                     </div>
                 </div>
@@ -75,8 +107,19 @@
                         <a href="#" class="btn04 bordertop"><span><p>店内の風景</p></span></a>
                     </buttun>
                 </div>
-                </div><!--lead-area-->
               </article><!--lead-->
+              <section id="news">
+                  <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">News</span><span class="subtitle slide-in_inner leftAnimeInner">お知らせ</span></span></h2>
+                  <div class="news-flex fadeInTrigger">
+                    <div class="news-content">
+                      <?php echo do_shortcode('[news_list]'); ?>
+                      <div class="news-btn">
+                        <a href="https://daieirecords.com/news/" class="btn04 bordertop"><span><p>お知らせ一覧</p></span></a>
+                      </div>
+                    </div>
+                    <div class="news-image"></div>
+                  </div>
+              </section><!--#menu-->
               
               
 

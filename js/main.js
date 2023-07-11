@@ -50,12 +50,10 @@ menuBtn.addEventListener('click', function() {
   // .activeを追加し、html要素に.fixed、.navに.activeを追加する。
   if (!this.classList.contains('active')) {
     html.classList.add('fixed');
-    nav.classList.add('active');
   } else {
     // .menu-btnに.activeがすでに追加されていれば、
     // .activeを削除し、html要素の.fixed、.navの.activeを削除する。
     html.classList.remove('fixed');
-    nav.classList.remove('active');
   }
 });
 
