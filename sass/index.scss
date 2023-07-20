@@ -263,7 +263,7 @@ Tabのレイアウト
 }*/
 
 .modal_bg {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -277,9 +277,9 @@ Tabのレイアウト
 }
 .modalScroll {
     background: #fff;
-    height: 90%;
+    height: auto;
     width: 90%;
-    max-height: 800px;
+    max-height: 700px;
     padding: 5px;
     border-radius: 20px;
     -ms-overflow-style: none;
@@ -289,6 +289,9 @@ Tabのレイアウト
     color: rgb(49, 49, 49);
     text-align: center;
 }
+.no_scroll {
+    overflow: hidden;
+  }
 .popup-close {
     position: absolute;
     top: 20px;
@@ -432,7 +435,7 @@ Tabのレイアウト
                 border-bottom: 1px solid #ddd;
                 @include m.font;
                 @include m.breakpoint(only-tab){
-                    width: 600px;
+                    width: 500px;
                 }
                 a{
                     color: #333;
@@ -684,7 +687,7 @@ Tabのレイアウト
 .btn04{
     position: relative;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 10px 20px;
     color:#333;
     border:1px solid #ccc;
     text-decoration: none;
