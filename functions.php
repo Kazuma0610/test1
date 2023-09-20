@@ -77,6 +77,13 @@ add_action('wp_enqueue_scripts', 'add_styles');
         array('main_style'), // main_styleが読み込まれた後にfooter_styleを読み込む 
         '1.0'
       );
+
+      wp_enqueue_style(
+        'contact_style',
+        get_template_directory_uri() . '/css/contact.css',
+        array('main_style'), // main_styleが読み込まれた後にcontact_styleを読み込む 
+        '1.0'
+      );
   }
 
 //JSの読み込み//

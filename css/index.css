@@ -317,7 +317,7 @@ Tabのレイアウト
   background: #fff;
   height: auto;
   width: 90%;
-  max-height: 700px;
+  max-height: 800px;
   padding: 5px;
   border-radius: 20px;
   -ms-overflow-style: none;
@@ -514,7 +514,7 @@ Tabのレイアウト
 }
 @media (min-width: 880px) {
   #news .news-content ul li {
-    width: 500px;
+    width: 600px;
   }
 }
 #news .news-content ul li a {
@@ -831,7 +831,7 @@ Tabのレイアウト
 .btn04 {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 30px;
   color: #333;
   border: 1px solid #ccc;
   text-decoration: none;

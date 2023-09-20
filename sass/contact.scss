@@ -1,0 +1,204 @@
+/* --------------------------------------------------------------------------------
+Contactのレイアウト
+-------------------------------------------------------------------------------- */
+/*レイアウトのためのCSS*/
+
+@use "mixin" as m;
+
+/*---------------------*/
+/*Contact内の装飾*/
+
+#contact{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+}
+
+/*フォームの装飾*/
+.contact-form {
+    max-width: 1000px;
+    margin: 30px auto 80px;
+  }
+.contact-form p{
+    text-align: center;
+}
+  form {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    @include m.breakpoint(pc){
+        width: 60%;
+      }
+   }
+  
+  input[type=text] {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: medium;
+    border: none;
+    border-radius: 3px;
+    background: #ddf0ff;
+  }
+  @media (min-width: 38.25em) {
+    input[type=text] {
+      width: 80%;
+    }
+  }
+  
+  input[name=btn_confirm],
+  input[name=btn_submit],
+  input[name=btn_back] {
+    margin-top: 50px;
+    padding: 5px 20px;
+    font-size: 100%;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 #2887d1;
+    background: #4eaaf1;
+  }
+  
+  input[name=btn_back] {
+    margin-right: 20px;
+    box-shadow: 0 3px 0 #777;
+    background: #999;
+  }
+  
+  .element_wrap {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+  @media (min-width: 38.25em) {
+    .element_wrap {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .element_wrap_con, .element_wrap_cb {
+    margin-bottom: 10px;
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 150px;
+    font-size:10px;
+  }
+  @media (min-width: 38.25em) {
+    label {
+      font-size:15px;
+    }
+  }
+  
+  .required {
+    color: red;
+    font-size: 86%;
+    margin-top: 10px;
+    font-weight: normal !important;
+  }
+  
+  .element_wrap p {
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 0em;
+  }
+  
+  .element_wrap_con p {
+    margin-top: 0em !important;
+    margin-bottom: 0em !important;
+  }
+  
+  .element_wrap_con, .element_wrap_cb p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  label[for=gender_male],
+  label[for=gender_female],
+  label[for=agreement] {
+    margin-right: 10px;
+    width: auto;
+    font-weight: normal;
+  }
+  
+  select {
+    margin-top: -10px;
+  }
+  
+  textarea[name=contact] {
+    padding: 5px 10px;
+    width: 100%;
+    height: 100px;
+    font-size: medium;
+    border: none;
+    border-radius: 3px;
+    background: #ddf0ff;
+  }
+  @media (min-width: 38.25em) {
+    textarea[name=contact] {
+      width: 80%;
+    }
+  }
+
+  .error_list {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    color: #ff2e5a;
+    font-size: 86%;
+    text-align: left;
+    border: 1px solid #ff2e5a;
+    border-radius: 5px;
+  }
+  
+  .done_text {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 30px;
+  }
+  
+  .data-return {
+    margin-right: 10px;
+  }
+
+  .contact-form h1{
+    font-size: 15px;
+  }
+  @media (min-width: 38.25em) {
+    .contact-form h1{
+      font-size: 15px;
+    }
+  }
