@@ -20,7 +20,7 @@
                     <a href="#">Cast</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="https://daieirecords.com/contact/">Contact</a>
                   </li>
                   <li>
                     <a href="#">Colum</a>

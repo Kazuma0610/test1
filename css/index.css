@@ -45,7 +45,7 @@ Tabのレイアウト
   background: #f8f9fa;
 }
 .tab li {
-  width: 45%;
+  width: 25%;
 }
 @media (min-width: 1030px) {
   .tab li {
@@ -474,11 +474,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #news h2 .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 #news .news-flex {
@@ -962,11 +963,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #menu .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .menu-btn {
@@ -1172,11 +1174,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #reserve h2 .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .reserve-btn {
@@ -1285,11 +1288,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #cast .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .cast-btn {
@@ -1468,11 +1472,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #access .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 

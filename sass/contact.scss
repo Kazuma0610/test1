@@ -12,6 +12,7 @@ Contactのレイアウト
     position: relative;
     background: #f8f9fa;
     z-index: 0;
+    margin-bottom: 150px;
     h2{
         font-family: 'Parisienne', cursive;
         font-size: 3rem;
@@ -25,9 +26,10 @@ Contactのレイアウト
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
 }
@@ -109,10 +111,11 @@ Contactのレイアウト
     font-weight: bold;
     width: 150px;
     font-size:10px;
-  }
-  @media (min-width: 38.25em) {
-    label {
-      font-size:15px;
+    @include m.breakpoint(tablet){
+      font-size:12px;
+    }
+    @include m.breakpoint(pc){
+      width: 180px;
     }
   }
   
@@ -128,6 +131,8 @@ Contactのレイアウト
     margin: 0;
     text-align: left;
     margin-bottom: 0em;
+    font-size: .8rem;
+    padding-left: 20px;
   }
   
   .element_wrap_con p {
@@ -142,6 +147,16 @@ Contactのレイアウト
     font-size: 15px;
     line-height: 20px;
   }
+
+  .cb-wrap{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include m.breakpoint(tablet){
+        margin-left: 75px;
+      }
+}
 
   label[for=gender_male],
   label[for=gender_female],
@@ -180,6 +195,10 @@ Contactのレイアウト
     text-align: left;
     border: 1px solid #ff2e5a;
     border-radius: 5px;
+    background: #fff;
+    @include m.breakpoint(pc){
+      width: 60%;
+    }
   }
   
   .done_text {

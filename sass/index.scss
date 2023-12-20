@@ -39,7 +39,7 @@ Tabのレイアウト
     justify-content: center;
     background: #f8f9fa;
     li{
-       width: calc(50% - 10%/2);
+       width: calc(30% - 10%/2);
        @include m.breakpoint(pc){
         width: calc(50% - 50%/2); 
        }  
@@ -404,9 +404,10 @@ Tabのレイアウト
        }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     }
@@ -795,9 +796,10 @@ Tabのレイアウト
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     @at-root .menu-btn{
@@ -948,9 +950,10 @@ $arrow-color:#000;
        }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     }
@@ -1037,9 +1040,10 @@ $arrow-color:#000;
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     @at-root .cast-btn{
@@ -1190,9 +1194,10 @@ $arrow-color:#000;
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
 }
