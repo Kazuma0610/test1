@@ -13,7 +13,7 @@ Tabのレイアウト
   max-width: 1600px;
   margin: 30px auto;
   margin-bottom: -10px;
-  background: #a5e2ff;
+  background: #f8f9fa;
 }
 
 .area h2 {
@@ -42,9 +42,10 @@ Tabのレイアウト
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background: #f8f9fa;
 }
 .tab li {
-  width: 45%;
+  width: 25%;
 }
 @media (min-width: 1030px) {
   .tab li {
@@ -75,7 +76,7 @@ Tabのレイアウト
 
 /*liにactiveクラスがついた時の形状*/
 .tab li.active a {
-  background: #000;
+  background: #d8b1b2;
   color: #fff;
 }
 
@@ -162,6 +163,48 @@ Tabのレイアウト
     justify-content: space-around;
     top: 0px;
   }
+  .lead-area::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    background: url(../images/neta1.png) no-repeat center;
+    background-size: cover;
+  }
+  .lead-area::after {
+    content: "";
+    width: 100px;
+    min-height: 100px;
+    position: absolute;
+    top: 350px;
+    left: 350px;
+    background: url(../images/neta1.png) no-repeat center;
+    background-size: cover;
+  }
+}
+@media (min-width: 880px) and (min-width: 1030px) {
+  .lead-area::before {
+    content: "";
+    width: 25%;
+    min-height: 150px;
+    position: absolute;
+    top: 420px;
+    left: 250px;
+    background: url(../images/neta1.png) no-repeat center;
+    background-size: cover;
+  }
+  .lead-area::after {
+    content: "";
+    width: 25%;
+    min-height: 150px;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    background: url(../images/neta1.png) no-repeat center;
+    background-size: cover;
+  }
 }
 .lead-area h2 {
   width: auto;
@@ -180,7 +223,7 @@ Tabのレイアウト
 }
 @media (min-width: 1030px) {
   .lead-area h2 {
-    line-height: 2.5;
+    line-height: 2;
     font-size: 2rem;
   }
 }
@@ -252,8 +295,11 @@ Tabのレイアウト
   }
 }
 
+/*::-webkit-scrollbar{
+    display: none;
+}*/
 .modal_bg {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   height: 100vh;
   position: absolute;
   width: 100%;
@@ -265,26 +311,69 @@ Tabのレイアウト
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.modalScroll {
   background: #fff;
   height: auto;
   width: 90%;
-  max-height: 800px;
   padding: 5px;
   border-radius: 20px;
   -ms-overflow-style: none;
   z-index: 150;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+@media (min-width: 38.25em) {
+  .modalScroll {
+    height: 80%;
+  }
+}
+@media (min-width: 1030px) {
+  .modalScroll {
+    height: auto;
+  }
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  border-radius: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b6b6b6;
+  border-radius: 10px;
 }
 
 .modal_content {
   color: rgb(49, 49, 49);
   text-align: center;
+}
+.modal_content .gallery {
+  -moz-columns: 2;
+       columns: 2;
+  padding: 0 15px;
+}
+@media (min-width: 880px) {
+  .modal_content .gallery {
+    -moz-columns: 2;
+         columns: 2;
+  }
+}
+@media (min-width: 1030px) {
+  .modal_content .gallery {
+    -moz-columns: 4;
+         columns: 4;
+  }
+}
+.modal_content .gallery li {
+  margin-bottom: 20px;
+}
+.modal_content .gallery img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom; /*画像の下にできる余白を削除*/
+}
+
+.no_scroll {
+  overflow: hidden;
 }
 
 .popup-close {
@@ -383,6 +472,211 @@ Tabのレイアウト
     font-size: 3rem;
   }
 }
+.modal_content .swiper-text {
+  padding: 10px;
+}
+.modal_content .swiper-text h3 {
+  padding-bottom: 5px;
+}
+.modal_content .swiper-text p {
+  letter-spacing: 3px;
+}
+.modal_content .swiper-text h4 {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+/*.lightbox {
+    position: absolute;
+    top: 300px !important;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: 400;
+    @include m.breakpoint(tablet){
+        top: 150px !important;
+      }
+
+}*/
+/*----------お知らせのセクション-----------*/
+#news {
+  position: relative;
+  background: #f8f9fa;
+  z-index: 0;
+  padding: 30px 0 0px;
+}
+#news h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #news h2 {
+    font-size: 5rem;
+  }
+}
+#news h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0px 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  margin-top: -25px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #news h2 .subtitle {
+    margin-top: -35px;
+  }
+}
+#news .news-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 880px) {
+  #news .news-flex {
+    align-items: center;
+    flex-direction: unset;
+  }
+}
+#news .news-content {
+  width: 100%;
+  margin-top: -20px;
+}
+@media (min-width: 880px) {
+  #news .news-content {
+    max-width: 48%;
+    padding: 50px;
+    margin-top: 0px;
+  }
+}
+#news .news-content ul {
+  margin: 0 0 20px;
+}
+#news .news-content ul li {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #news .news-content ul li {
+    min-width: 400px;
+  }
+}
+#news .news-content ul li a {
+  color: #333;
+}
+#news .news-content ul li a:hover {
+  opacity: 0.6;
+}
+.news_date {
+  font-size: 0.8rem;
+}
+
+.news_title {
+  font-size: 1rem;
+  line-height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.news-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  .news-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+  }
+}
+
+#news .news-image {
+  width: 100%;
+  min-height: 250px;
+  background: url(../images/news.png) no-repeat center;
+  background-size: cover;
+}
+@media (min-width: 880px) {
+  #news .news-image {
+    width: 50%;
+    min-height: 400px;
+    background: url(../images/news.png) no-repeat center;
+    background-size: cover;
+  }
+}
+
+/*
+* 新着記事一覧ショートコード用
+*/
+.news-list .news-list-inner {
+  padding: 20px 5px;
+  border: 2px solid #f5f5f5;
+}
+
+.archive .news-list .news-list-inner {
+  background: #fff;
+  padding: 20px;
+}
+
+.news-list ul {
+  list-style: none;
+  margin: 0 0 20px;
+}
+
+.news-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.news-list a {
+  color: #333;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.news-list a:hover {
+  opacity: 0.6;
+}
+
+.news-list a.wp-block-button__link {
+  color: #fff;
+}
+
+.news-list a.wp-block-button__link:hover {
+  color: #F87474;
+}
+
+.news-list .news_date {
+  margin: 0;
+  font-size: 14px;
+}
+
+.news-list .news_title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 /*---------------------*/
 #colum {
@@ -454,6 +748,13 @@ Tabのレイアウト
 }
 .newpost-flex .newpost_thumb {
   margin-bottom: 10px;
+  overflow: hidden;
+}
+.newpost-flex .newpost_thumb img {
+  transition: transform 0.6s ease;
+}
+.newpost-flex .newpost_thumb img:hover {
+  transform: scale(1.1);
 }
 .newpost-flex .newpost_title, .newpost-flex .newpost_date {
   font-size: 0.8rem;
@@ -581,6 +882,137 @@ Tabのレイアウト
 }
 
 /*----------topics-----------*/
+/*----------SNS--------------*/
+#insta {
+  padding: 0px 10px 30px;
+}
+@media (min-width: 880px) {
+  #insta {
+    padding: 0px 10px 50px;
+  }
+}
+#insta h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #insta h2 {
+    font-size: 5rem;
+  }
+}
+#insta h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0px 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #insta h2 .subtitle {
+    margin-top: -20px;
+  }
+}
+#insta .insta-wrapper .gallery {
+  -moz-columns: 2;
+       columns: 2;
+  padding: 0 15px;
+}
+@media (min-width: 880px) {
+  #insta .insta-wrapper .gallery {
+    -moz-columns: 2;
+         columns: 2;
+  }
+}
+@media (min-width: 1030px) {
+  #insta .insta-wrapper .gallery {
+    -moz-columns: 4;
+         columns: 4;
+  }
+}
+#insta .insta-wrapper .gallery li {
+  margin-bottom: 20px;
+}
+#insta .insta-wrapper .gallery img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom; /*画像の下にできる余白を削除*/
+}
+#insta .banner-wrapper {
+  position: relative;
+}
+@media (min-width: 38.25em) {
+  #insta .banner-wrapper ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+}
+#insta .banner-wrapper ul li {
+  margin-top: 50px;
+  position: relative;
+}
+#insta .banner-wrapper ul li a .b-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #666;
+  border-radius: 6px;
+  width: 60%;
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+@media (min-width: 1030px) {
+  #insta .banner-wrapper ul li a .b-text {
+    top: 25%;
+    left: 30%;
+    width: 200px;
+    height: 80px;
+  }
+}
+#insta .banner-wrapper ul li a .b-text-insta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #666;
+  border-radius: 6px;
+  width: 60%;
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+@media (min-width: 1030px) {
+  #insta .banner-wrapper ul li a .b-text-insta {
+    top: 25%;
+    left: 30%;
+    width: 200px;
+    height: 80px;
+  }
+}
+
 /*アニメーションボタン*/
 /*共通*/
 .btn04 {
@@ -717,11 +1149,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #menu .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .menu-btn {
@@ -927,11 +1360,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #reserve h2 .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .reserve-btn {
@@ -1040,11 +1474,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #cast .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 .cast-btn {
@@ -1167,7 +1602,7 @@ Tabのレイアウト
   opacity: 0;
   transition: 0.2s ease-in-out;
   z-index: 3;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -1223,11 +1658,12 @@ Tabのレイアウト
   margin: 0px 0 10px 0;
   font-weight: normal;
   color: #e2a2b1;
+  margin-top: -25px;
   font-family: "Noto Serif JP", serif;
 }
 @media (min-width: 880px) {
   #access .subtitle {
-    margin-top: -20px;
+    margin-top: -35px;
   }
 }
 

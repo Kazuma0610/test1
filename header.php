@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!--fontawesomeの呼び出しCDNコード-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"><!--fontawesomeの呼び出しCDNコード-->
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script><!--fontawesomeの呼び出しCDNコード(JS用）-->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet"><!--notoserifjpフォント-->
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"><!--Parisienne-->
 <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/><!--SwiperのCSS-->
@@ -22,6 +23,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
 <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script><!--progressbar-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" /><!--lightbox用-->
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>
@@ -32,6 +34,30 @@
     </div>
 </div>
 <div class="splashbg"></div><!---画面遷移用-->
+<div class="modal">
+                <div class="modal_bg js-modal-close"></div>
+                  <div class="modalScroll">
+                      <div class="modal_content">
+                        <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">リラックス出来る空間を</span></span></h2>
+                          
+                          <div class="insta-wrapper">
+                            <ul class="gallery">
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside11.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside11.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside12.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside12.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside13.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside13.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside14.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside14.png" alt="店内画像"></a><p>当店のアロマ</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside15.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside15.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside16.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside16.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside17.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside17.png" alt="店内画像"></a><p>癒しのエントランス</p></li>
+                            </ul>
+                          </div>
+                      
+                        
+                        <span class="popup-close" onclick="closePopUp()"></span>
+                      </div>
+                  </div>
+</div><!--modal-->
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
     <header id="header" class="site-header"> 
@@ -50,7 +76,7 @@
                 <nav class="global-nav pc-only">
                   <ul class="nav-list">
                     <li class="nav-item">
-                      <a href="#">ホーム</a>
+                      <a href="https://daieirecords.com">ホーム</a>
                     </li>
                     <li id="id1" class="nav-item">
                       <a href="#">カテゴリー</a>
@@ -117,7 +143,7 @@
                                     <li class="sub-list"><a href="#">当店の価格一覧</a>
                                     </li>
                                 </ul>
-                                <ul>
+                                <ul class="sns-wrap">
                                   <li class="sub-list"><a href="#">当店のインスタグラムはコチラから</a>
                                   </li>
                                   <li class="sub-list"><a href="#">当店のTwitterはコチラから</a>
@@ -152,7 +178,7 @@
                     </li><!--nav-item-->
                     <li class="nav-item"><a href="#">店舗案内</a></li>
                     <li class="nav-item"><a href="#">会社概要</a></li>
-                    <li class="nav-item"><a href="#">お問合せ</a></li>
+                    <li class="nav-item"><a href="https://daieirecords.com/contact/">お問合せ</a></li>
                   </ul>
                 </nav>
                 <!--▲ メガグローバルナビゲーション -->
@@ -235,7 +261,7 @@
                         </div>
                     </div>
                 </nav>
-                <div class="openbtn"><span></span><span></span><span></span></div><!--ハンバーガーボタン-->
+                <div class="openbtn openbtn-sponly"><span></span><span></span><span></span></div><!--ハンバーガーボタン-->
                 <nav id="g-nav">
                    <div id="g-nav-list">
                     <div class="section s_07 sp-only">
@@ -258,6 +284,10 @@
                                               <div class="accordion_header">B</div><!--accordion_header3-->
                                         </div><!--accordion_one-->
                                     </div><!--accordion_inner-->
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
+                                <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                                 <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                           </div><!--accordion_one-->
                     </div><!--section s_07-->

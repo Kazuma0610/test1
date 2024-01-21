@@ -20,7 +20,7 @@
                     <a href="#">Cast</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="https://daieirecords.com/contact/">Contact</a>
                   </li>
                   <li>
                     <a href="#">Colum</a>
@@ -38,7 +38,7 @@
 </div><!--#page-->
 <?php wp_footer(); ?>
 <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.mySwiper', {
         loop: true,                        
         slidesPerView: 1,
         centeredSlides : true,
@@ -53,7 +53,7 @@
                 },
             },
         centeredSlides : true,
-        spaceBetween: 10,               //追記
+        spaceBetween: 5,               //追記
         autoplay: {                         
             delay: 7000,  
         },                   
@@ -102,5 +102,7 @@
   });
 </script>
 <!-- slick -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+<!--lightbox-->
 </body>
 </html>

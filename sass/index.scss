@@ -11,7 +11,7 @@ Tabのレイアウト
 	max-width: 1600px;
 	margin:30px auto;
     margin-bottom: -10px;
-    background:#a5e2ff;
+    background: #f8f9fa;
 }
 
 .area h2{
@@ -37,8 +37,9 @@ Tabのレイアウト
 	display: flex;
 	flex-wrap: wrap;
     justify-content: center;
+    background: #f8f9fa;
     li{
-       width: calc(50% - 10%/2);
+       width: calc(30% - 10%/2);
        @include m.breakpoint(pc){
         width: calc(50% - 50%/2); 
        }  
@@ -66,7 +67,7 @@ Tabのレイアウト
 
 /*liにactiveクラスがついた時の形状*/
 .tab li.active a{
-	background:#000;
+	background: #d8b1b2;
     color: #fff;
 }
 
@@ -143,6 +144,48 @@ Tabのレイアウト
         margin-bottom: 0px;
         justify-content: space-around;
         top: 0px;
+        &::before{
+            content:"";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:300px;
+            left: 300px;
+            background: url(../images/neta1.png) no-repeat center;
+            background-size: cover;
+        }
+        &::after{
+            content:"";
+            width: 100px;
+            min-height: 100px;
+            position: absolute;
+            top:350px;
+            left: 350px;
+            background: url(../images/neta1.png) no-repeat center;
+            background-size: cover;
+        }
+        @include m.breakpoint(pc){
+            &::before{
+                content:"";
+                width: 25%;
+                min-height: 150px;
+                position: absolute;
+                top:420px;
+                left: 250px;
+                background: url(../images/neta1.png) no-repeat center;
+                background-size: cover;
+            }
+            &::after{
+                content:"";
+                width: 25%;
+                min-height: 150px;
+                position: absolute;
+                top:400px;
+                left: 400px;
+                background: url(../images/neta1.png) no-repeat center;
+                background-size: cover;
+            }
+        }
     }
     h2{
         width: auto;
@@ -156,7 +199,7 @@ Tabのレイアウト
             font-size: 1.4rem;
         }
         @include m.breakpoint(pc){
-            line-height: 2.5;
+            line-height: 2;
             font-size: 2rem;
         }
     }
@@ -214,36 +257,72 @@ Tabのレイアウト
         z-index: 1000;
       }
   }
+
+/*::-webkit-scrollbar{
+    display: none;
+}*/
+
 .modal_bg {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     height: 100vh;
     position: absolute;
     width: 100%;
     z-index: 100;
   }
 .modalScroll{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.modalScroll {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
     background: #fff;
     height: auto;
     width: 90%;
-    max-height: 800px;
     padding: 5px;
     border-radius: 20px;
     -ms-overflow-style: none;
     z-index: 150;
+    overflow: hidden;
+    overflow-y: scroll;
+    @include m.breakpoint(tablet){
+        height: 80%;
+      }
+    @include m.breakpoint(pc){
+        height: auto;
+      }
 }
 ::-webkit-scrollbar {
-    display: none;
-}
+    border-radius: 10px;
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #b6b6b6;
+    border-radius: 10px;
+  }
 .modal_content {
     color: rgb(49, 49, 49);
     text-align: center;
+    .gallery{
+        columns:2;
+        padding: 0 15px;
+        @include m.breakpoint(only-tab){
+            columns:2;
+          }
+        @include m.breakpoint(pc){
+            columns:4;
+          }
+        li{
+            margin-bottom: 20px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;/*画像の下にできる余白を削除*/
+        }
+    }
 }
+.no_scroll {
+    overflow: hidden;
+  }
 .popup-close {
     position: absolute;
     top: 20px;
@@ -321,7 +400,178 @@ Tabのレイアウト
             font-size: 3rem;
           }
     }
+    .swiper-text{
+        padding: 10px;
+        h3{
+            padding-bottom: 5px;
+        }
+        p{
+            letter-spacing: 3px;
+        }
+        h4{
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+    }
 }
+
+/*.lightbox {
+    position: absolute;
+    top: 300px !important;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: 400;
+    @include m.breakpoint(tablet){
+        top: 150px !important;
+      }
+
+}*/
+
+
+/*----------お知らせのセクション-----------*/
+#news{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    padding: 30px 0 0px;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+    }
+    .news-flex{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+            @include m.breakpoint(only-tab){
+                align-items: center;
+                flex-direction: unset;
+    }
+    }
+    .news-content{
+        width: 100%;
+        margin-top: -20px;
+        @include m.breakpoint(only-tab){
+            max-width: 48%;
+            padding: 50px;
+            margin-top: 0px;
+        }
+        ul{
+            margin: 0 0 20px;
+            li{
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                @include m.font;
+                @include m.breakpoint(only-tab){
+                    min-width: 400px;
+                }
+                a{
+                    color: #333;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                    @at-root .news_date{
+                        font-size: .8rem;
+                    }
+                    @at-root .news_title{
+                        font-size: 1rem;
+                        line-height: 30px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+        @at-root .news-btn{
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            @include m.font;
+            @include m.breakpoint(only-tab){
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                font-size: 1rem;
+                letter-spacing: 5px;
+            }
+        }
+    }
+    .news-image{
+      width: 100%;
+      min-height: 250px;
+      background: url(../images/news.png) no-repeat center;
+      background-size: cover;
+      @include m.breakpoint(only-tab){
+        width: 50%;
+        min-height: 400px;
+        background: url(../images/news.png) no-repeat center;
+        background-size: cover;
+    }
+    }
+}
+/*
+* 新着記事一覧ショートコード用
+*/
+.news-list .news-list-inner {
+    padding: 20px 5px;
+    border: 2px solid #f5f5f5;
+   }
+   .archive .news-list .news-list-inner {
+    background: #fff;
+    padding: 20px;
+   }
+   .news-list ul {
+    list-style: none;
+    margin: 0 0 20px;
+   }
+   .news-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+   }
+   .news-list a {
+    color: #333;
+    text-decoration-line: none;
+   }
+   .news-list a:hover {
+    opacity: 0.6;
+   }
+   .news-list a.wp-block-button__link {
+    color: #fff;
+   }
+   .news-list a.wp-block-button__link:hover {
+    color: #F87474;
+   }
+   .news-list .news_date {
+    margin: 0;
+    font-size: 14px;
+   }
+   .news-list .news_title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   }
 
 
 /*---------------------*/
@@ -375,6 +625,13 @@ Tabのレイアウト
         }
         .newpost_thumb{
             margin-bottom: 10px;
+            overflow: hidden;
+            img{
+                transition: transform .6s ease;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            } 
         }
         .newpost_title,.newpost_date{
             font-size: 0.8rem;
@@ -467,6 +724,116 @@ Tabのレイアウト
        }  
 }
 /*----------topics-----------*/
+
+
+/*----------SNS--------------*/
+#insta{
+    padding: 0px 10px 30px;
+    @include m.breakpoint(only-tab){
+        padding: 0px 10px 50px;
+      }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+    }
+    .insta-wrapper{
+        .gallery{
+            columns:2;
+            padding: 0 15px;
+            @include m.breakpoint(only-tab){
+                columns:2;
+              }
+            @include m.breakpoint(pc){
+                columns:4;
+              }
+            li{
+                margin-bottom: 20px;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                vertical-align: bottom;/*画像の下にできる余白を削除*/
+            }
+        }
+    }
+    .banner-wrapper{
+        position: relative;
+        ul{
+            @include m.breakpoint(tablet){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:40px;
+              }
+            li{
+                margin-top: 50px;
+                position: relative;
+                a{
+                    .b-text{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border: solid 1px #666;
+                        border-radius: 6px;
+                        width: 60%;
+                        height: 50%;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        z-index: 999;
+                        position: absolute;
+                        top:25%;
+                        left: 20%;
+                        @include m.breakpoint(pc){
+                            top: 25%;
+                            left: 30%;
+                            width: 200px;
+                            height:80px;
+                          }
+                    }
+                    .b-text-insta{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border: solid 1px #666;
+                        border-radius: 6px;
+                        width: 60%;
+                        height: 50%;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        z-index: 999;
+                        position: absolute;
+                        top:25%;
+                        left: 20%;
+                        @include m.breakpoint(pc){
+                            top: 25%;
+                            left: 30%;
+                            width: 200px;
+                            height: 80px;
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
@@ -583,9 +950,10 @@ Tabのレイアウト
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     @at-root .menu-btn{
@@ -736,9 +1104,10 @@ $arrow-color:#000;
        }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     }
@@ -825,9 +1194,10 @@ $arrow-color:#000;
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
     @at-root .cast-btn{
@@ -929,7 +1299,7 @@ $arrow-color:#000;
         opacity: 0;
         transition: .2s ease-in-out;
         z-index: 3;
-        top: 70%;
+        top: 50%;
         left:50%;
         transform: translate(-50%,-50%);
         color:#fff;
@@ -978,9 +1348,10 @@ $arrow-color:#000;
     }
     .subtitle{
         @include m.subtitle;
+        margin-top: -25px;
         @include m.font;
     @include m.breakpoint(only-tab){
-            margin-top: -20px;
+            margin-top: -35px;
           }
     }
 }

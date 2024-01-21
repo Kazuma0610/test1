@@ -20,7 +20,7 @@ version： 2.0.0
     right:-120%;
 	width:300px;
     height: 100vh;/*ナビの高さ*/
-	background:#999;
+	background: #d8b1b2;
     /*動き*/
 	transition: all 0.6s;
 }
@@ -152,11 +152,12 @@ version： 2.0.0
 	max-width: 1024px;
 	margin: 0 auto;
 	position: relative;
-	top:150px;
+	top:100px;
+	padding-bottom: 50px;
 }
 
 .s_07 .accordion_one .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 	border-bottom: 1px dashed #dfdfdf;;
 	color: #fff;
 	font-size: 1em;
@@ -174,37 +175,37 @@ version： 2.0.0
 }
 
 .s_07 .accordion_one:nth-of-type(1) .accordion_inner .accordion_header {
-	background-color: #666;
+	background-color:#d8b1b2;
 	padding-left: 50px;
 }
 
 .s_07 .accordion_one:nth-of-type(1) .accordion_inner .accordion_inner .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 	padding-left: 80px;
 }
 
 .s_07 .accordion_one:nth-of-type(2) .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one:nth-of-type(2) .accordion_inner .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one:nth-of-type(2) .accordion_inner .accordion_inner .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one:nth-of-type(3) .accordion_header {
-	background-color: #999;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one:nth-of-type(3) .accordion_inner .accordion_header {
-	background-color: #666;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one:nth-of-type(3) .accordion_inner .accordion_inner .accordion_header {
-	background-color: #666;
+	background-color: #d8b1b2;
 }
 
 .s_07 .accordion_one .accordion_header:hover {
@@ -324,6 +325,7 @@ version： 2.0.0
 /* ハンバーガーメニュー展開時、背景を固定 */
 html.fixed {
 	height: 100%;
+	width: 100%;
     overflow: hidden;
 	}
 
@@ -364,8 +366,8 @@ html.fixed {
 	  position: relative;
 }  
 .nav-item_sub {
-	  background: #ccc;
-	  left: 0px;
+	  background: #ede4e1;
+	  left: 31px;
 	  margin: 0 -20%;
 	  opacity: 0;
 	  position: absolute;
@@ -390,7 +392,7 @@ html.fixed {
 	opacity: 1;
 	visibility: visible;
 }
-/* メガメニュー内コンテンツ */
+/* メガメニュー内コンテンツ(カテゴリー) */
 .inner.is-active-move{
 	display: block;
 	animation-name: moveAnime;/*ふわっと表示させるためのアニメーション*/
@@ -439,6 +441,9 @@ html.fixed {
 }
 .mega-content-sub-wrap{
 	margin-left: -50px;
+}
+.sns-wrap{
+	margin-top: 55px!important;
 }
 .sub-list{
 	padding: 10px;
@@ -558,6 +563,7 @@ html.fixed {
 	height: 100vh;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	background: #ede4e1;
 }
 .search-modal__inner{
 	height: 100%;
@@ -567,6 +573,7 @@ html.fixed {
     padding: 8px 16px 16px;
     scrollbar-width: none;
     width: 100%;
+	background: #ede4e1;
 }
 /*左から右に出現*/
 #search-modal{
@@ -577,7 +584,7 @@ html.fixed {
 	left:-120%;
 	width: 100%;
 	height: 100vh;
-	background: #999;
+	background: #ede4e1;
 	/*動き*/
 	transition: all 0.6s;
 }
@@ -678,6 +685,8 @@ html.fixed {
 	border: 2px solid #dfe1cf;
 }
 .speech-bubbles__inner::before{
+	content: "";
+	position: absolute;
 	width: 0;
 	left: 8px;
 	border-left: 10px solid transparent;
@@ -687,6 +696,8 @@ html.fixed {
     height: 0;
 }
 .speech-bubbles__inner::after{
+	content: "";
+	position: absolute;
 	display: block;
 	background: #f8f8f4;
     border-bottom: 2px solid #fff;
@@ -698,7 +709,7 @@ html.fixed {
 }
 /*ドロップダウンメニュー*/
 .search-content__dropdown{
-	border-top: 1px dashed #dcdcdc;
+	border-top: 1px dashed #bfd3a6;
     margin-top: 24px;
 }
 /* アコーディオンメニュー全体 */
@@ -709,8 +720,8 @@ html.fixed {
 	margin-top: 10px;
   }
 .accordion-title {
-	background-color: #999;
-	border-bottom: 1px dashed #dfdfdf;;
+	background: #ede4e1;
+	border-bottom: 1px dashed #bfd3a6;
 	color: #000;
 	font-size: 1em;
 	padding: 20px 11%;
@@ -739,19 +750,19 @@ html.fixed {
 	top: 45%;
   }
 .accordion-text {
-	border-bottom: 1px dashed #dfdfdf;
+	border-bottom: 1px dashed #bfd3a6;
     display: none;
     padding: 16px 8px;
     width: 100%;
 	list-style-type:none;
   }
 .nav-menu__list-item{
-	border-bottom: 1px dashed #dfdfdf;
+	border-bottom: 1px dashed #bfd3a6;
     padding: 20px 40px;
     width: 100%;
 }
 .nav-menu__list-item:nth-of-type(1){
-	border-bottom: 1px dashed #dfdfdf;
+	border-bottom: 1px dashed #bfd3a6;
     padding: 0px 40px 20px;
     width: 100%;
 }
@@ -772,6 +783,7 @@ html.fixed {
     padding: 4px 8px;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	background: #f8f8f4;
 }
 
 /*** 16.1 Tablet Large 600px */
@@ -823,7 +835,6 @@ html.fixed {
 	    left:0;
 	    width: 100%;
 	    height: 100vh;
-	    background: #999;
 	    /*動き*/
 	    transition: all 0.4s;
 		background: rgba(59,59,59,.8);

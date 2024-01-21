@@ -50,12 +50,10 @@ menuBtn.addEventListener('click', function() {
   // .activeを追加し、html要素に.fixed、.navに.activeを追加する。
   if (!this.classList.contains('active')) {
     html.classList.add('fixed');
-    nav.classList.add('active');
   } else {
     // .menu-btnに.activeがすでに追加されていれば、
     // .activeを削除し、html要素の.fixed、.navの.activeを削除する。
     html.classList.remove('fixed');
-    nav.classList.remove('active');
   }
 });
 
@@ -114,55 +112,7 @@ id2.addEventListener('mouseleave', function() {
         });
 
 
-//スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
-jQuery(function ScrollAnime ($) {
-  var _window = $(window),
-        _header = $('.site-header'),
-           heroBottom,
-           startPos,
-           winScrollTop;
 
-           _window.on('scroll',function(){
-           winScrollTop = $(this).scrollTop();
- heroBottom = $('.mv-contents').height();
-           if (winScrollTop >= startPos) {
-           if(winScrollTop >= heroBottom){
-           _header.addClass('hide');
-       }
-       } else {
-           _header.removeClass('hide');
-       }
-           startPos = winScrollTop;
-       });
-
-           _window.trigger('scroll');
-     
-});
-
-//スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
-jQuery(function ScrollAnime ($) {
-  var _window = $(window),
-        _header = $('.site-header'),
-           heroBottom,
-           startPos,
-           winScrollTop;
-
-           _window.on('scroll',function(){
-           winScrollTop = $(this).scrollTop();
- heroBottom = $('.breadcrumb').height();
-           if (winScrollTop >= startPos) {
-           if(winScrollTop >= heroBottom){
-           _header.addClass('hide');
-       }
-       } else {
-           _header.removeClass('hide');
-       }
-           startPos = winScrollTop;
-       });
-
-           _window.trigger('scroll');
-     
-});
 
 //TOPをクリックしたらページトップに戻る。また500pxスクロールしたら出現
 jQuery(function() {
@@ -199,10 +149,20 @@ $(window).scroll(function () {
 //ボタンを押したらモーダルが出現
 function buttonClick() {
   $(".modal").fadeIn();
+  $("html").addClass("fixed"); // 背景固定させるクラス付与
 }
 
 $(".popup-close").on("click", function () {
+  $("html").removeClass("fixed"); // 背景固定させるクラス付与
   $(".modal").fadeOut();
   return false;
 });
+
+
+//lightbox オプションの設定※https://lokeshdhakar.com/projects/lightbox2/#options参照
+
+lightbox.option({
+  'wrapAround': true,//グループ最後の写真の矢印をクリックしたらグループ最初の写真に戻る
+  'albumLabel': ' %1 / total %2 '//合計枚数中現在何枚目かというキャプションの見せ方を変更できる
+})
 
