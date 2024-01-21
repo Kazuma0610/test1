@@ -159,3 +159,19 @@ function slideAnime(){
     $(window).scroll(function (){
       delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
     });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
+
+    $('#toc_container a[href*="#"]').click(function () {
+      var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+      var pos = $(elmHash).offset().top-80;//idの上部の距離からHeaderの高さを引いた値を取得
+      $('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+      return false;
+    });
+
+    $('#sidebar a[href*="#"]').click(function () {
+      var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+      var pos = $(elmHash).offset().top-80;//idの上部の距離からHeaderの高さを引いた値を取得
+      $('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+      return false;
+    });

@@ -2,17 +2,8 @@
     <header class="entry-header">
         <?php the_title('<h1 class="entry-title">','</h1>'); ?>
         <?php if ( is_singular('post')) { ?>
-            <div class="date-flex">
-                <i class="fas fa-sync-alt"></i><?php the_date('','' ); ?>
-                <i class="fas fa-folder"></i><?php the_category(','); ?>
-            </div>
-            <div class="label-ad bg-strip"><i class="fas fa-info-circle"></i><span>[PR]記事内に広告を含む場合があります</span></div>
+            <?php the_date('','投稿日: ' ); ?>
         <?php } // is_singlar('post') ?>
-        <?php if ( is_singular('news')) { ?>
-            <div class="date-flex">
-                <i class="fas fa-sync-alt"></i><?php the_date('','' ); ?>
-            </div>
-        <?php } // is_singlar('news') ?>
     </header><!--entry-header-->
 
     <figure class="post-thumbnail">
@@ -33,7 +24,7 @@
         ); ?>
         <?php if (is_singular('post')) { ?>
             <footer class="entry-footer">
-                <i class="fas fa-folder-open"></i><span class="cat-links"><?php the_category(','); ?></span>
+                <span class="cat-links">カテゴリー: <?php the_category(','); ?></span>
             </footer><!--.entry-footer -->
         <?php } // is_singlar('post') ?>
 

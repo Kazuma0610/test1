@@ -112,9 +112,9 @@ body {
 
 /*	Basic
 /* -------------------------------------------------------------------------- */
-html{
+/*html{
 	overflow-x: hidden;
-}
+}*/
 
 * {
 	-moz-box-sizing: border-box;
@@ -125,6 +125,9 @@ html{
 }
 
 body {
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 	background: #f8f9fa;
 	margin: 0;
 	padding: 0;
@@ -233,7 +236,7 @@ cite {
 /*レイアウト確認用に一時記述----------*/
 /*.contents-main,.contents,#primary,.content-area {height: 100%; }*/
 
-#sidebar{height: 100%}
+/*#sidebar{height: auto!important}*/
  
 /*.site-header{background-color: #888;}
  
@@ -243,7 +246,10 @@ cite {
 
 .contents,.contents-main {background-color: #f8f9fa;}
  
-#sidebar{background-color: #f8f9fa; }
+#sidebar{
+	background-color: #f8f9fa;
+	margin-top: 20px;
+ }
  
 .site-footer{background: #839bad;}
  
@@ -311,6 +317,34 @@ html {
 }
 .contents-main{
 	margin-top: 50px;
+}
+.content-area{
+	width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
+.under-content{
+	display: block;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 30px;
+}
+/*** 16.3 Tablet Large 880px */
+@media screen and (min-width: 55em) {
+	.content-area{
+		width: 94%;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.under-content{
+		width: 94%;
+        max-width: 1200px;
+        margin: 0 auto;
+	}
 }
 /*------------------------*/
 
@@ -457,9 +491,18 @@ html {
 /*------------------------*/
 /*パンクズの設定*/
 .breadcrumb{
+	width: 100%;
+	margin: 0 auto;
 	margin-top: 90px;
-	padding-left: 10px;
-	background: #f8f9fa;
+	text-align: left;
+	padding-left: 20px;
+	background: #f7f7f7;
+	box-shadow: inset 0 -1px 8px rgba(0,0,0,.06);
+}
+.breadcrumb p{
+	max-width: 1150px;
+	margin: 0 auto;
+	padding: 5px;
 }
 /*------------------------*/
 
@@ -606,15 +649,13 @@ html {
 }
 /*** 16.3 Mobile Large 880px*/
 @media screen and (min-width: 55em) {
-	.content-area::after{
+	/*.content-area::after{
 		display: block;
         clear: both;
         content: '';
-	}
+	}*/
 	.site-main{
-		float: left;
-        width: 70%;
-        margin-right: 3%;
+		width: calc(100% - 300px);
 	}
 	.site-main p{
 		font-size: 1.5em;
@@ -635,7 +676,7 @@ html {
 /*** 16.3 Tablet Large 880px */
 @media screen and (min-width: 55em) {
 	.site-main p{
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 }
 /*------------------------*/
@@ -643,9 +684,6 @@ html {
 
 /*------------------------*/
 /*サイドバーウィジェットの設定*/
-.sidebar{
-	margin-bottom: 100px;
-}
 .sidebar h3{
 	font-size: 1em;
 	position: relative;
@@ -780,19 +818,18 @@ ul.wpp-list li:nth-child(6),ul.wpp-list li:nth-child(7),ul.wpp-list li:nth-child
 @media screen and (min-width: 55em) {
 	/*コンテンツのサイズ指定*/
 	/*float時のcss！必ずclearfixを*/
-.container:after{
+/*.container:after{
     display: block;
     clear: both;
     content: '';
-}
-.contents{
+}*/
+/*.contents{
     float: left;
     width: 70%;
     margin-right: 3%;
-}
+}*/
 .sidebar{
-    float: left;
-    width: 27%;
+    width: 280px;
 }
 	}
 /*------------------------*/

@@ -28,9 +28,9 @@
         
           <div class="wrapper">
 	          <ul class="tab">
-		          <li><a href="#shop">当店</a></li>
-		          <li><a href="#media">コラム</a></li>
-              <li><a href="#sns">SNS</a></li>
+		          <li><a class="tab-a" href="#shop">当店</a></li>
+		          <li><a class="tab-b" href="#media">コラム</a></li>
+              <li><a class="tab-c" href="#sns">SNS</a></li>
 	          </ul>
 
 		        <div id="shop" class="area">
@@ -113,6 +113,45 @@
 	          </div><!--media/area-contents-->
 
             <div id="sns" class="area">
+              <article id="insta">
+                <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Sns</span><span class="subtitle slide-in_inner leftAnimeInner">ソーシャルメディア</span></span></h2>
+                <div class="insta-wrapper">
+                  <ul class="gallery">
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko1.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko1.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/tate1.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tate1.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko2.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko2.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/tate2.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tate2.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko3.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko3.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/tate3.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tate3.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko4.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/yoko4.png" alt="インスタ画像"></a></li>
+                    <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/tate4.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tate4.png" alt="インスタ画像"></a></li>
+                  </ul>
+                </div>
+                <div class="banner-wrapper">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <div class="b-text">
+                          <span class="text-one">X</span>
+                        </div>
+                        <figure class="b-pic">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b-sns1.png" alt="Xbanner">
+                        </figure>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="b-text-insta">
+                          <span class="text-one">INSTAGLAM</span>
+                        </div>
+                        <figure class="b-pic">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/b-sns2.png" alt="Instabanner">
+                        </figure>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </article>
             </div><!--sns/area-contents-->
 
             <section id="menu">

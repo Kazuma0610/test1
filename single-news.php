@@ -1,7 +1,6 @@
 <?php get_header(); ?>
     <section id="primary" class="content-area">
-        <main id="main" class="site-main">
-            
+        <section id="main" class="site-main">
             <?php
             while ( have_posts() ) :
                 the_post();
@@ -72,7 +71,7 @@
                         </ul>
                 </aside>
 
-        </main><!--#main-->
+        </section><!--#main-->
         <?php get_sidebar(); ?>
     </section><!-- #primary-->                   
 <?php get_footer(); ?>

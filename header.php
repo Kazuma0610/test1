@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>"><!--スタイルシートの呼び出し-->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><!--fontawesomeの呼び出しCDNコード-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"><!--fontawesomeの呼び出しCDNコード-->
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script><!--fontawesomeの呼び出しCDNコード(JS用）-->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet"><!--notoserifjpフォント-->
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"><!--Parisienne-->
 <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/><!--SwiperのCSS-->
@@ -22,6 +23,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
 <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script><!--progressbar-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" /><!--lightbox用-->
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>
@@ -37,58 +39,19 @@
                   <div class="modalScroll">
                       <div class="modal_content">
                         <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">リラックス出来る空間を</span></span></h2>
-                        <div class="swiperCont">
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" alt="画像"/>
-                                <div class="swiper-text">
-                                  <h3>安らぎを与える空間作り</h3>
-                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
-                                  <!--<h4>店長からのコメント</h4>
-                                  <p>ああああああああああああああああああああああああああああああああああ<br>
-                                      ああああああああああああああああああああああああああああああああああああ<br>
-                                    ああああああああああああああああああああああああああああああああああああああああ</p>-->
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside2.png" alt="画像"/>
-                                <div class="swiper-text">
-                                  <h3>安らぎを与える空間作り</h3>
-                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
-                                  <!--<h4>店長からのコメント</h4>
-                                  <p>ああああああああああああああああああああああああああああああああああ<br>
-                                      ああああああああああああああああああああああああああああああああああああ<br>
-                                    ああああああああああああああああああああああああああああああああああああああああ</p>-->
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside3.png" alt="画像"/>
-                                <div class="swiper-text">
-                                  <h3>安らぎを与える空間作り</h3>
-                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
-                                  <!--<h4>店長からのコメント</h4>
-                                  <p>ああああああああああああああああああああああああああああああああああ<br>
-                                      ああああああああああああああああああああああああああああああああああああ<br>
-                                    ああああああああああああああああああああああああああああああああああああああああ</p>-->
-                                </div>
-                              </div>
-                              <div class="swiper-slide">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside2.png" alt="画像"/>
-                                <div class="swiper-text">
-                                  <h3>安らぎを与える空間作り</h3>
-                                  <p>通常コースのヘッドスパがこの空間で<span>1h¥5000～</span></p>
-                                  <!--<h4>店長からのコメント</h4>
-                                  <p>ああああああああああああああああああああああああああああああああああ<br>
-                                      ああああああああああああああああああああああああああああああああああああ<br>
-                                    ああああああああああああああああああああああああああああああああああああああああ</p>-->
-                                </div>
-                              </div>
-                            </div><!--swiper-wrapper-->
-                          </div><!--swiper mySwiper-->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div><!--swipercont-->
+                          
+                          <div class="insta-wrapper">
+                            <ul class="gallery">
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside1.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside11.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside11.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside12.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside12.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside13.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside13.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside14.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside14.png" alt="店内画像"></a><p>当店のアロマ</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside15.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside15.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside16.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside16.png" alt="店内画像"></a><p>施術のベッド</p></li>
+                              <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/inside17.png" data-lightbox="gallery2" data-title="店内風景"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/inside17.png" alt="店内画像"></a><p>癒しのエントランス</p></li>
+                            </ul>
+                          </div>
                       
                         
                         <span class="popup-close" onclick="closePopUp()"></span>

@@ -311,22 +311,65 @@ Tabのレイアウト
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.modalScroll {
   background: #fff;
   height: auto;
   width: 90%;
-  max-height: 800px;
   padding: 5px;
   border-radius: 20px;
   -ms-overflow-style: none;
   z-index: 150;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+@media (min-width: 38.25em) {
+  .modalScroll {
+    height: 80%;
+  }
+}
+@media (min-width: 1030px) {
+  .modalScroll {
+    height: auto;
+  }
+}
+
+::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b6b6b6;
+  border-radius: 10px;
 }
 
 .modal_content {
   color: rgb(49, 49, 49);
   text-align: center;
+}
+.modal_content .gallery {
+  -moz-columns: 2;
+       columns: 2;
+  padding: 0 15px;
+}
+@media (min-width: 880px) {
+  .modal_content .gallery {
+    -moz-columns: 2;
+         columns: 2;
+  }
+}
+@media (min-width: 1030px) {
+  .modal_content .gallery {
+    -moz-columns: 4;
+         columns: 4;
+  }
+}
+.modal_content .gallery li {
+  margin-bottom: 20px;
+}
+.modal_content .gallery img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom; /*画像の下にできる余白を削除*/
 }
 
 .no_scroll {
@@ -443,6 +486,18 @@ Tabのレイアウト
   padding-bottom: 5px;
 }
 
+/*.lightbox {
+    position: absolute;
+    top: 300px !important;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: 400;
+    @include m.breakpoint(tablet){
+        top: 150px !important;
+      }
+
+}*/
 /*----------お知らせのセクション-----------*/
 #news {
   position: relative;
@@ -515,7 +570,7 @@ Tabのレイアウト
 }
 @media (min-width: 880px) {
   #news .news-content ul li {
-    width: 600px;
+    min-width: 400px;
   }
 }
 #news .news-content ul li a {
@@ -827,6 +882,137 @@ Tabのレイアウト
 }
 
 /*----------topics-----------*/
+/*----------SNS--------------*/
+#insta {
+  padding: 0px 10px 30px;
+}
+@media (min-width: 880px) {
+  #insta {
+    padding: 0px 10px 50px;
+  }
+}
+#insta h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+}
+@media (min-width: 880px) {
+  #insta h2 {
+    font-size: 5rem;
+  }
+}
+#insta h2 .subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: "Parisienne", cursive;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0px 0 10px 0;
+  font-weight: normal;
+  color: #e2a2b1;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 880px) {
+  #insta h2 .subtitle {
+    margin-top: -20px;
+  }
+}
+#insta .insta-wrapper .gallery {
+  -moz-columns: 2;
+       columns: 2;
+  padding: 0 15px;
+}
+@media (min-width: 880px) {
+  #insta .insta-wrapper .gallery {
+    -moz-columns: 2;
+         columns: 2;
+  }
+}
+@media (min-width: 1030px) {
+  #insta .insta-wrapper .gallery {
+    -moz-columns: 4;
+         columns: 4;
+  }
+}
+#insta .insta-wrapper .gallery li {
+  margin-bottom: 20px;
+}
+#insta .insta-wrapper .gallery img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom; /*画像の下にできる余白を削除*/
+}
+#insta .banner-wrapper {
+  position: relative;
+}
+@media (min-width: 38.25em) {
+  #insta .banner-wrapper ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+}
+#insta .banner-wrapper ul li {
+  margin-top: 50px;
+  position: relative;
+}
+#insta .banner-wrapper ul li a .b-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #666;
+  border-radius: 6px;
+  width: 60%;
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+@media (min-width: 1030px) {
+  #insta .banner-wrapper ul li a .b-text {
+    top: 25%;
+    left: 30%;
+    width: 200px;
+    height: 80px;
+  }
+}
+#insta .banner-wrapper ul li a .b-text-insta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #666;
+  border-radius: 6px;
+  width: 60%;
+  height: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+@media (min-width: 1030px) {
+  #insta .banner-wrapper ul li a .b-text-insta {
+    top: 25%;
+    left: 30%;
+    width: 200px;
+    height: 80px;
+  }
+}
+
 /*アニメーションボタン*/
 /*共通*/
 .btn04 {
@@ -1416,7 +1602,7 @@ Tabのレイアウト
   opacity: 0;
   transition: 0.2s ease-in-out;
   z-index: 3;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
