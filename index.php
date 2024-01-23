@@ -39,7 +39,7 @@
                 <div class="lead-img fadeIn">
                 </div>
                 <div class="lead-area fadeIn">
-                  <h2>恵比寿にある<br>癒しの<br>プライベート空間</h2>
+                  <h2>恵比寿にある<br>癒しの<br>プライベート空間だお</h2>
                     <div class="text">エステサロン<br class="pc-only">肌十色は<br class="pc-only">頑張るあなたが<br class="pc-only">ちょっと疲れた時に<br class="pc-only">立ち寄れる<br class="pc-only">ほっとする時間を<br>つくります。</div>
                     <buttun class="lead-btn buttun" onclick="buttonClick()">
                         <a href="#" class="btn04 bordertop"><span><p>店内の風景</p></span></a>
