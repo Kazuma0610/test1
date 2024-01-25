@@ -640,6 +640,116 @@ version： 2.0.0
     left: -20px;
 }
 
+/*チャット風レイアウト*/
+.balloon-chat-wrapper{
+    margin: 40px 0 40px 0;
+}
+@media screen and (min-width: 38.25em) {
+	.balloon-chat-wrapper{
+        margin: 50px 20px;
+        padding: 1rem;
+    }
+}
+.balloon-chat {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+/* 左の吹き出し */
+.balloon-chat.left { 
+    flex-direction: row; /* 左から右に並べる */
+    }
+    
+/* 右の吹き出し */
+.balloon-chat.right { 
+    flex-direction: row-reverse; /* 右から左に並べる */
+    }
+    @media screen and (min-width: 38.25em) {
+        .balloon-chat.right { 
+            margin-top: 0px;
+            flex-direction: row-reverse; /* 右から左に並べる */
+            }
+    }
+
+/* 吹き出しの入力部分の作成 */
+.chatting {
+    position: relative;
+    display: inline-block; /* 吹き出しが文字幅に合わせます */ 
+    width: 70%;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background: #ccffcc; /*吹き出しのカラーはここで変更*/
+    text-align: left; /*テキストの位置はここで変更*/
+    border-radius: 12px; /*吹き出しの丸み具合を変更*/
+    }
+    @media screen and (min-width: 38.25em) {
+        .chatting {
+            position: relative;
+            display: inline-block; /* 吹き出しが文字幅に合わせます */ 
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background: #ccffcc; /*吹き出しのカラーはここで変更*/
+            text-align: left; /*テキストの位置はここで変更*/
+            border-radius: 12px; /*吹き出しの丸み具合を変更*/
+            }
+    }
+
+/* 吹き出しの三角部分の作成 */
+.chatting::after {
+    content: "";
+    border: 15px solid transparent;
+    border-top-color: #ccffcc; /*カラーはここで変更（吹き出し部分と合わせる）*/
+    position: absolute;
+    top: 10px; /*三角部分の高さを変更*/
+    }
+.left .chatting::after {
+    left: -15px; /*左側の三角部分の位置を変更*/
+    }
+.right .chatting::after {
+    right: -15px; /*右側の三角部分の位置を変更*/
+    } 
+
+.chat-text{
+    font-size: .8rem!important;
+}
+@media screen and (min-width: 38.25em) {
+    .chat-text{
+        font-size: 1rem!important;
+    }
+}
+
+/* アイコンの作成 */
+.balloon-chat figure img {
+    border-radius: 50%; /*丸の設定*/
+    border: 2px solid #333300; /*アイコンの枠のカラーと太さはここで変更*/
+    margin: 0;
+    }
+
+/* アイコンの大きさ */
+.icon-img {
+    width: 50px;
+    height: 50px;
+    }
+    @media screen and (min-width: 38.25em) {
+        .icon-img {
+            width: 80px;
+            height: 80px;
+            }
+    }
+/* アイコンの名前の設定 */
+.icon-name {
+    width: 50px; /* アイコンの大きさと合わせる */
+    font-size: 12px;
+    text-align: center;
+    }
+    @media screen and (min-width: 38.25em) {
+        .icon-name {
+            width: 80px; /* アイコンの大きさと合わせる */
+            font-size: 12px;
+            text-align: center;
+            }
+    }
+
 /*この記事を書いた人-タイトルcss*/
 .l-articleBottom__title{
     display: block;
