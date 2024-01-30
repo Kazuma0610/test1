@@ -22,6 +22,15 @@ summary,time,mark,audio,video {
   outline: 0;
   background: transparent;
 }
+
+html{
+	overflow-x: hidden;
+}
+@media screen and (min-width:1000px) {
+    html{
+		overflow-x:unset;
+	}
+}
  
 body {
   line-height: 1;

@@ -492,7 +492,7 @@ version： 2.0.0
     color: #fff;
     margin: 50px 0 20px;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     /*letter-spacing: 5px;*/
     font-weight: 700;
 }
@@ -625,20 +625,39 @@ version： 2.0.0
 }
 /*デメリット*/
 .demelit_points{
-    display: block;
+    display: block!important;
+    border: 1px solid #d7aab4;
+    padding: 5px;
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    margin: 50px auto !important;
+}
+@media screen and (min-width: 38.25em) {
+	.demelit_points{
+        padding: 20px;
+        width: 80%;
+    }
 }
 .demelit_points li{
     position: relative;
     width: calc(100% - 40px);
     margin: 0px 20px 0px 20px;
     letter-spacing: 5px;
-
+    line-height: 30px;
+    font-weight: bold;
+    font-size: .8rem;
 }
-.demelit_points li::before{
+@media screen and (min-width: 38.25em) {
+	.demelit_points li{
+        font-size: 1rem;
+    }
+}
+/*.demelit_points li::before{
     content: "●";
     position: absolute;
     left: -20px;
-}
+}*/
 
 /*チャット風レイアウト*/
 .balloon-chat-wrapper{
@@ -676,23 +695,13 @@ version： 2.0.0
     position: relative;
     display: inline-block; /* 吹き出しが文字幅に合わせます */ 
     width: 70%;
-    margin: 10px 20px;
+    margin: 20px 20px;
     padding: 10px 20px;
     background: #ccffcc; /*吹き出しのカラーはここで変更*/
     text-align: left; /*テキストの位置はここで変更*/
     border-radius: 12px; /*吹き出しの丸み具合を変更*/
     }
-    @media screen and (min-width: 38.25em) {
-        .chatting {
-            position: relative;
-            display: inline-block; /* 吹き出しが文字幅に合わせます */ 
-            margin: 10px 20px;
-            padding: 10px 20px;
-            background: #ccffcc; /*吹き出しのカラーはここで変更*/
-            text-align: left; /*テキストの位置はここで変更*/
-            border-radius: 12px; /*吹き出しの丸み具合を変更*/
-            }
-    }
+    
 
 /* 吹き出しの三角部分の作成 */
 .chatting::after {
@@ -861,3 +870,108 @@ version： 2.0.0
         padding: 10px;
     }
 }
+
+/*ボタン設定*/
+/*ボタン基本設定*/
+.btn-wrap{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 80px;
+}
+.btn,
+a.btn,
+button.btn {
+  width: 100%;
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+@media screen and (min-width: 38.25em) {
+    .btn,
+    a.btn,
+    button.btn {
+      width: 80%;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+      padding: 1rem 4rem;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      color: #212529;
+      border-radius: 0.5rem;
+    }
+}
+a.btn-c-7 {
+    font-size: .7rem;
+    position: relative;
+    color: #fff;
+    background: #32b16c;
+    box-shadow: 0 5px 0 #2c9d60;
+  }
+@media screen and (min-width: 38.25em) {
+    a.btn-c-7 {
+        font-size: 1rem;
+        position: relative;
+        color: #fff;
+        background: #32b16c;
+        box-shadow: 0 5px 0 #2c9d60;
+      }
+}
+  a.btn-c-7::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+    line-height: 1;
+    position: absolute;
+    top: calc(60% - 0.7rem);
+    left: 1.5rem;
+    margin: 0;
+    padding: 0;
+    content: "\f30b";
+    transition: all 0.3s;
+  }
+  a.btn-c-7:hover {
+    transform: translate(0, 3px);
+    color: #fff;
+    background: #38c578;
+    box-shadow: 0 2px 0 #2c9d60;
+  }
+  a.btn-c-7:hover::before {
+    left: 2rem;
+  }
+  a.btn-c-7 span {
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.2rem 0.5rem;
+    color: #32b16c;
+    border-radius: 4px;
+    background: #fff;
+  }
