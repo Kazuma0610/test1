@@ -777,6 +777,11 @@ ul.wpp-list li a.wpp-post-title {
     color: #333;
     margin: 10px 10px 10px 0px;
 }
+@media screen and (min-width: 55em) {
+	ul.wpp-list li a.wpp-post-title {
+		font-size: 10px;
+	}
+}
 ul.wpp-list li a.wpp-post-title:hover {
     color: #3fa3ff;
 }

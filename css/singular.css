@@ -194,6 +194,8 @@ version： 2.0.0
     width:280px;
 }
 }
+
+
 /*-----------------------------*/
 
 /*TOC目次*/
@@ -629,7 +631,7 @@ version： 2.0.0
     border: 1px solid #d7aab4;
     padding: 5px;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     width: 100%;
     margin: 50px auto !important;
 }
@@ -641,9 +643,9 @@ version： 2.0.0
 }
 .demelit_points li{
     position: relative;
-    width: calc(100% - 40px);
-    margin: 0px 20px 0px 20px;
-    letter-spacing: 5px;
+    width: calc(100% - 10px);
+    margin: 0px 10px 0px 10px;
+    letter-spacing: 3px;
     line-height: 30px;
     font-weight: bold;
     font-size: .8rem;
@@ -651,6 +653,7 @@ version： 2.0.0
 @media screen and (min-width: 38.25em) {
 	.demelit_points li{
         font-size: 1rem;
+        margin: 0px 20px 0px 20px;
     }
 }
 /*.demelit_points li::before{
@@ -694,7 +697,7 @@ version： 2.0.0
 .chatting {
     position: relative;
     display: inline-block; /* 吹き出しが文字幅に合わせます */ 
-    width: 70%;
+    max-width: 70%;
     margin: 20px 20px;
     padding: 10px 20px;
     background: #ccffcc; /*吹き出しのカラーはここで変更*/
@@ -758,6 +761,50 @@ version： 2.0.0
             text-align: center;
             }
     }
+
+/*実験コンテンツ*/
+.linkmove-content{
+    width: 80%;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #d7aab4;
+    background: linear-gradient(-45deg,transparent 25%,#f5f5f5 25%,#f5f5f5 50%,transparent 50%,transparent 75%,#f5f5f5 75%,#f5f5f5);
+    background-clip: padding-box;
+    background-size: 6px 6px;
+}
+.linkmove-wrapper{
+    display: block!important;
+    text-align: left;
+    font-size: 1rem;
+}
+.linkmove-wrapper li{
+    width: 100%;
+    padding: 5px;
+    padding-left: 2em;
+    position: relative;
+    counter-increment: number;
+}
+.linkmove-wrapper li::before{
+    content: counter(number);
+    display: block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    background-color: #d7aab4;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #d7aab4;
+    box-sizing: content-box;
+    color: #fff;
+    left: 1px;
+    top: 0.4em;
+    -webkit-transform: scale(.75);
+    transform: scale(.75);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
 
 /*この記事を書いた人-タイトルcss*/
 .l-articleBottom__title{
@@ -887,7 +934,7 @@ button.btn {
   line-height: 1;
   position: relative;
   display: inline-block;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -944,7 +991,7 @@ a.btn-c-7 {
         box-shadow: 0 5px 0 #2c9d60;
       }
 }
-  a.btn-c-7::before {
+  /*a.btn-c-7::before {
     font-family: "Font Awesome 5 Free";
     font-size: 1rem;
     line-height: 1;
@@ -955,7 +1002,7 @@ a.btn-c-7 {
     padding: 0;
     content: "\f30b";
     transition: all 0.3s;
-  }
+  }*/
   a.btn-c-7:hover {
     transform: translate(0, 3px);
     color: #fff;
