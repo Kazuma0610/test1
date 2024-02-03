@@ -806,6 +806,83 @@ version： 2.0.0
     transform-origin: 0 50%;
 }
 
+/*Stepの作成*/
+.step_is_container{
+    width: 100%;
+    counter-reset: step;
+}
+.step_item_first{
+    position: relative;
+    padding: 0 0 2em 0px;
+    margin-top: 30px;
+}
+.step_item_first::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    border-left: 2px solid red;
+    height: calc(100% - 20px)!important;
+    left: 7px;
+    top: 18px;
+}
+.step_item{
+    position: relative;
+    padding: 0 0 2em 0px;
+}
+.step_item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    border-left: 2px solid red;
+    height: calc(100% - 20px)!important;
+    left: 7px;
+    top: 18px;
+}
+.step_item_last{
+    position: relative;
+    padding: 0 0 2em 0px;
+}
+.step_number{
+    display: flex;
+    align-items: center;
+    color: inherit;
+    flex-direction: row;
+    height: auto;
+    justify-content: flex-start;
+    position: relative;
+    width: auto;
+    top: 0;
+    left:0;
+    text-align: center;
+    line-height: 1;
+    box-sizing: content-box;
+}
+.step_arrow{
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 16px;
+    margin-right: 8px;
+    width: 16px;
+    color: #d7aab4;
+    position: relative;
+    top:1px;
+}
+.step_number::after{
+    display: block;
+    content: counter(step);
+    counter-increment: step;
+    font-size: 14px;
+    opacity: .8;
+}
+.step_p{
+    font-size: 1rem!important;
+    padding: 20px;
+}
+
 /*この記事を書いた人-タイトルcss*/
 .l-articleBottom__title{
     display: block;
