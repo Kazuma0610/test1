@@ -568,6 +568,7 @@ version： 2.0.0
 
 /*テーブルのCSS*/
 .wp-block-table{
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .wp-block-table td{
