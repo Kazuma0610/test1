@@ -24,6 +24,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
 <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script><!--progressbar-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" /><!--lightbox用-->
+<!--質問アコーディオンJS-->
+<script type="text/javascript">
+			jQuery(function ($) {
+              $('.accordion_one .ac_header').click(function(){
+                $(this).next('.ac_inner').slideToggle();
+                $(this).toggleClass("open");
+               });
+           });
+</script>
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>

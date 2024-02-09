@@ -560,10 +560,16 @@ version： 2.0.0
 }
 /*pのcss*/
 .post-p{
+    margin: 1em;
     font-size: 1rem!important;
     font-weight: normal!important;
     line-height: 2rem!important;
-
+}
+@media screen and (min-width: 55em) {
+	.post-p{
+        margin: 0em;
+        margin-top: 2em;
+    }
 }
 
 /*テーブルのCSS*/
@@ -887,6 +893,157 @@ version： 2.0.0
     padding: 20px;
 }
 
+/*icon-infoの作成*/
+.icon-info{
+    margin: 30px 0 30px 0;
+    font-size: .8rem!important;
+    line-height: 1.6;
+    position: relative;
+    padding: 1em 1em 1em 4.25em;
+    border-radius: 2px;
+    background-color:#f6ebee;
+}
+.fa-info{
+    position: absolute;
+    top:55px;
+    left:17px;
+}
+.icon-info::after{
+    border-right: 1px solid;
+    border-right-color: #d7aab4;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 3.25em;
+    opacity: .4;
+    position: absolute;
+    top: 25%;
+    width: 0;
+}
+
+/*==================================================
+質問・アコーディオンのためのcss
+===================================*/
+.s_section{
+    margin-top: 4rem;
+}
+@media screen and (min-width: 38.25em) {
+    .s_section{
+        margin: 2rem;
+        margin-top: 4rem;
+    }
+}
+.qa-link-box{
+    display: block;
+    max-width: 60%;
+    list-style-type: none;
+    margin: 10px auto 20px!important;
+	margin-bottom: 0px !important;
+}
+
+.qa-link-box li{
+    text-align: center;
+    border: solid 1px #000;
+    border-radius: 5px;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+.qa-link-box li a{
+    font-size: 15px;
+}
+.qa-p{
+	width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0px 0 20px 0;
+    font-size: 1rem!important;
+    color: black;
+    letter-spacing: 1px!important;
+    line-height: 2!important;
+}
+.qa-record h2{
+	text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 1rem!important;
+    border-left: none;
+}
+.p-faq__q-txt{
+    font-size: 1rem!important;
+}
+.p-faq__a-txt{
+    font-size: 1rem!important;
+}
+.accordion_one{
+	width: 100%;
+	margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+.accordion_area .accordion_one .ac_header {
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	padding: 1.5rem 4rem 1.5rem 2rem;
+	position: relative;
+	z-index: 0;
+	cursor: pointer;
+	transition: .2s;
+  }
+.accordion_area .accordion_one .ac_header:not(.open):hover {
+	background-color: #f1f8ff;
+  }
+.accordion_area .accordion_one:nth-child(odd) .ac_header {
+	background-color: #f5f5f5;
+  }
+.accordion_area .accordion_one:nth-child(odd) .ac_header:not(.open):hover {
+	background-color: #f1f8ff;
+  }
+.accordion_area .accordion_one .ac_header .i_box {
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+  }
+.accordion_area .accordion_one .ac_header .i_box:before, .accordion_area .accordion_one .ac_header .i_box:after {
+	position: absolute;
+	content: "";
+	margin: auto;
+	box-sizing: border-box;
+	vertical-align: middle;
+  }
+.accordion_area .accordion_one .ac_header .i_box:before {
+	border-top: 2px solid #014897;
+	width: 20px;
+	height: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+  }
+.accordion_area .accordion_one .ac_header .i_box:after {
+	border-left: 2px solid #014897;
+	width: 0;
+	height: 20px;
+	top: 0;
+	bottom: 0;
+	right: 9px;
+	transition: .3s;
+  }
+.accordion_area .accordion_one .ac_header.open .i_box:after {
+	height: 0;
+  }
+.accordion_area .accordion_one .ac_inner {
+	display: none;
+	text-align: left;
+	padding: 1.5rem 2rem 1.5rem 2rem;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+	background: #fff;
+  }
+
 /*この記事を書いた人-タイトルcss*/
 .l-articleBottom__title{
     display: block;
@@ -1004,7 +1161,7 @@ version： 2.0.0
 .btn-wrap{
     width: 100%;
     text-align: center;
-    margin: 20px 0 80px;
+    margin: 50px 0 80px;
 }
 .btn,
 a.btn,
