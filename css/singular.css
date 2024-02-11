@@ -926,11 +926,13 @@ version： 2.0.0
 ===================================*/
 .s_section{
     margin-top: 4rem;
+    margin-bottom: 5rem;
 }
 @media screen and (min-width: 38.25em) {
     .s_section{
         margin: 2rem;
         margin-top: 4rem;
+        margin-bottom: 5rem;
     }
 }
 .qa-link-box{
@@ -969,10 +971,44 @@ version： 2.0.0
     border-left: none;
 }
 .p-faq__q-txt{
+    position: relative;
     font-size: 1rem!important;
+    padding-left: 30px;
+}
+.p-faq__q-txt::before{
+    content: "Q";
+    display: block;
+    position: absolute;
+    top:-0.1em;
+    left: -1em;
+    width: 2em;
+    line-height: 2;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background-color: #d55656;
+    border: 1px solid #d55656;
+    border-radius: 10%;
 }
 .p-faq__a-txt{
+    position: relative;
     font-size: 1rem!important;
+    padding-left: 30px;
+}
+.p-faq__a-txt::after{
+    content: "A";
+    display: block;
+    position: absolute;
+    top:-0.1em;
+    left: -1em;
+    width: 2em;
+    line-height: 2;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background-color: #6599b7;
+    border: 1px solid #6599b7;
+    border-radius: 10%;
 }
 .accordion_one{
 	width: 100%;
