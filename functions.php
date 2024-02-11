@@ -240,3 +240,17 @@ function shortcode_news_list() {
   return $html;
  }
  add_shortcode("news_list", "shortcode_news_list");
+
+
+ /* 親テーマ階層のPHPの読み込み
+---------------------------------------------------------- */
+function short_php($params = array()) {
+  extract(shortcode_atts(array(
+    'file' => 'default'
+  ), $params));
+  ob_start();
+  include(get_theme_root() . '/' . get_template() . "/$file.php");
+  return ob_get_clean();
+}
+ 
+add_shortcode('call_php', 'my_php_Include');
