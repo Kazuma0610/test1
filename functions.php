@@ -242,15 +242,231 @@ function shortcode_news_list() {
  add_shortcode("news_list", "shortcode_news_list");
 
 
- /* 親テーマ階層のPHPの読み込み
+/* 子テーマ用のPHPの読み込み
 ---------------------------------------------------------- */
-function short_php($params = array()) {
-  extract(shortcode_atts(array(
-    'file' => 'default'
-  ), $params));
+function my_php_Include($params = array()) {
+  extract(shortcode_atts(array('file' => 'default'), $params));
   ob_start();
-  include(get_theme_root() . '/' . get_template() . "/$file.php");
+  include(STYLESHEETPATH . "/$file.php");
   return ob_get_clean();
+  }
+  add_shortcode('call_php', 'my_php_Include');
+
+
+
+/**
+ * 目次ショートコードです。
+ *
+ * @version 4.2.1
+ */
+class Toc_Shortcode {
+
+	private $add_script = false;
+	private $atts = array();
+
+	public function __construct() {
+		add_shortcode( 'toc', array( $this, 'shortcode_content' ) );
+		add_action( 'wp_footer', array( $this, 'add_script' ), 999999 );
+		add_filter( 'the_content', array( $this, 'change_content' ) );
+	}
+
+	function change_content( $content ) {
+		$elements = wp_html_split( $content );
+		$id = 1;
+		foreach ( $elements as &$element ) {
+			if ( 0 === strpos( $element, '<h' ) ) {
+				if ( preg_match( '/<h[1-6].*?>/u', $element ) ) {
+					if ( ! preg_match( '/<h[1-6](.*?) id="([^"]*)"/u', $element ) ) {
+						$s = preg_replace( '/<(h[1-6])(.*?)>/u', '<${1} id="toc' . $id . '" ${2}>', $element );
+						if ( $element !== $s ) {
+							$element = $s;
+						}
+						
+					}
+					$id++;
+				}
+			}
+		}
+		return join( $elements );
+	}
+
+	public function shortcode_content( $atts ) {
+		global $post, $page;
+
+		if ( ! isset( $post ) )
+			return '';
+
+		$this->atts = shortcode_atts( array(
+			'id'        => '',
+			'class'     => 'toc',
+			'title'     => '目次',
+			'toggle'    => true,
+      'opentext'  => '開く',
+			'closetext' => '閉じる',
+			'close'     => false,
+			'showcount' => 2,
+			'depth'     => 0,
+			'toplevel'  => 2,
+			'scroll'    => 'smooth',
+		), $atts );
+
+		$this->atts['toggle'] = ( false !== $this->atts['toggle'] && 'false' !== $this->atts['toggle'] ) ? true : false;
+		$this->atts['close'] = ( false !== $this->atts['close'] && 'false' !== $this->atts['close'] ) ? true : false;
+
+		$content = $post->post_content;
+		$content = function_exists( 'do_blocks' ) ? do_blocks( $content ) : $content;
+
+		$split = preg_split( '/<!--nextpage-->/msuU', $content );
+		$pages = array();
+		$permalink = get_permalink( $post );
+
+		if ( is_array( $split ) ) {
+			$page_number = 0;
+			$counter = 0;
+			$counters = array( 0, 0, 0, 0, 0, 0 );
+			$current_depth = 0;
+			$prev_depth = 0;
+			$top_level = intval( $this->atts['toplevel'] );
+			if ( $top_level < 1 ) $top_level = 1;
+			if ( $top_level > 6 ) $top_level = 6;
+			$this->atts['toplevel'] = $top_level;
+			$max_depth = ( ( $this->atts['depth'] == 0 ) ? 6 : intval( $this->atts['depth'] ) );
+
+			$toc_list = '';
+
+			foreach ( $split as $content ) {
+				$headers = array();
+				preg_match_all( '/<(h[1-6])(.*?)>(.*?)<\/h[1-6].*?>/u', $content, $headers );
+				$header_count = count( $headers[0] );
+				$page_number++;
+
+				for ( $i = 0; $i < $header_count; $i++ ) {
+					$depth = 0;
+					switch ( $headers[1][$i] ) {
+						case 'h1': $depth = 1 - $top_level + 1; break;
+						case 'h2': $depth = 2 - $top_level + 1; break;
+						case 'h3': $depth = 3 - $top_level + 1; break;
+						case 'h4': $depth = 4 - $top_level + 1; break;
+						case 'h5': $depth = 5 - $top_level + 1; break;
+						case 'h6': $depth = 6 - $top_level + 1; break;
+					}
+					if ( $depth >= 1 && $depth <= $max_depth ) {
+						if ( $current_depth == $depth ) {
+							$toc_list .= '</li>';
+						}
+						while ( $current_depth > $depth ) {
+							$toc_list .= '</li></ul>';
+							$current_depth--;
+							$counters[$current_depth] = 0;
+						}
+						if ( $current_depth != $prev_depth ) {
+							$toc_list .= '</li>';
+						}
+						if ( $current_depth < $depth ) {
+							$class  = $current_depth == 0 ? ' class="toc-list"' : '';
+							$hidden = $current_depth == 0 && $this->atts['close'] ? ' hidden=""' : '';
+							$toc_list .= "<ul{$class}{$hidden}>";
+							$current_depth++;
+						}
+						$counters[$current_depth - 1]++;
+						$number = $counters[0];
+						for ( $j = 1; $j < $current_depth; $j++ ) {
+							$number .= '.' . $counters[$j];
+						}
+						$counter++;
+
+						if ( preg_match( '/.*? id="([^"]*)"/u', $headers[2][$i], $m ) ) {
+							$href = '#' . $m[1];
+						} else {
+							$href = '#toc' .  ( $i + 1 );
+						}
+
+						if ( $page != $page_number ) {
+							if ( 1 == $page_number ) {
+								$href = trailingslashit( $permalink ) . $href;
+							} else {
+								$href = trailingslashit( $permalink ) . $page_number . '/' . $href;
+							}
+						}
+
+						$toc_list .= '<li' . ( $page !== $page_number ? ' class="other-page"' : '' ) . '>';
+						$toc_list .= '<a href="' . esc_url( $href ) . '"><span class="contentstable-number">' . $number . '</span> ' . strip_shortcodes( $headers[3][$i] ) . '</a>';
+
+						$prev_depth = $depth;
+					}
+				}
+			}
+
+			while ( $current_depth >= 1 ) {
+				$toc_list .= '</li></ul>';
+				$current_depth--;
+			}
+		}
+
+		$html = '';
+		if ( $counter >= $this->atts['showcount'] ) {
+			$this->add_script = true;
+
+			$toggle = '';
+			if ( $this->atts['toggle'] ) {
+				$toggle = ' <span class="toc-toggle">[<a class="internal" href="javascript:void(0);">' . ( $this->atts['close'] ? $this->atts['opentext'] : $this->atts['closetext'] ) . '</a>]</span>';
+			}
+
+			$html .= '<div' . ( $this->atts['id'] != '' ? ' id="' . $this->atts['id'] . '"' : '' ) . ' class="' . $this->atts['class'] . '">';
+			$html .= '<p class="toc-title">' . $this->atts['title'] . $toggle . '</p>';
+			$html .= $toc_list;
+			$html .= '</div>' . "\n";
+		}
+
+		return $html;
+	}
+
+	public function add_script() {
+		if ( ! $this->add_script ) {
+			return false;
+		}
+
+		$var = wp_json_encode( array(
+			'open_text' => isset( $this->atts['opentext'] ) ? $this->atts['opentext'] : '開く',
+			'close_text' => isset( $this->atts['closetext'] ) ? $this->atts['closetext'] : '閉じる',
+			'scroll' => isset( $this->atts['scroll'] ) ? $this->atts['scroll'] : 'smooth',
+		) );
+
+		?>
+<script<?php echo current_theme_supports( 'html5', 'script' ) ? '' : " type='text/javascript'"; ?>>
+var xo_toc = <?php echo $var; ?>;
+let xoToc = () => {
+  /**
+   * スムーズスクロール関数
+   */
+  let smoothScroll = (target, offset) => {
+    const targetRect = target.getBoundingClientRect();
+    const targetY = targetRect.top + window.pageYOffset - offset;
+    window.scrollTo({left: 0, top: targetY, behavior: xo_toc['scroll']});
+  };
+
+  /**
+   * 目次項目の開閉
+   */
+  const tocs = document.getElementsByClassName('toc');
+  for (let i = 0; i < tocs.length; i++) {
+    const toggle = tocs[i].getElementsByClassName('toc-toggle')[0].getElementsByTagName('a')[0];
+    toggle.addEventListener('click', function (e) {
+      const target = e.currentTarget;
+      const tocList = tocs[i].getElementsByClassName('toc-list')[0];
+      if (tocList.hidden) {
+        target.innerText = xo_toc['close_text'];
+      } else {
+        target.innerText = xo_toc['open_text'];
+      }
+      tocList.hidden = !tocList.hidden;
+    });
+  }
+};
+xoToc();
+</script><?php
+	}
+
 }
- 
-add_shortcode('call_php', 'my_php_Include');
+
+$toc = new Toc_Shortcode();

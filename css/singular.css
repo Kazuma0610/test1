@@ -289,6 +289,54 @@ version： 2.0.0
     }
 }
 
+/*目次自作のCSS*/
+.toc {
+    background: #fff; /* 背景色 */
+	border: 1px solid #ccc; /* 枠線 */
+	box-sizing: border-box; /* スマホの横揺れ防止 */
+	display: block !important;
+	font-size: 95%; /* フォントサイズ */
+	line-height: 1.4; /* 行間 */
+	margin: 2em auto; /* 外側の余白 */
+	padding: 2em; /* 内側の余白 */
+	width: 100% !important; /* 幅 */
+    text-decoration: none;
+}
+.toc .toc-title {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.toc .toc-toggle {
+    display: none;
+    font-weight: normal;
+    font-size: 90%;
+}
+.toc ul {
+    display: block!important;
+    list-style: none;
+    margin: 0px auto;
+}
+.toc-list li,.toc-list li a {
+    display: block!important;
+    margin: 0;
+    width: 100%;
+    padding: 5px;
+}
+.toc-list ul li a{
+    margin-left: 1rem;
+    color: #444; /* リンク色 */
+	border-bottom: 1px dotted #ccc; /* リンク下線 */
+}
+
+/*.toc-title li{
+    display: block!important;
+    width: 100%;
+}
+.toc .toc-list .other-page a {
+	color: gray;
+}*/
 
 
 
