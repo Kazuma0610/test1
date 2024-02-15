@@ -453,7 +453,6 @@ let xoToc = () => {
     window.scrollTo({left: 0, top: targetY, behavior: xo_toc['scroll']});
   };
 
-
   /**
    * 目次項目の開閉
    */

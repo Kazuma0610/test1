@@ -190,6 +190,8 @@ function slideAnime(){
       return false;
     });
 
+
+    //自作目次の「もっとみる」ボタンのJS
     const elements = document.querySelectorAll('.toc');
 
     Array.from(elements).forEach(function(el){
