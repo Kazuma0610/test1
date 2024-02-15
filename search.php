@@ -13,7 +13,7 @@
                     echo '“'.$_GET['s'] .'”の検索結果：'.$wp_query->found_posts .'件'; // 検索キーワードと該当件数を表示
                 }
                 ?></div>
-                <ul>
+                <ul class="contents-flex">
                     <?php while(have_posts()): the_post(); ?>
                     <li>
                         <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail(); ?><?php echo get_the_title(); ?></a>

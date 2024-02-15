@@ -300,8 +300,8 @@ class Toc_Shortcode {
 			'id'        => '',
 			'class'     => 'toc',
 			'title'     => '目次',
-			'toggle'    => true,
-      'opentext'  => '開く',
+			'toggle'    => false,
+			'opentext'  => '開く',
 			'closetext' => '閉じる',
 			'close'     => false,
 			'showcount' => 2,
@@ -412,13 +412,21 @@ class Toc_Shortcode {
 				$toggle = ' <span class="toc-toggle">[<a class="internal" href="javascript:void(0);">' . ( $this->atts['close'] ? $this->atts['opentext'] : $this->atts['closetext'] ) . '</a>]</span>';
 			}
 
+      $more = "もっと見る";
+
 			$html .= '<div' . ( $this->atts['id'] != '' ? ' id="' . $this->atts['id'] . '"' : '' ) . ' class="' . $this->atts['class'] . '">';
 			$html .= '<p class="toc-title">' . $this->atts['title'] . $toggle . '</p>';
 			$html .= $toc_list;
+      $html .= '<buttun class="more_btn">'. $more . '</buttun>';
 			$html .= '</div>' . "\n";
+
+      
 		}
 
 		return $html;
+    
+    
+
 	}
 
 	public function add_script() {
@@ -445,6 +453,7 @@ let xoToc = () => {
     window.scrollTo({left: 0, top: targetY, behavior: xo_toc['scroll']});
   };
 
+
   /**
    * 目次項目の開閉
    */
@@ -470,3 +479,5 @@ xoToc();
 }
 
 $toc = new Toc_Shortcode();
+
+?>

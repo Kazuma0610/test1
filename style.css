@@ -616,7 +616,7 @@ html {
 	font-size: 1rem;
     margin: 0px 0px 50px 20px;
 }
-.site-main ul{
+.contents-flex {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;

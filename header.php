@@ -33,6 +33,10 @@
                });
            });
 </script>
+<!--目次の「もっと見るボタン」-->
+<script type="text/javascript">
+			
+</script>
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
 <body <?php body_class(); ?>>

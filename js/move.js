@@ -190,4 +190,33 @@ function slideAnime(){
       return false;
     });
 
- 
+    const elements = document.querySelectorAll('.toc');
+
+    Array.from(elements).forEach(function(el){
+
+    //ボタンを取得
+    const btn = el.querySelector('.more_btn');
+    //コンテンツを取得
+    const content = el.querySelector('.toc-list');
+
+    //ボタンクリックでイベント発火
+    btn.addEventListener('click', function(){
+
+      if(!content.classList.contains('open')){
+          //コンテンツの実際の高さを代入
+          //キーワード値（none、max-content等）では動作しないので注意
+          content.style.maxHeight = content.scrollHeight + 'px';
+          //openクラスを追加
+          content.classList.add('open');
+          //もっと見るボタンのテキストを設定
+          btn.textContent = '閉じる';
+      } else {
+          //コンテンツの高さを固定値を代入
+          content.style.maxHeight = '150px';
+          //openクラスを削除
+          content.classList.remove('open');
+          //もっと見るボタンのテキストを設定
+          btn.textContent = 'もっと見る';
+      }
+    });
+});

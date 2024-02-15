@@ -203,7 +203,7 @@ version： 2.0.0
 	background: #fff; /* 背景色 */
 	border: 1px solid #ccc; /* 枠線 */
 	box-sizing: border-box; /* スマホの横揺れ防止 */
-	display: block !important;
+	display: none;
 	font-size: 95%; /* フォントサイズ */
 	line-height: 1.4; /* 行間 */
 	margin: 2em auto; /* 外側の余白 */
@@ -295,26 +295,59 @@ version： 2.0.0
 	border: 1px solid #ccc; /* 枠線 */
 	box-sizing: border-box; /* スマホの横揺れ防止 */
 	display: block !important;
-	font-size: 95%; /* フォントサイズ */
+	font-size: 0.8rem; /* フォントサイズ */
 	line-height: 1.4; /* 行間 */
 	margin: 2em auto; /* 外側の余白 */
 	padding: 2em; /* 内側の余白 */
 	width: 100% !important; /* 幅 */
     text-decoration: none;
+    box-shadow: 2px 2px 5px 0px rgba(200, 200, 200, 1);
 }
-.toc .toc-title {
+.toc-title {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     text-align: center;
     font-weight: bold;
 }
 .toc .toc-toggle {
-    display: none;
     font-weight: normal;
-    font-size: 90%;
+    font-size: .8rem;
+}
+.toc-list{
+    position: relative;
+    height: auto;
+    max-height: 400px; 
+    overflow: hidden;
+    transition: max-height 1s; 
+}
+.toc-list::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    background: linear-gradient(to bottom,transparent 0%,#ffffff 100%);
+}
+.open::after{
+    z-index: -1;
+    opacity: 0;
+}
+.more_btn{
+    width: 70%;
+    display: block;
+    margin: 30px auto;
+    padding: 8px 40px;
+    border: 0;
+    color: #ffffff;
+    background-color: #00c2bc;
+    text-align: center;
+    cursor: pointer;
 }
 .toc ul {
-    display: block!important;
     list-style: none;
     margin: 0px auto;
 }
@@ -325,10 +358,21 @@ version： 2.0.0
     padding: 5px;
 }
 .toc-list ul li a{
-    margin-left: 1rem;
     color: #444; /* リンク色 */
 	border-bottom: 1px dotted #ccc; /* リンク下線 */
 }
+.toc ul ul{
+    padding-left: 2rem;
+}
+
+.btn-test {
+    border: 1px solid #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px;
+  }
 
 /*.toc-title li{
     display: block!important;
