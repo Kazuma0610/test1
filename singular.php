@@ -57,7 +57,7 @@
                 );
                 $related_query = new WP_Query( $args );?>
                 <aside class="related_post_sp">
-                    <h3>関連記事</h3>
+                    <div class="related_head">関連記事</div>
                         <ul class="related_post_container">
                         <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
                             <li>
@@ -163,5 +163,6 @@
                         <?php wp_reset_postdata(); //最後に記事のリセット?>
                         </ul>
                 </aside>    
-    </section>                
+    </section>    
+    <div class="modal-toggle btn-example btn-modal" data-modal="modalOne">目次</div><!--投稿のモバイル用目次-->            
 <?php get_footer(); ?>

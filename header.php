@@ -33,9 +33,16 @@
                });
            });
 </script>
-<!--目次の「もっと見るボタン」-->
+<!--モーダル目次内のリンク移動-->
 <script type="text/javascript">
-			
+			jQuery(function ($) {
+                $('.modal-content a[href*="#"]').click(function () {
+                var elmHash = $(this).attr('href'); //ページ内リンクのHTMLタグhrefから、リンクされているエリアidの値を取得
+                var pos = $(elmHash).offset().top-80;//idの上部の距離からHeaderの高さを引いた値を取得
+                $('body,html').animate({scrollTop: pos}, 500); //取得した位置にスクロール。500の数値が大きくなるほどゆっくりスクロール
+                return false;
+             });
+        });
 </script>
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>
@@ -71,6 +78,16 @@
                       </div>
                   </div>
 </div><!--modal-->
+<div id="modalOne" class="modal-sp"><!-- 目次用modalInner -->
+   <div class="modal-content">
+     <div class="modal-top">
+       <span class="modal-close">×</span>
+     </div>
+     <div class="modal-container">
+       <ul id="tocBlock"></ul>
+     </div>
+   </div>
+</div><!-- 目次用modalInner -->
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
     <header id="header" class="site-header"> 
@@ -337,7 +354,8 @@
  
        </div><!--end header-inner-->
 
-        <div class="foot-inner">
+       <?php if(is_front_page()): ?>
+         <div class="foot-inner">
             <div class="sp-tel">
                 <a href="tel:000-000-0000">
                 <div class="sp-tel-text">お電話はこちらから</div>
@@ -347,7 +365,10 @@
             <div class="sp-contact">
                 <a href="#" target="_blank" rel="noopner">ご予約はこちら</a>
             </div>
-        </div>
+         </div>
+       <?php endif; ?>
+
+        
 
        
        

@@ -191,6 +191,8 @@ function slideAnime(){
     });
 
 
+
+
     //自作目次の「もっとみる」ボタンのJS
     const elements = document.querySelectorAll('.toc');
 
@@ -214,7 +216,7 @@ function slideAnime(){
           btn.textContent = '閉じる';
       } else {
           //コンテンツの高さを固定値を代入
-          content.style.maxHeight = '150px';
+          content.style.maxHeight = '400px';
           //openクラスを削除
           content.classList.remove('open');
           //もっと見るボタンのテキストを設定
