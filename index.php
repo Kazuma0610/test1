@@ -81,7 +81,14 @@
                           <!-- アイキャッチ表示 -->
                           <div class="newpost_thumb"><?php the_post_thumbnail('medium'); ?></div>
                           <!-- タイトル表示 -->
-                          <p class="newpost_title"><?php the_title(); ?></p>
+                          <p class="newpost_title"><?php
+                              $limit = 15; // 表示させる文字数の上限
+                              if (mb_strlen($post->post_title)>$limit) {
+                              $title= mb_substr($post->post_title,0,$limit) ; echo $title. '…' ;
+                              } else {
+                                echo $post->post_title;
+                              }
+                              ?></p>
                           <!--日付表示-->
                           <p class="newpost_date"><?php the_date(); ?></p>
                         </a>

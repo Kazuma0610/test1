@@ -255,11 +255,7 @@ function my_php_Include($params = array()) {
 
 
 
-/**
- * 目次ショートコードです。
- *
- * @version 4.2.1
- */
+/*** 目次ショートコードです。** @version 4.2.1*/
 class Toc_Shortcode {
 
 	private $add_script = false;
@@ -480,4 +476,84 @@ xoToc();
 
 $toc = new Toc_Shortcode();
 
+
+/*** cookieの設定 ***/
+add_action( 'get_header', 'readpost');
+ 
+function readpost() {
+global $browsing_histories;
+$browsing_histories = null;
+$set_this_ID = null;
+    if(is_single()){
+if( isset($_COOKIE['postid_history']) ){
+//postid_historyの部分は任意の文字列でOKです
+//cookieの値を呼び出し
+$browsing_histories = explode(",", $_COOKIE['postid_history']);
+if($browsing_histories[0] != get_the_ID()){
+if(count($browsing_histories) >= 50 ){
+$set_browsing_histories = array_slice($browsing_histories , 0, 49);
+}else{
+$set_browsing_histories = $browsing_histories;
+}
+//値の先頭が現在の記事IDでなければ文字列の一番最初に追加
+$set_this_ID = get_the_ID().','.implode(",", $set_browsing_histories);
+setcookie( 'postid_history', $set_this_ID, time() + 60 * 60 * 24 * 365 * 1,'/');
+// }else{
+// 	$set_this_ID = $_COOKIE['postid_history'];
+}
+}else{
+//cookieがなければ、現在の記事IDを保存
+$set_this_ID = get_the_ID();
+setcookie( 'postid_history', $set_this_ID, time() + 60 * 60 * 24 * 365 * 1,'/');
+}
+//詳細ページ以外なら呼び出しのみ
+}else{
+if( isset($_COOKIE['postid_history']) ){
+$browsing_histories = explode(",", $_COOKIE['postid_history']);
+}
+}
+$postread = explode(",", $_COOKIE['postid_history']);
+$postread = array_unique($postread);
+$postread = array_values($postread);
+return $postread;
+}
+
+/*** 履歴閲覧記事の設定 ***/
+function readpost_typecheack($postnum) {
+  global $post;
+  $postdate = readpost();
+  $numlist = 0;
+  if(!empty($postdate)):
+  ?>
+  <div class="post-check-wrap">
+  <ul class="my-post-check"><?php
+  foreach($postdate as $key =>$val):
+  $posttype = get_post_type( $val );
+  if($posttype==="post")://ここで記事かどうかを見る。
+  if($postnum==$numlist){ break; }
+  ?>
+  <li>
+  <a href="<?php echo get_permalink($val); ?>">
+  <figure class="my-widget__img">
+  <?php echo get_the_post_thumbnail($val, 'thumb-160'); ?>
+  </figure>
+  <div class="my-widget__text"><?php echo get_the_title($val); ?>
+	</div>
+  <div class="post-date dfont"><?php echo get_the_time("Y年m月d日", $val); ?></div>
+  
+  </a>
+  <!--<?php print_r($postcustom); ?>-->
+  </li>
+  <?php
+  $numlist++;
+  endif;
+  endforeach;
+  ?>
+  </ul>
+  </div>
+  <?php
+  endif;
+  }
+
 ?>
+

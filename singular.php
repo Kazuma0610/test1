@@ -39,8 +39,14 @@
                     </div>
                     <?php endif; ?>
                 </div>
+
+                <!--閲覧履歴記事SP盤-->
+                <aside class="latest_post_wrap_sp">
+                    <div class="latest_post">最近閲覧した記事</div>
+                    <?php readpost_typecheack(4); ?>
+                </aside>
                 
-                <!--関連記事-->
+                <!--関連記事SP盤-->
                 <?php if(has_category() ) {
                     $catlist =get_the_category();
                     $category = array();
@@ -79,6 +85,12 @@
         <?php get_sidebar(); ?>
     </section><!-- #primary-->
     <section class="under-content">
+                <aside class="latest_post_wrap">
+                    <div class="latest_post">最近閲覧した記事</div>
+                    <?php readpost_typecheack(4); ?>
+                </aside>
+    
+
                 <!--関連記事-->
                 <?php if(has_category() ) {
                     $catlist =get_the_category();
@@ -112,57 +124,8 @@
                         <?php wp_reset_postdata(); //最後に記事のリセット?>
                         </ul>
                 </aside>
-                <aside class="related_post">
-                    <h3>関連記事</h3>
-                        <ul class="related_post_container">
-                        <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
-                            <li>
-                                <a href="<?php the_permalink(); ?>">
-                                    <!-- アイキャッチ表示 -->
-                                    <div class="related_thumb"><?php the_post_thumbnail('medium'); ?></div>
-                                    <!-- タイトル表示 -->
-                                    <p class="related_title"><?php the_title(); ?></p>
-                                    <?php the_date('','' ); ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); //最後に記事のリセット?>
-                        </ul>
-                </aside>  
-                <aside class="related_post">
-                    <h3>関連記事</h3>
-                        <ul class="related_post_container">
-                        <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
-                            <li>
-                                <a href="<?php the_permalink(); ?>">
-                                    <!-- アイキャッチ表示 -->
-                                    <div class="related_thumb"><?php the_post_thumbnail('medium'); ?></div>
-                                    <!-- タイトル表示 -->
-                                    <p class="related_title"><?php the_title(); ?></p>
-                                    <?php the_date('','' ); ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); //最後に記事のリセット?>
-                        </ul>
-                </aside>  
-                <aside class="related_post">
-                    <h3>関連記事</h3>
-                        <ul class="related_post_container">
-                        <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
-                            <li>
-                                <a href="<?php the_permalink(); ?>">
-                                    <!-- アイキャッチ表示 -->
-                                    <div class="related_thumb"><?php the_post_thumbnail('medium'); ?></div>
-                                    <!-- タイトル表示 -->
-                                    <p class="related_title"><?php the_title(); ?></p>
-                                    <?php the_date('','' ); ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                        <?php wp_reset_postdata(); //最後に記事のリセット?>
-                        </ul>
-                </aside>    
+
+                
     </section>    
     <div class="modal-toggle btn-example btn-modal" data-modal="modalOne">目次</div><!--投稿のモバイル用目次-->            
 <?php get_footer(); ?>

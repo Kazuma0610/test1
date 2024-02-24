@@ -22,7 +22,7 @@
 <script src="js/5-1-6.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script><!--cookie用-->
-<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script><!--progressbar-->
+<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></s><!--progressbar-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" /><!--lightbox用-->
 <!--質問アコーディオンJS-->
 <script type="text/javascript">
@@ -43,6 +43,21 @@
                 return false;
              });
         });
+</script>
+<!--投稿記事の「ライター別の最新記事一覧」のもっとみるボタン-->
+<script type="text/javascript">
+			jQuery(function ($) {
+          var show = 3; //最初に表示する件数
+          var num = 3;  //もっと見るで表示する件数
+          var contents = '.catList li'; // 対象のlist
+            $(contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
+            $('.more').on('click', function () {
+            $(contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
+            if ($(contents + '.is-hidden').length == 0) {
+            $('.more').fadeOut();
+            }
+          });
+      });
 </script>
 <?php wp_head(); ?><!--システム・プラグイン用-->
 </head>

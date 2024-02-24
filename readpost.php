@@ -1,0 +1,1 @@
+<?php readpost_typecheack(4); ?>
