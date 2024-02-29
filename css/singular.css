@@ -195,6 +195,110 @@ version： 2.0.0
 }
 }
 
+/*----------------------------*/
+/*レーティング評価コンテンツ*/
+.rateing-title{
+    font-size: .8em!important;
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+.rateing-contents{
+    margin: 10px 0 50px 0;
+    box-shadow: 0 3px 5px rgba(0,0,0,.07);
+    color: #333;
+    border-radius: 20px;
+    background-color: #fffdf5;
+    padding: 20px;
+}
+.rateing-star-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+}
+.rateing-container{
+    text-align: center;
+}
+.rateing-number{
+    font-size: 2rem!important;
+    font-weight: bold!important;
+}
+.star5_rating{
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC; /* グレーカラー 自由に設定化 */
+    /*font-size: 30px; フォントサイズ 自由に設定化 */
+}
+.star5_rating:before, .star5_rating:after{
+    content: '★★★★★';
+}
+.star5_rating:after{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffcf32; /* イエローカラー 自由に設定化 */
+}
+.star5_rating[data-rate="4"]:after{ width: 80%; } /* 星4 */
+
+/*barの装飾*/
+.ub-bar-graph-content{
+    display: inline-block;
+    white-space: nowrap;
+    width: 50px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #5C3B44;
+    text-decoration: underline;
+}
+.ub-bar-graph-em{
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    max-width: 223px;
+    width: 40vw;
+    height: auto;
+    background-color: #EFEFEF;
+}
+.ub-bar-graph-em::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #F09796;
+}
+.horizontal-bar{
+    vertical-align: middle;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    appearance:none;
+}
+progress::-webkit-progress-value {
+    background-color: #fac225;
+  }
+progress::-webkit-progress-bar {
+    background-color: #EFEFEF;
+  }
+
+  @media screen and (min-width: 38.25em) {
+	.rateing-title{
+        font-size: 1.5em!important;
+    }
+}
 
 /*-----------------------------*/
 
@@ -203,13 +307,15 @@ version： 2.0.0
 	background: #fff; /* 背景色 */
 	border: 1px solid #ccc; /* 枠線 */
 	box-sizing: border-box; /* スマホの横揺れ防止 */
-	display: none;
+	display: none!important;
 	font-size: 95%; /* フォントサイズ */
 	line-height: 1.4; /* 行間 */
 	margin: 2em auto; /* 外側の余白 */
 	padding: 2em; /* 内側の余白 */
 	width: 100% !important; /* 幅 */
     text-decoration: none;
+    opacity: 0;
+    height: 0px!important;
 }
 
 .toc_title {
@@ -217,6 +323,7 @@ version： 2.0.0
 	font-weight: bold; /* 太字 */
 	padding: 0.4em 0; /* 内側の余白 */
 	text-align: center; /* 中央寄せ */
+    height: 0px;
 }
 
 .toc_toggle {
@@ -238,6 +345,7 @@ version： 2.0.0
 .toc_list {
 	margin-top: 1em;
     text-decoration: none;
+    height: 0px!important;
 }
 
 .toc_list a {
@@ -260,6 +368,7 @@ version： 2.0.0
 }
 
 .toc_list li {
+    display: none;
     width: 100%;
 	margin-bottom: 0.4em;
 	padding-bottom: 0.4em;

@@ -134,7 +134,27 @@
                     <li class="ga-move"><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/tate4.png" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tate4.png" alt="インスタ画像"></a></li>
                   </ul>
                 </div>
-                <div class="banner-wrapper">
+                <!-- Button Instagram -->
+                <div class="btn__container">
+                  <ul class="snsbtniti">
+                    <li>
+                      <a href="TwitterのプロフィールURL" class="flowbtn4 fl_tw2">
+                        <i class="fa-brands fa-x-twitter"></i><div class="x-icon">X</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="インスタのプロフィールURL" class="flowbtn4 insta_btn2">
+                        <i class="fab fa-instagram"></i><div class="insta-icon">Instagram</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="FacebookページのURL" class="flowbtn4 fl_fb2">
+                        <i class="fab fa-facebook-f"></i><div class="facebook-icon">Facebook</div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!--<div class="banner-wrapper">
                   <ul>
                     <li>
                       <a href="#">
@@ -157,7 +177,7 @@
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div>-->
               </article>
             </div><!--sns/area-contents-->
 
