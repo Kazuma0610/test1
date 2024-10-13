@@ -8,13 +8,13 @@
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main1.png" alt="画像"/>
                         </div>
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main2.png" alt="画像"/>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main4.png" alt="画像"/>
                         </div>
                         <div class="swiper-slide">
                             <a href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main3.png" alt="画像"/></a>
                         </div>
                         <div class="swiper-slide">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main2.png" alt="画像"/>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/main5.png" alt="画像"/>
                         </div>
                     </div>
                 </div>
@@ -81,14 +81,7 @@
                           <!-- アイキャッチ表示 -->
                           <div class="newpost_thumb"><?php the_post_thumbnail('medium'); ?></div>
                           <!-- タイトル表示 -->
-                          <p class="newpost_title"><?php
-                              $limit = 15; // 表示させる文字数の上限
-                              if (mb_strlen($post->post_title)>$limit) {
-                              $title= mb_substr($post->post_title,0,$limit) ; echo $title. '…' ;
-                              } else {
-                                echo $post->post_title;
-                              }
-                              ?></p>
+                          <p class="newpost_title"><?php the_title(); ?></p>
                           <!--日付表示-->
                           <p class="newpost_date"><?php the_date(); ?></p>
                         </a>
@@ -138,7 +131,7 @@
                 <div class="btn__container">
                   <ul class="snsbtniti">
                     <li>
-                      <a href="TwitterのプロフィールURL" class="flowbtn4 fl_tw2">
+                      <a href="xのプロフィールURL" class="flowbtn4 fl_tw2">
                         <i class="fa-brands fa-x-twitter"></i><div class="x-icon">X</div>
                       </a>
                     </li>
@@ -264,6 +257,7 @@
                   <a href="#" class="btn04 bordertop"><span><p>メニュー一覧を見る</p></span></a>
                 </div>
             </section><!--#menu-->
+
             <section id="reserve" class="inner-section">
               <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Reserve</span><span class="subtitle slide-in_inner leftAnimeInner">ご予約</span></span></h2>
               <div class="reserve-wrap fadeInTrigger">
@@ -275,11 +269,12 @@
                     <dd>営業時間 : 10.00-19.00</dd>
                   </dl>
                   <div class="reserve-btn">
-                    <a href="#" class="btn04 bordertop"><span><p>ご予約はコチラ</p></span></a>
+                    <a href="https://daieirecords.com/reservation/" class="btn04 bordertop"><span><p>ご予約はコチラ</p></span></a>
                   </div>
                 </div>
               </div>
             </section><!--reserve-->
+
             <section id="cast" class="inner-section">
               <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Cast</span><span class="subtitle slide-in_inner leftAnimeInner">施術者</span></span></h2>
               <div class="cast-container">
@@ -331,6 +326,7 @@
                 </div>
               </div>
             </section><!--cast-->
+            
             <section id="access" class="inner-section">
               <h2><span class="slide-in leftAnime"><span class="slide-in_inner leftAnimeInner">Access</span><span class="subtitle slide-in_inner leftAnimeInner">アクセス</span></span></h2>
               <div class="map-wrap fadeInTrigger">

@@ -117,13 +117,13 @@
                 <?php else : ?>
                     <p class="site-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                 <?php endif; ?>
-                <p class="site-description"><?php bloginfo('description'); ?></p>
                 <!--▼ メガグローバルナビゲーション -->
                 <nav class="global-nav pc-only">
                   <ul class="nav-list">
                     <li class="nav-item">
                       <a href="https://daieirecords.com">ホーム</a>
                     </li>
+
                     <li id="id1" class="nav-item">
                       <a href="#">カテゴリー</a>
                         <div class="nav-item_sub">
@@ -200,6 +200,7 @@
                           </div><!--inner-->
                         </div><!--nav-item_sub-->
                     </li><!--nav-item-->
+                    
                     <li id="id2" class="nav-item">
                       <a href="#">料金価格</a>
                         <div class="nav-item_sub">
@@ -225,6 +226,7 @@
                     <li class="nav-item"><a href="#">店舗案内</a></li>
                     <li class="nav-item"><a href="#">会社概要</a></li>
                     <li class="nav-item"><a href="https://daieirecords.com/contact/">お問合せ</a></li>
+                    <li class="nav-item"><a href="https://daieirecords.com/reservation/">ご予約</a></li>
                   </ul>
                 </nav>
                 <!--▲ メガグローバルナビゲーション -->
@@ -310,6 +312,7 @@
                 <div class="openbtn openbtn-sponly"><span></span><span></span><span></span></div><!--ハンバーガーボタン-->
                 <nav id="g-nav">
                    <div id="g-nav-list">
+                    
                     <div class="section s_07 sp-only">
                           <div class="accordion_one">
                                 <div class="accordion_header">TOP</div><!--accordion_header-->
@@ -337,6 +340,7 @@
                                 <div class="accordion_header"><a href="http://http://sample-site-test.local/%e5%bd%93%e5%ba%97%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">当店について</a></div>
                           </div><!--accordion_one-->
                     </div><!--section s_07-->
+
                     <div class="header-bg-wrap pc-only">
                       <div class="section s_07 pc-only">
                           <div class="accordion_one">
@@ -363,6 +367,7 @@
                           </div><!--accordion_one-->
                       </div><!--section s_07-->
                     </div><!--header-bg-wrap pc-only-->
+
                    </div><!--g-nav-list-->
                 </nav><!--g-nav-->
 

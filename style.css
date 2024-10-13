@@ -104,7 +104,6 @@ hr {
 }
 
 /* -------------------------------------------------------------------------- */
-
 /*	Font Family
 /* -------------------------------------------------------------------------- */
 
@@ -373,6 +372,10 @@ html {
 	font-family: "Noto Serif JP", serif;
 	background: #f8f9fa;
 }
+.site-title{
+	font-size: 1.5rem;
+	letter-spacing: 5px;
+}
 .site-title a{
 	font-weight: bold;
 }
@@ -395,6 +398,10 @@ html {
     margin-right: auto;
     margin-left: auto;
     padding: 1.25rem;
+}
+.site-title{
+	font-size: 2rem;
+	letter-spacing: 5px;
 }
 .footer-inner{
 	margin-bottom: 0px;
@@ -616,7 +623,7 @@ html {
 	font-size: 1rem;
     margin: 0px 0px 50px 20px;
 }
-.contents-flex {
+.site-main ul{
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;

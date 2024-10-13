@@ -1,4 +1,3 @@
-	
 <?php
 //テーマのセットアップ
 // HTML5でマークアップさせる
@@ -17,6 +16,8 @@ function register_my_menu() {
   register_nav_menu( 'pc-menu','Pc Menu');
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
+
+
 
 //CSSの読み込み
 add_action('wp_enqueue_scripts', 'add_styles');
@@ -81,6 +82,13 @@ add_action('wp_enqueue_scripts', 'add_styles');
       wp_enqueue_style(
         'contact_style',
         get_template_directory_uri() . '/css/contact.css',
+        array('main_style'), // main_styleが読み込まれた後にcontact_styleを読み込む 
+        '1.0'
+      );
+
+      wp_enqueue_style(
+        'reserve_style',
+        get_template_directory_uri() . '/css/reserve.css',
         array('main_style'), // main_styleが読み込まれた後にcontact_styleを読み込む 
         '1.0'
       );
@@ -556,4 +564,3 @@ function readpost_typecheack($postnum) {
   }
 
 ?>
-
