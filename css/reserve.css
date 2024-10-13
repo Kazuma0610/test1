@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*レスポンシブル*/
+/*文字フォント*/
+/*セクションpadding*/
+/*ボタン*/
+/*サブタイトル*/
+.site-main-post {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#post-372 .entry-content iframe {
+  width: 100%;
+  height: 1000px;
+}
+/*# sourceMappingURL=reserve.css.map */

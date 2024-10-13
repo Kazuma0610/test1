@@ -1,5 +1,3 @@
 <aside id="sidebar" class="sidebar">
-  <div class="sidebar-inner">
- 
-  </div><!--end sidebar-inner-->
+    <?php dynamic_sidebar('sidebar'); ?>
 </aside>

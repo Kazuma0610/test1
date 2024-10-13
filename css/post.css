@@ -1,0 +1,26 @@
+@charset "utf-8";
+/*
+theme Name: WordPress Sample-site by Kazuma
+Author: Kazuma
+Description: Sample original theme
+version： 2.0.0
+*/
+
+
+/*個別ページ*/
+/*当店いついて*/
+.site-main-post{
+    padding: 1rem;
+}
+.post-54 .entry-header{
+    display: flex;
+    border-bottom: unset!important;
+}
+.post-54 .entry-title{
+    margin: 0 auto;
+    border-bottom: 1px solid #929292;
+}
+.site-main-post p{
+    font-size: 1em;
+    font-weight: unset;
+}

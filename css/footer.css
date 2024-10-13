@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*レスポンシブル*/
+/*文字フォント*/
+/*セクションpadding*/
+/*ボタン*/
+/*サブタイトル*/
+/* --------------------------------------------------------------------------------
+footerのレイアウト
+-------------------------------------------------------------------------------- */
+.footer-inner {
+  height: 300px;
+  text-align: center;
+}
+@media (min-width: 38.25em) {
+  .footer-inner {
+    height: auto;
+  }
+}
+
+.footer-flex {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+@media (min-width: 38.25em) {
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+}
+
+.footer-tl {
+  text-align: center;
+}
+.footer-tl dt {
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  font-family: "Noto Serif JP", serif;
+}
+.footer-tl dd {
+  padding: 5px 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #ffedad;
+  font-family: "Noto Serif JP", serif;
+}
+
+.footer-list ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 38.25em) {
+  .footer-list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.footer-list ul li {
+  padding: 5px;
+  font-size: 0.8rem;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 400px) {
+  .footer-list ul li {
+    padding: 10px;
+  }
+}
+@media (min-width: 38.25em) {
+  .footer-list ul li {
+    font-size: 1rem;
+  }
+}
+
+.footer-inner small {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Noto Serif JP", serif;
+}
+@media (min-width: 38.25em) {
+  .footer-inner small {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 40px;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,1522 @@
+/* --------------------------------------------------------------------------------
+Tabのレイアウト
+-------------------------------------------------------------------------------- */
+/*レイアウトのためのCSS*/
+
+@use "mixin" as m;
+
+
+.wrapper{
+	width:100%;
+	max-width: 1600px;
+	margin:30px auto;
+    margin-bottom: -10px;
+    background: #f8f9fa;
+}
+
+.area h2{
+	font-size:1.3rem;
+	margin:20px 0 20px 10px;
+}
+
+.inner-section{
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px;
+    @include m.breakpoint(tablet){
+        padding: 50px;
+       }
+    @include m.breakpoint(only-tab){
+        padding: 50px;
+       }
+}
+
+
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    background: #f8f9fa;
+    li{
+       width: calc(30% - 10%/2);
+       @include m.breakpoint(pc){
+        width: calc(50% - 50%/2); 
+       }  
+    }
+    li a{
+       display: block;
+	   background:#fff;
+	   margin:0 0px;
+	   padding:10px 20px;
+       color: darkgray;
+       text-align: center;
+	   font-size: 1em;
+	   font-weight: bold;
+	   border: darkgray 1px solid;
+	   border-bottom: 2px solid #000;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       @include m.font;
+       @include m.breakpoint(pc){
+        font-size: 1.5em;
+	    border-bottom: 0px solid #000;
+       }  
+    }     
+}
+
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background: #d8b1b2;
+    color: #fff;
+}
+
+
+/*エリアの表示非表示と形状*/
+@mixin anime-1{
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #f8f9fa;
+	padding:30px;
+    &.is-active{/*areaにis-activeというクラスがついた時の形状*/
+        display: block;/*表示*/
+        @include anime-1;
+    }
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/*lead内の装飾*/
+@mixin font-tate{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+#lead{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include m.padding-sec-sp;
+    flex-direction: column-reverse;
+    @include m.breakpoint(only-tab){
+        flex-direction: unset;
+        @include m.padding-sec-pc;
+    }  
+}
+.lead-img{
+    width: 100%;
+    min-height: 250px;
+    background: url(../images/sample-pic1.jpg) no-repeat center;
+    background-size: cover;
+    @include m.breakpoint(only-tab){
+        width: 46%;
+        min-height: 400px;
+        background: url(../images/sample-pic1.jpg) no-repeat center;
+        background-size: cover;
+    }
+}
+.lead-area{
+    width: 100%;
+    min-height: 20em;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row-reverse;
+    position: relative;
+    top: -50px;
+    @include m.breakpoint(only-tab){
+        width: 52%;
+        min-height: 0em;
+        margin-bottom: 0px;
+        justify-content: space-around;
+        top: 0px;
+        &::before{
+            content:"";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:300px;
+            left: 300px;
+            background: url(../images/neta1.png) no-repeat center;
+            background-size: cover;
+        }
+        &::after{
+            content:"";
+            width: 100px;
+            min-height: 100px;
+            position: absolute;
+            top:350px;
+            left: 350px;
+            background: url(../images/neta1.png) no-repeat center;
+            background-size: cover;
+        }
+        @include m.breakpoint(pc){
+            &::before{
+                content:"";
+                width: 25%;
+                min-height: 150px;
+                position: absolute;
+                top:420px;
+                left: 250px;
+                background: url(../images/neta1.png) no-repeat center;
+                background-size: cover;
+            }
+            &::after{
+                content:"";
+                width: 25%;
+                min-height: 150px;
+                position: absolute;
+                top:400px;
+                left: 400px;
+                background: url(../images/neta1.png) no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+    h2{
+        width: auto;
+        line-height: 2;
+        letter-spacing: 10px;
+        font-size: 1rem;
+        @include font-tate;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 28%;
+            font-size: 1.4rem;
+        }
+        @include m.breakpoint(pc){
+            line-height: 2;
+            font-size: 2rem;
+        }
+    }
+    @at-root .text{
+        width: auto;
+        height: 23em;
+        padding: 50px 0 0 0;
+        line-height: 2;
+        letter-spacing: 5px;
+        font-size: 0.8rem;
+        @include font-tate;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 48%;
+            font-size: 1rem;
+        }
+        @include m.breakpoint(pc){
+            font-size: 1.5rem;
+           }
+    }
+    @at-root .lead-btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        @include m.font;
+        @include m.breakpoint(only-tab){
+            width: 10%;
+            margin-top: 0px;
+            position: relative;
+            top:130px;
+            left:50px;
+            @include font-tate;
+           }
+        @include m.breakpoint(pc){
+            left:0;
+           }
+    }
+}
+/*モーダル内装飾*/
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+    @include m.breakpoint(tablet){
+        display: none;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 1000;
+      }
+  }
+
+/*::-webkit-scrollbar{
+    display: none;
+}*/
+
+.modal_bg {
+    background: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+.modalScroll{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+    background: #fff;
+    height: auto;
+    width: 90%;
+    padding: 5px;
+    border-radius: 20px;
+    -ms-overflow-style: none;
+    z-index: 150;
+    overflow: hidden;
+    overflow-y: scroll;
+    @include m.breakpoint(tablet){
+        height: 80%;
+      }
+    @include m.breakpoint(pc){
+        height: auto;
+      }
+}
+::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #b6b6b6;
+    border-radius: 10px;
+  }
+.modal_content {
+    color: rgb(49, 49, 49);
+    text-align: center;
+    .gallery{
+        columns:2;
+        padding: 0 15px;
+        @include m.breakpoint(only-tab){
+            columns:2;
+          }
+        @include m.breakpoint(pc){
+            columns:4;
+          }
+        li{
+            margin-bottom: 20px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;/*画像の下にできる余白を削除*/
+        }
+    }
+}
+.no_scroll {
+    overflow: hidden;
+  }
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    border: 1px solid #fff;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 9999;
+    @include m.breakpoint(tablet){
+        top: 20px;
+        right: 20px;
+      }
+    @include m.breakpoint(only-tab){
+        top: 30px;
+        right: 30px;
+      }
+    @include m.breakpoint(pc){
+        top: 50px;
+        right: 50px;
+      }
+  }
+  .popup-close:after, .popup-close:before {
+    width: 14px;
+    height: 2px;
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    background: #667075
+  }
+  .popup-close:before {
+    -ms-transform: rotate(-45deg);
+    transform: rotateZ(-45deg)
+  }
+  .popup-close:after {
+    -ms-transform: rotate(45deg);
+    transform: rotateZ(45deg)
+  }
+  .popup-close {
+    width: 25px;
+    height: 23px
+  }
+  .popup-close:after, .popup-close:before {
+    width: 11px;
+    height: 2px;
+    left: 6px;
+    top: 9px
+  }
+/*モーダルの中身*/
+.modal_content{
+    padding: 10px;
+    @include m.breakpoint(only-tab){
+        padding: 50px;
+      }
+    h2{
+        @include m.font;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+        @include m.breakpoint(tablet){
+            font-size: 1.5rem;
+          }
+        @include m.breakpoint(only-tab){
+            font-size: 2rem;
+          }
+        @include m.breakpoint(pc){
+            font-size: 3rem;
+          }
+    }
+    .swiper-text{
+        padding: 10px;
+        h3{
+            padding-bottom: 5px;
+        }
+        p{
+            letter-spacing: 3px;
+        }
+        h4{
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+    }
+}
+
+/*.lightbox {
+    position: absolute;
+    top: 300px !important;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    font-weight: 400;
+    @include m.breakpoint(tablet){
+        top: 150px !important;
+      }
+
+}*/
+
+
+/*----------お知らせのセクション-----------*/
+#news{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    padding: 30px 0 0px;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+    }
+    .news-flex{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+            @include m.breakpoint(only-tab){
+                align-items: center;
+                flex-direction: unset;
+    }
+    }
+    .news-content{
+        width: 100%;
+        margin-top: -20px;
+        @include m.breakpoint(only-tab){
+            max-width: 48%;
+            padding: 50px;
+            margin-top: 0px;
+        }
+        ul{
+            margin: 0 0 20px;
+            li{
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                @include m.font;
+                @include m.breakpoint(only-tab){
+                    min-width: 400px;
+                }
+                a{
+                    color: #333;
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                    @at-root .news_date{
+                        font-size: .8rem;
+                    }
+                    @at-root .news_title{
+                        font-size: 1rem;
+                        line-height: 30px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+        @at-root .news-btn{
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            @include m.font;
+            @include m.breakpoint(only-tab){
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                font-size: 1rem;
+                letter-spacing: 5px;
+            }
+        }
+    }
+    .news-image{
+      width: 100%;
+      min-height: 250px;
+      background: url(../images/news.png) no-repeat center;
+      background-size: cover;
+      @include m.breakpoint(only-tab){
+        width: 50%;
+        min-height: 400px;
+        background: url(../images/news.png) no-repeat center;
+        background-size: cover;
+    }
+    }
+}
+/*
+* 新着記事一覧ショートコード用
+*/
+.news-list .news-list-inner {
+    padding: 20px 5px;
+    border: 2px solid #f5f5f5;
+   }
+   .archive .news-list .news-list-inner {
+    background: #fff;
+    padding: 20px;
+   }
+   .news-list ul {
+    list-style: none;
+    margin: 0 0 20px;
+   }
+   .news-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+   }
+   .news-list a {
+    color: #333;
+    text-decoration-line: none;
+   }
+   .news-list a:hover {
+    opacity: 0.6;
+   }
+   .news-list a.wp-block-button__link {
+    color: #fff;
+   }
+   .news-list a.wp-block-button__link:hover {
+    color: #F87474;
+   }
+   .news-list .news_date {
+    margin: 0;
+    font-size: 14px;
+   }
+   .news-list .news_title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   }
+
+
+/*---------------------*/
+#colum{
+    padding: 0px 10px 30px;
+    @include m.breakpoint(only-tab){
+        padding: 0px 10px 50px;
+      }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+    }
+    @at-root .newpost-flex{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: -20px 0px 20px 0px;
+        li{
+            width: calc(50% - 20px / 2);
+            margin: 0 5px 20px 0;
+            @include m.breakpoint(tablet){
+                width: calc(22% - 20px / 4);
+                margin: 0 20px 20px 0;
+                &:nth-child(1){
+                    margin-left: 10px;
+                }
+                &:nth-child(5){
+                    margin-left: 10px;
+                }
+                &:nth-child(4){
+                    margin-right: 0px;
+                }
+                &:nth-child(8){
+                    margin-right: 0px;
+                }
+              }
+        }
+        .newpost_thumb{
+            margin-bottom: 10px;
+            overflow: hidden;
+            img{
+                transition: transform .6s ease;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            } 
+        }
+        .newpost_title,.newpost_date{
+            font-size: 0.8rem;
+            padding-left: 10px;
+            @include m.font;
+            @include m.breakpoint(only-tab){
+                font-size: 1rem;
+              }
+        }
+    }
+}
+
+
+/*----------topics-----------*/
+#topics{
+    padding: 10px;
+    @include m.breakpoint(only-tab){
+        padding: 70px 10px 50px;
+      }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+    }
+}
+/*順番にフェードイン*/
+.delayScroll{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    li{
+        width: calc(50% - 10px);
+        margin: 0 5px 50px 0;
+        @include m.breakpoint(tablet){
+            width: calc(22% - 5px);
+            margin: 0 20px 50px 0;
+           }  
+        img{
+            &:hover{
+            opacity: 0.8;
+        }
+        }
+    }
+}
+.box{
+    opacity: 0;
+}
+.fadeUp{
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeUpAnime{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*---------文字の個所---------*/
+.topics-area{
+    max-width: 230px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 5px 0 10px #ccc;
+    font-size: 0.8rem;
+    @include m.font;
+    @include m.breakpoint(only-tab){
+        font-size: 1rem;
+       }  
+}
+/*----------topics-----------*/
+
+
+/*----------SNS--------------*/
+#insta{
+    padding: 0px 10px 30px;
+    @include m.breakpoint(only-tab){
+        padding: 0px 10px 50px;
+      }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    .subtitle{
+        @include m.subtitle;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -20px;
+          }
+    }
+    }
+    .insta-wrapper{
+        .gallery{
+            columns:2;
+            padding: 0 15px;
+            @include m.breakpoint(only-tab){
+                columns:2;
+              }
+            @include m.breakpoint(pc){
+                columns:4;
+              }
+            li{
+                margin-bottom: 20px;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                vertical-align: bottom;/*画像の下にできる余白を削除*/
+            }
+        }
+    }
+    .banner-wrapper{
+        position: relative;
+        ul{
+            @include m.breakpoint(tablet){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:40px;
+              }
+            li{
+                margin-top: 50px;
+                position: relative;
+                a{
+                    .b-text{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border: solid 1px #666;
+                        border-radius: 6px;
+                        width: 60%;
+                        height: 50%;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        z-index: 999;
+                        position: absolute;
+                        top:25%;
+                        left: 20%;
+                        @include m.breakpoint(pc){
+                            top: 25%;
+                            left: 30%;
+                            width: 200px;
+                            height:80px;
+                          }
+                    }
+                    .b-text-insta{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        border: solid 1px #666;
+                        border-radius: 6px;
+                        width: 60%;
+                        height: 50%;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        z-index: 999;
+                        position: absolute;
+                        top:25%;
+                        left: 20%;
+                        @include m.breakpoint(pc){
+                            top: 25%;
+                            left: 30%;
+                            width: 200px;
+                            height: 80px;
+                          }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*SNSアイコン*/
+.btn__container{
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    .snsbtniti{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+.flowbtn4{
+    font-family: 'Comic Sans MS','Chalkboard SE',sans-serif;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+    &:hover{
+        color:#fff!important;/* ボタンマウスホバー時テキストカラー */
+    }
+    &.fl_tw2{
+        border:solid 1px black;/* Twitter */
+        color:black;
+    }
+    &.fl_tw2:hover{
+        border:solid 1px black;/* Twitterマウスホバー時 */
+        background:black;
+    }
+    &.insta_btn2 {
+        border:solid 1px #c6529a;
+        color:#c6529a;
+    }
+    &.insta_btn2:hover{
+        border:solid 1px #c6529a;
+        background:#c6529a;
+    }
+    &.flowbtn4.fl_fb2{
+        border:solid 1px #3b5998;
+        color:#3b5998;
+    }
+    &.flowbtn4.fl_fb2:hover{
+        border:solid 1px #3b5998;
+        background:#3b5998;
+    }
+    .fa-x-twitter{
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+    }
+    .fa-instagram{
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+    }
+    .fa-facebook-f{
+        position: absolute;
+        bottom: 30px;
+        left: 25px;
+    }
+    }
+.x-icon{
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0;
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+.insta-icon{
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0;
+    position: absolute;
+    left: 8px;
+    bottom: 10px;
+}
+.facebook-icon{
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+    
+
+
+
+/*アニメーションボタン*/
+/*共通*/
+.btn04{
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color:#333;
+    border:1px solid #ccc;
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+    &:hover{
+        color:#fff;
+        border-color: transparent;
+        transition-delay: .6s;
+    }
+    span{
+        display: block;
+    }
+    p{
+        position: relative;
+        z-index: 2;
+    }
+}
+/*線から塗に変化（上から下）*/
+/*線*/
+.bordertop{width: auto;
+    span::before,span::after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 0;
+        /*線の形状*/
+        background: #e2a2ba;
+        /*アニメーション設定*/
+        transition: all .3s;
+    }
+    @at-root .bordertop{
+        span::before{
+            left:0;
+            top:0;
+        }
+        span::after{
+            right: 0;
+            top:0;
+        }
+    }
+    &:hover span::before,&:hover span::after{
+        height: 100%;
+    }
+    /*背景の設定*/
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top:0;
+        z-index:0;
+        width: 100%;
+        height: 0;
+        background: #e2a2ba;
+        transition: all .3s;
+    }
+    &:hover::before{
+        height: 100%;
+        transition-delay: .4s;
+    }
+}
+
+
+
+/*fadeInアニメーションの設定*/
+.fadeIn{
+    animation-name: fadeInAnime;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeInTrigger{
+    opacity: 0;
+}
+/*---------------------*/
+
+
+/*MENU内の装飾*/
+#menu{
+    background: #f8f9fa;
+    @include m.padding-sec-sp;
+    @include m.breakpoint(only-tab){
+        @include m.padding-sec-pc;
+       }
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+    @at-root .menu-btn{
+        @include m.buttun-basic;
+    }
+}
+/*--------------------------------*/
+
+
+/*textが流れるアニメーションの設定*/
+/*共通*/
+.slide-in{
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 10px;
+}
+.slide-in_inner{
+    display: inline-block;
+}
+/*設定*/
+.leftAnime{
+    opacity: 0;
+}
+.slideAnimeLeftRight{
+    animation-name: slideTextX100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX100{
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slideAnimeRightLeft{
+    animation-name: slideTextX-100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX-100{
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/*---------------------*/
+
+
+/*MENU内のスライダー設定*/
+/* slick */
+$arrow-color:#000;
+.slider{
+    li{
+        margin: 10px;
+    }
+}
+.slick-next{
+    &:before{
+        color:$arrow-color;
+        position: relative;
+        left: -10px;
+    }
+}
+.slick-prev{
+    &:before{
+        color:$arrow-color;
+        position: relative;
+        right: -10px;
+    }
+}
+.slick-dots{
+    bottom:-55px;
+}
+/*MENU内のスライダー内の要素装飾*/
+.slider-wrap{
+    max-width: 369px;
+    height: auto;
+}
+.menu-area{
+    padding: 20px;
+    background: #fff;
+    box-shadow: 5px 0 10px #ccc;
+    @include m.font;
+}
+/*写真をホバーで円状の波紋*/
+.circle span.mask{
+    position: relative;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    &::before{
+        position: absolute;
+        content: "";
+        transform: scale(0);
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+    }
+    &:hover::before{
+        animation: circle 0.75s;
+    }
+
+    @keyframes circle{
+        0%{
+            transform: scale(0);
+            opacity: 1;
+        }
+        30%{
+            opacity: 1;
+        }
+        100%{
+            transform: scale(2);
+        }
+    }
+}
+/*---------------------*/
+
+
+/*reserve内の装飾*/
+#reserve{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+         padding-bottom: 0px;
+       }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+    }
+    @at-root .reserve-btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        @include m.font;
+    }
+    h3{
+        text-align: center;
+        font-size: 1.5rem;
+        color: #555555;
+        @include m.font;
+        padding: 20px;
+    }
+    @at-root .reserve-text{
+        padding: 0px;
+        @include m.breakpoint(tablet){
+            padding: 30px;
+           }
+        @include m.breakpoint(only-tab){
+            padding: 0px;
+           }
+        @include m.breakpoint(pc){
+            padding: 50px;
+           }
+    }
+    @at-root .reserve-text{
+        dl{
+            text-align: center;
+            color: #555555;
+            letter-spacing: 5px;
+            @include m.font;
+        }
+        dt{
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    }
+}
+.reserve-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    @include m.breakpoint(tablet){
+        justify-content: space-between;
+       }
+    @at-root .reserve-img{
+        width: 100%;
+        height: 300px;
+        background: url(../images/reserve-sample.png) no-repeat center;
+        background-size: cover;
+        @include m.breakpoint(tablet){
+            width: 55%;
+           }
+        @include m.breakpoint(only-tab){
+            width: 70%;
+           }
+    }
+}
+
+
+/*---------------------*/
+/*cast内の装飾*/
+#cast{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+    @at-root .cast-btn{
+        @include m.buttun-basic;
+        margin-top: -50px;
+    }
+}
+.cast-wrap{
+    text-align: center;
+    @include m.breakpoint(tablet){
+        text-align: unset;
+      }
+}
+.cast-flex{
+    display: inline-block;
+    padding: 0px 20px 0 20px;
+    @include m.breakpoint(tablet){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 50px 20px 0 20px;
+      }
+    @include m.breakpoint(only-tab){
+        padding: 50px 30px 0 30px;
+      }
+    @include m.breakpoint(pc){
+        padding: 50px 30px 0 30px;
+      }
+    li{
+        position: relative;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 100px;
+        @include m.breakpoint(tablet){
+            max-width: 200px;
+            &:nth-child(2){
+                margin-top: -50px;
+            }
+          }
+        @include m.breakpoint(pc){
+            max-width: 25%;
+          }
+    }
+    @at-root .cast-detail{
+        position: relative;
+        display: inline-block;
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 10px;
+        letter-spacing: .2em;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 10;
+        @include m.font;
+    }
+    @at-root .cast-area{
+        padding: 20px;
+        background: #fff;
+        box-shadow: 5px 0 10px #ccc;
+        margin-top: -50px;
+        padding: 50px;
+        @include m.font;
+        @include m.breakpoint(tablet){
+            padding-left: 20px;
+          }
+    }
+}
+
+/*画像のホバー時のテキスト*/
+.bgDU{
+    position: relative;
+    span.mask-text{
+        position: relative;
+        display: block;
+        line-height: 0;
+        overflow: hidden;
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top:0;
+            opacity: 0;
+            transition: .2s ease-in-out;
+            transform: translateY(100%);
+            background:rgba(#e2a2b1, 0.7);
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &:hover span.mask-text::before{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    @at-root .cap{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: .2s ease-in-out;
+        z-index: 3;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        color:#fff;
+        line-height: 1.5;
+        font-size: 1rem;
+        font-weight: bold;
+        @include m.font;
+        padding: 15px;
+        @include m.breakpoint(tablet){
+            font-size: 1rem;
+          }
+        @include m.breakpoint(pc){
+            font-size: 1.5rem;
+          }
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+}
+/*--------------------*/
+
+
+/*---------------------*/
+/*Access内の装飾*/
+@mixin access-font{
+    @include m.font;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+}
+
+#access{
+    position: relative;
+    background: #f8f9fa;
+    z-index: 0;
+    h2{
+        font-family: 'Parisienne', cursive;
+        font-size: 3rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: normal;
+        color: #e2a2b1;
+    @include m.breakpoint(only-tab){
+         font-size: 5rem;
+       }
+    }
+    .subtitle{
+        @include m.subtitle;
+        margin-top: -25px;
+        @include m.font;
+    @include m.breakpoint(only-tab){
+            margin-top: -35px;
+          }
+    }
+}
+.map{
+    position: relative;
+    padding-bottom: 60%; // これが縦横比
+    height: 0;
+    overflow: hidden;
+    @include m.breakpoint(tablet){
+        padding-bottom: 40%; // これが縦横比
+      }
+    iframe{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.map-area{
+    width:100%;
+    height: auto;
+    background: #fff;
+    border: solid 1px #ccc;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    @include m.breakpoint(only-tab){
+        position: absolute;
+        max-width: 300px;
+        max-height: 250px;
+        top:260px;
+        right:70px;
+        padding: 20px;
+      }
+    @include m.breakpoint(pc){
+        max-width: 300px;
+        max-height: 1050px;
+        top:300px;
+        right:70px;
+        padding: 20px;
+      }
+    h3{
+        display: flex;
+        @include m.font;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        justify-content: center;
+        &::before{
+            border-top: 3px solid;
+            max-width: 20px;
+            content: "";
+            flex-grow: 1;
+            position: relative;
+            top:12px;
+            margin-right: 10px;
+        }
+        &::after{
+            border-top: 3px solid;
+            max-width: 20px;
+            content: "";
+            flex-grow: 1;
+            position: relative;
+            top:12px;
+            margin-left: 10px;
+        }
+    }
+    .access-text-foot{
+        @include access-font;
+        margin-top: 10px;
+    }
+    .access-text-lead{
+        @include access-font;
+    }
+}
+/*--------------------*/

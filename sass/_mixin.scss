@@ -1,0 +1,64 @@
+/*レスポンシブル*/
+@mixin breakpoint($point) {
+	@if $point == mini {
+		@media (min-width: 400px) {
+			@content;
+		}
+	}
+	@if $point == tablet {
+		@media (min-width: 38.25em) {
+			@content;
+		}
+	}
+    @if $point == only-tab {
+		@media (min-width: 880px) {
+			@content;
+		}
+	}
+	@if $point == pc {
+		@media (min-width: 1030px) {
+			@content;
+		}
+	}
+    
+}
+
+/*文字フォント*/
+@mixin font{
+    font-family: 'Noto Serif JP', serif;
+}
+
+/*セクションpadding*/
+@mixin padding-sec-sp{
+	padding: 30px;
+}
+
+@mixin padding-sec-pc{
+	padding:70px 50px 70px 50px;
+}
+
+
+/*ボタン*/
+@mixin buttun-basic{
+	width: 100%;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    font-family: "Noto Serif JP", serif;
+}
+
+
+/*サブタイトル*/
+@mixin subtitle{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Parisienne', cursive;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0px 0 10px 0;
+    font-weight: normal;
+    color: #e2a2b1;
+}
